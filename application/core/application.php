@@ -36,7 +36,7 @@ class Application
             $this->url_controller = new $this->url_controller();
 
             // check for method: does such a method exist in the controller ?
-            if (method_exists($this->url_controller, $this->url_action)) {
+            if (method_exists($this->url_controller, ($this->url_action ?? ''))) {
 
                 if (!empty($this->url_params)) {
                     // Call the method and pass arguments to it
