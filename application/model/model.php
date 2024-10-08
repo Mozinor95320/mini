@@ -2,7 +2,7 @@
 
 class Model
 {
-    public db;
+    public $db;
     /**
      * @param object $db A PDO database connection
      */
