@@ -15,7 +15,7 @@ class Songs extends Controller
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index
      */
-    public function index($pPage)
+    public function index($pPage=1)
     {
         // Nombre d'éléments par page
         $limit = 10;
