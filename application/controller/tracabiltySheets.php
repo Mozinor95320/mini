@@ -16,21 +16,7 @@ class TracabiltySheets extends Controller
      * This method handles what happens when you move to http://yourproject/tracabiltySheets/index
      */
 
-         /**
-     * PAGE: index
-     * This method handles what happens when you move to http://yourproject/songs/index
-     */
-    public function index()
-    {
-        // getting all songs and amount of songs
-        $songs = $this->model->getAllSongs();
-        $amount_of_songs = $this->model->getAmountOfSongs();
-
-       // load views. within the views we can echo out $songs and $amount_of_songs easily
-        require APP . 'view/_templates/header.php';
-        require APP . 'view/songs/index.php';
-        require APP . 'view/_templates/footer.php';
-    }
+    
     public function index($pPage=1)
     {
         // Number of items per page
