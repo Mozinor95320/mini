@@ -16,19 +16,26 @@ class TracabiltySheets extends Controller
      * This method handles what happens when you move to http://yourproject/tracabiltySheets/index
      */
 
-    
-    public function index($pPage=1)
+
+    public function index($pPage = 1, $pLimit = 10)
     {
         // Number of items per page
+        // Get the current page from the parameter, or set it to 1 if not defined
         $limit = 10;
+        if (isset($pLimit)) {
+            $limit = (int)$pLimit;
+        }
 
-        $page = 0;
-
+        $page = 1;
         // Get the current page from the parameter, or set it to 1 if not defined
         if (isset($pPage)) {
             $page = (int)$pPage;
-        } else {
-            $page = 1;
+        }
+
+        // if we have POST data to create a new tracabiltySheet entry
+        if (isset($_POST["submit_update_tracabiltySheet"])) {
+            $limit = $_POST["limit"]; 
+            $page = $_POST["page"];
         }
 
         $offset = ($page - 1) * $limit;
