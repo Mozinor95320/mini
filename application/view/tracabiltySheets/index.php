@@ -48,7 +48,7 @@
                             <?php } ?>
                         </td>
                         <td><a href="<?php echo URL . 'tracabiltySheets/deleteTracabiltySheet/' . htmlspecialchars($tracabiltySheet->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
-                        <td><a href="<?php echo URL . 'tracabiltySheets/editTracabiltySheet' . htmlspecialchars($tracabiltySheet->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
+                        <td><a href="<?php echo URL . 'tracabiltySheets/editTracabiltySheet/' . htmlspecialchars($tracabiltySheet->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
                     </tr>
                 <?php } ?>
 
