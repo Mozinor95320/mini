@@ -13,7 +13,7 @@ class TracabiltySheets extends Controller
 {
     /**
      * PAGE: index
-     * This method handles what happens when you move to http://yourproject/songs/index
+     * This method handles what happens when you move to http://yourproject/tracabiltySheets/index
      */
     public function index($pPage=1)
     {
@@ -78,10 +78,10 @@ class TracabiltySheets extends Controller
      */
     public function deleteTracabiltySheet($tracabiltySheet_id)
     {
-        // if we have an id of a song that should be deleted
+        // if we have an id of a tracabilty Sheet that should be deleted
         if (isset($tracabiltySheet_id)) {
             // do deleteTracabiltySheet() in model/model.php
-            $this->model->deleteSong($tracabiltySheet_id);
+            $this->model->deleteTracabiltySheet($tracabiltySheet_id);
         }
 
         // where to go after TracabiltySheet has been deleted
