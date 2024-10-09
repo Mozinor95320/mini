@@ -131,11 +131,11 @@ class Model
      */
     public function getAmountOfTracabiltySheets()
     {
-        $sql = "SELECT COUNT(id) AS amountOfTracabiltySheets FROM song";
+        $sql = "SELECT COUNT(id) AS amount_of_tracabiltySheets FROM song";
         $query = $this->db->prepare($sql);
         $query->execute();
 
         // fetch() is the PDO method that get exactly one result
-        return $query->fetch()->amountOfTracabiltySheets;
+        return $query->fetch()->amount_of_tracabiltySheets;
     }
 }
