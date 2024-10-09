@@ -15,7 +15,7 @@ class Model
         }
     }
 
-    public function getPaginatedSongs($limit, $offset)
+    public function getPaginatedTracabiltySheets($limit, $offset)
     {
         $sql = "SELECT id, artist, track, link FROM song LIMIT :limit OFFSET :offset";
         $query = $this->db->prepare($sql);
@@ -27,9 +27,9 @@ class Model
 
 
     /**
-     * Get all songs from database
+     * Get all tracabiltySheets from database
      */
-    public function getAllSongs()
+    public function getAlltracabiltySheets()
     {
         $sql = "SELECT id, artist, track, link FROM song";
         $query = $this->db->prepare($sql);
@@ -43,7 +43,7 @@ class Model
     }
 
     /**
-     * Add a song to database
+     * Add a tracabiltySheet to database
      * TODO put this explanation into readme and remove it from here
      * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
      * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
@@ -53,7 +53,7 @@ class Model
      * @param string $track Track
      * @param string $link Link
      */
-    public function addSong($artist, $track, $link)
+    public function addTracabiltySheet($artist, $track, $link)
     {
         $sql = "INSERT INTO song (artist, track, link) VALUES (:artist, :track, :link)";
         $query = $this->db->prepare($sql);
@@ -66,16 +66,16 @@ class Model
     }
 
     /**
-     * Delete a song in the database
+     * Delete a tracabiltySheet in the database
      * Please note: this is just an example! In a real application you would not simply let everybody
      * add/update/delete stuff!
-     * @param int $song_id Id of song
+     * @param int $tracabiltySheet_id Id of tracabiltySheet
      */
-    public function deleteSong($song_id)
+    public function deleteTracabiltySheet($tracabiltySheet_id)
     {
-        $sql = "DELETE FROM song WHERE id = :song_id";
+        $sql = "DELETE FROM song WHERE id = :tracabiltySheet_id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
+        $parameters = array(':tracabiltySheet_id' => $tracabiltySheet_id);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
@@ -84,13 +84,13 @@ class Model
     }
 
     /**
-     * Get a song from database
+     * Get a tracabiltySheet from database
      */
-    public function getSong($song_id)
+    public function getTracabiltySheet($tracabiltySheet_id)
     {
-        $sql = "SELECT id, artist, track, link FROM song WHERE id = :song_id LIMIT 1";
+        $sql = "SELECT id, artist, track, link FROM song WHERE id = :tracabiltySheet_id LIMIT 1";
         $query = $this->db->prepare($sql);
-        $parameters = array(':song_id' => $song_id);
+        $parameters = array(':tracabiltySheet_id' => $tracabiltySheet_id);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
@@ -102,7 +102,7 @@ class Model
     }
 
     /**
-     * Update a song in database
+     * Update a tracabiltySheet in database
      * // TODO put this explaination into readme and remove it from here
      * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
      * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
@@ -111,13 +111,13 @@ class Model
      * @param string $artist Artist
      * @param string $track Track
      * @param string $link Link
-     * @param int $song_id Id
+     * @param int $tracabiltySheet_id Id
      */
-    public function updateSong($artist, $track, $link, $song_id)
+    public function updateTracabiltySheet($artist, $track, $link, $tracabiltySheet_id)
     {
-        $sql = "UPDATE song SET artist = :artist, track = :track, link = :link WHERE id = :song_id";
+        $sql = "UPDATE song SET artist = :artist, track = :track, link = :link WHERE id = :tracabiltySheet_id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link, ':song_id' => $song_id);
+        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link, ':tracabiltySheet_id' => $tracabiltySheet_id);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
@@ -127,15 +127,15 @@ class Model
 
     /**
      * Get simple "stats". This is just a simple demo to show
-     * how to use more than one model in a controller (see application/controller/songs.php for more)
+     * how to use more than one model in a controller (see application/controller/tracabiltySheets.php for more)
      */
-    public function getAmountOfSongs()
+    public function getAmountOfTracabiltySheets()
     {
-        $sql = "SELECT COUNT(id) AS amount_of_songs FROM song";
+        $sql = "SELECT COUNT(id) AS amount_of_tracabiltySheets FROM song";
         $query = $this->db->prepare($sql);
         $query->execute();
 
         // fetch() is the PDO method that get exactly one result
-        return $query->fetch()->amount_of_songs;
+        return $query->fetch()->amount_of_tracabiltySheets;
     }
 }
