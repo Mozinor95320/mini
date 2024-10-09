@@ -27,30 +27,48 @@
         <h3>List of songs (data from first model)</h3>
         <table>
             <thead style="background-color: #ddd; font-weight: bold;">
-            <tr>
-                <td>Id</td>
-                <td>Artist</td>
-                <td>Track</td>
-                <td>Link</td>
-                <td>DELETE</td>
-                <td>EDIT</td>
-            </tr>
+                <tr>
+                    <td>Id</td>
+                    <td>Artist</td>
+                    <td>Track</td>
+                    <td>Link</td>
+                    <td>DELETE</td>
+                    <td>EDIT</td>
+                </tr>
             </thead>
             <tbody>
-            <?php foreach ($songs as $song) { ?>
-                <tr>
-                    <td><?php if (isset($song->id)) echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($song->artist)) echo htmlspecialchars($song->artist, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td><?php if (isset($song->track)) echo htmlspecialchars($song->track, ENT_QUOTES, 'UTF-8'); ?></td>
-                    <td>
-                        <?php if (isset($song->link)) { ?>
-                            <a href="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?></a>
-                        <?php } ?>
-                    </td>
-                    <td><a href="<?php echo URL . 'songs/deletesong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
-                    <td><a href="<?php echo URL . 'songs/editsong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
-                </tr>
-            <?php } ?>
+                <?php foreach ($songs as $song) { ?>
+                    <tr>
+                        <td><?php if (isset($song->id)) echo htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?></td>
+                        <td><?php if (isset($song->artist)) echo htmlspecialchars($song->artist, ENT_QUOTES, 'UTF-8'); ?></td>
+                        <td><?php if (isset($song->track)) echo htmlspecialchars($song->track, ENT_QUOTES, 'UTF-8'); ?></td>
+                        <td>
+                            <?php if (isset($song->link)) { ?>
+                                <a href="<?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($song->link, ENT_QUOTES, 'UTF-8'); ?></a>
+                            <?php } ?>
+                        </td>
+                        <td><a href="<?php echo URL . 'songs/deletesong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
+                        <td><a href="<?php echo URL . 'songs/editsong/' . htmlspecialchars($song->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
+                    </tr>
+                <?php } ?>
+
+                <div class="pagination">
+                    <?php if ($page > 1): ?>
+                        
+                        <a href="<?php echo URL . 'songs/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>">Précédent</a>
+                    <?php endif; ?>
+
+                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+                        <a href="<?php echo URL . 'songs/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+                            <?php echo $i; ?>
+                        </a>
+                    <?php endfor; ?>
+
+                    <?php if ($page < $totalPages): ?>
+                        
+                        <a href="<?php echo URL . 'songs/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>">Suivant</a>
+                    <?php endif; ?>
+                </div>
             </tbody>
         </table>
     </div>

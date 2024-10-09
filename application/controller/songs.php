@@ -15,6 +15,38 @@ class Songs extends Controller
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/songs/index
      */
+    public function index($pPage)
+    {
+        // Nombre d'éléments par page
+        $limit = 10;
+        // if we have an id of a song that should be deleted
+        $page = 0;
+
+        // Obtenez la page actuelle à partir du paramètre, ou définissez-la à 1 si non définie
+        if (isset($pPage)) {
+            $page = (int)$pPage;
+        } else {
+            $page = 1;
+        }
+
+        $offset = ($page - 1) * $limit;
+
+        // Obtenez le nombre total de chansons
+        $totalSongs = $this->model->getAmountOfSongs();
+
+        // Calcul du nombre total de pages
+        $totalPages = ceil($totalSongs / $limit);
+
+        // Obtenez les chansons pour la page actuelle
+        $songs = $this->model->getPaginatedSongs($limit, $offset);
+
+
+        // load views. within the views we can echo out $songs and $amount_of_songs easily
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/songs/index.php';
+        require APP . 'view/_templates/footer.php';
+    }
+    /*
     public function index()
     {
         // getting all songs and amount of songs
@@ -26,7 +58,7 @@ class Songs extends Controller
         require APP . 'view/songs/index.php';
         require APP . 'view/_templates/footer.php';
     }
-
+*/
     /**
      * ACTION: addSong
      * This method handles what happens when you move to http://yourproject/songs/addsong
@@ -68,7 +100,7 @@ class Songs extends Controller
         header('location: ' . URL . 'songs/index');
     }
 
-     /**
+    /**
      * ACTION: editSong
      * This method handles what happens when you move to http://yourproject/songs/editsong
      * @param int $song_id Id of the to-edit song
@@ -92,7 +124,7 @@ class Songs extends Controller
             header('location: ' . URL . 'songs/index');
         }
     }
-    
+
     /**
      * ACTION: updateSong
      * This method handles what happens when you move to http://yourproject/songs/updatesong
@@ -124,5 +156,4 @@ class Songs extends Controller
         // simply echo out something. A supersimple API would be possible by echoing JSON here
         echo $amount_of_songs;
     }
-
 }

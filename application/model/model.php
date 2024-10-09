@@ -15,6 +15,17 @@ class Model
         }
     }
 
+    public function getPaginatedSongs($limit, $offset)
+    {
+        $sql = "SELECT id, artist, track, link FROM songs LIMIT :limit OFFSET :offset";
+        $query = $this->db->prepare($sql);
+        $query->bindValue(':limit', $limit, PDO::PARAM_INT);
+        $query->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+
     /**
      * Get all songs from database
      */
