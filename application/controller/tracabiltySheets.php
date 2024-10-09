@@ -15,14 +15,30 @@ class TracabiltySheets extends Controller
      * PAGE: index
      * This method handles what happens when you move to http://yourproject/tracabiltySheets/index
      */
+
+         /**
+     * PAGE: index
+     * This method handles what happens when you move to http://yourproject/songs/index
+     */
+    public function index()
+    {
+        // getting all songs and amount of songs
+        $songs = $this->model->getAllSongs();
+        $amount_of_songs = $this->model->getAmountOfSongs();
+
+       // load views. within the views we can echo out $songs and $amount_of_songs easily
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/songs/index.php';
+        require APP . 'view/_templates/footer.php';
+    }
     public function index($pPage=1)
     {
-        // Nombre d'éléments par page
+        // Number of items per page
         $limit = 10;
-        // if we have an id of a tracabiltySheet that should be deleted
+
         $page = 0;
 
-        // Obtenez la page actuelle à partir du paramètre, ou définissez-la à 1 si non définie
+        // Get the current page from the parameter, or set it to 1 if not defined
         if (isset($pPage)) {
             $page = (int)$pPage;
         } else {
@@ -31,17 +47,17 @@ class TracabiltySheets extends Controller
 
         $offset = ($page - 1) * $limit;
 
-        // Obtenez le nombre total de chansons
-        $totalTracabiltySheets = $this->model->getAmountOfTracabiltySheets();
+        // Get the total number of traceability sheets
+        $amountOfTracabiltySheets = $this->model->getAmountOfTracabiltySheets();
 
-        // Calcul du nombre total de pages
-        $totalPages = ceil($totalTracabiltySheets / $limit);
+        // Calculate the total number of pages
+        $totalPages = ceil($amountOfTracabiltySheets / $limit);
 
-        // Obtenez les chansons pour la page actuelle
+        // Get the traceability sheets for the current page
         $tracabiltySheets = $this->model->getPaginatedTracabiltySheets($limit, $offset);
 
 
-        // load views. within the views we can echo out $tracabiltySheets and $amount_of_tracabiltySheets easily
+        // load views. within the views we can echo out $tracabiltySheets and $amountOfTracabiltySheets easily
         require APP . 'view/_templates/header.php';
         require APP . 'view/tracabiltySheets/index.php';
         require APP . 'view/_templates/footer.php';
@@ -139,9 +155,9 @@ class TracabiltySheets extends Controller
      */
     public function ajaxGetStats()
     {
-        $amount_of_tracabiltySheets = $this->model->getAmountOfTracabiltySheets();
+        $amountOfTracabiltySheets = $this->model->getAmountOfTracabiltySheets();
 
         // simply echo out something. A supersimple API would be possible by echoing JSON here
-        echo $amount_of_tracabiltySheets;
+        echo $amountOfTracabiltySheets;
     }
 }

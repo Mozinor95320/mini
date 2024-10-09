@@ -17,7 +17,7 @@
     <div class="box">
         <h3>Amount of Tracabilty Sheets (data from second model)</h3>
         <div>
-            <?php echo $amount_of_tracabiltySheets; ?>
+            <?php echo $amountOfTracabiltySheets; ?>
         </div>
         <h3>Amount of tracabilty Sheets (via AJAX)</h3>
         <div>
