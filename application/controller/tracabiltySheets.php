@@ -66,7 +66,7 @@ class TracabiltySheets extends Controller
         }
 
         // where to go after tracabiltySheet has been added
-        header('location: ' . URL . 'tracabiltySheet/index');
+        header('location: ' . URL . 'tracabiltySheets/index');
     }
 
     /**
