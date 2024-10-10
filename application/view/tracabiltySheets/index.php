@@ -55,31 +55,28 @@
                 <div class="pagination">
                     <?php if ($page > 1): ?>
 
-                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8') .'/'. htmlspecialchars($limit , ENT_QUOTES, 'UTF-8'); ?>">Précédent</a>
+                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>">Précédent</a>
                     <?php endif; ?>
 
                     <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8').'/'. htmlspecialchars($limit , ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
                             <?php echo $i; ?>
                         </a>
                     <?php endfor; ?>
 
                     <?php if ($page < $totalPages): ?>
 
-                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8').'/'. htmlspecialchars($limit , ENT_QUOTES, 'UTF-8'); ?>">Suivant</a>
+                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>">Suivant</a>
                     <?php endif; ?>
                 </div>
                 <form action="<?php echo URL; ?>tracabiltySheets/index" method="POST">
-                    <label for="limit">Nombre de chansons par page : </label>
-                    <select name="limit" id="limit" onchange="this.form.submit()">
+                    <label for="limitListTracabilitySheet">Nombre de chansons par page : </label>
+                    <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
                         <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
                         <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
                         <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
                         <option value="100" <?php if ($limit == 100) echo 'selected'; ?>>100</option>
                     </select>
-
-                    <!-- Keep the current page so it doesn't revert to the first page with each selection -->
-                    <input type="hidden" name="page" value="<?php echo $page; ?>">
                 </form>
             </tbody>
         </table>

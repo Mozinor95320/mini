@@ -17,6 +17,10 @@ class Application
      */
     public function __construct()
     {
+        // Start the session if it is not already started
+        if (session_status() == PHP_SESSION_NONE) {
+            session_start();
+        }
         // create array with URL parts in $url
         $this->splitUrl();
 
@@ -26,7 +30,6 @@ class Application
             require APP . 'controller/home.php';
             $page = new Home();
             $page->index();
-
         } elseif (file_exists(APP . 'controller/' . $this->url_controller . '.php')) {
             // here we did check for controller: does such a controller exist ?
 
@@ -45,13 +48,11 @@ class Application
                     // If no parameters are given, just call the method without parameters, like $this->home->method();
                     $this->url_controller->{$this->url_action}();
                 }
-
             } else {
                 if (strlen($this->url_action ?? '') == 0) {
                     // no action defined: call the default index() method of a selected controller
                     $this->url_controller->index();
-                }
-                else {
+                } else {
                     header('location: ' . URL . 'problem');
                 }
             }

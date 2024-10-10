@@ -17,25 +17,19 @@ class TracabiltySheets extends Controller
      */
 
 
-    public function index($pPage = 1, $pLimit = 10)
+    public function index($pPage = 1)
     {
-        // Number of items per page
-        // Get the current page from the parameter, or set it to 1 if not defined
-        $limit = 10;
-        if (isset($pLimit)) {
-            $limit = (int)$pLimit;
-        }
-
         $page = 1;
         // Get the current page from the parameter, or set it to 1 if not defined
         if (isset($pPage)) {
             $page = (int)$pPage;
         }
 
-        // if we have POST data to create a new tracabiltySheet entry
-        if (isset($_POST["submit_update_tracabiltySheet"])) {
-            $limit = $_POST["limit"]; 
-            $page = $_POST["page"];
+        $limit = 10;
+       // Number of items per page
+        // Get the current page from the parameter, or set it to 1 if not defined
+        if (isset($_POST['limitListTracabilitySheet'])) {
+            $_SESSION['limitListTracabilitySheet'] = (int)$_POST['limitListTracabilitySheet'];
         }
 
         $offset = ($page - 1) * $limit;
