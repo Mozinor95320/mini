@@ -105,3 +105,14 @@ body {
 .pagination a:hover {
     background-color: #ddd;
 }
+
+.navbar {
+    background-color: #000; /* Black background */
+    border-bottom: 4px solid orange; /* Orange border at the bottom */
+}
+.navbar-nav .nav-link {
+    color: #fff !important; /* White text for navbar links */
+}
+.navbar-nav .nav-link:hover {
+    color: orange !important; /* Orange hover effect on links */
+}
