@@ -25,11 +25,17 @@ class TracabiltySheets extends Controller
             $page = (int)$pPage;
         }
 
-        $limit = 10;
-       // Number of items per page
+
+        // Number of items per page
         // Get the current page from the parameter, or set it to 1 if not defined
         if (isset($_POST['limitListTracabilitySheet'])) {
             $_SESSION['limitListTracabilitySheet'] = (int)$_POST['limitListTracabilitySheet'];
+        }
+
+        if (isset($_SESSION['limitListTracabilitySheet'])) {
+            $limit = (int)$_SESSION['limitListTracabilitySheet'];
+        } else {
+            $limit = 10;
         }
 
         $offset = ($page - 1) * $limit;
