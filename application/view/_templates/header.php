@@ -29,36 +29,39 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="offcanvas-body p-4 pt-0 p-lg-0">
-                <hr class="d-lg-none text-white-50">
-                <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
-                    <li class="nav-item col-6 col-lg-auto">
-                        <a class="nav-link" href="<?php echo URL; ?>tracabiltySheets">Accueil</a>
-                    </li>
-                    <li class="nav-item col-6 col-lg-auto">
-                        <a class="nav-link" href="<?php echo URL; ?>tracabiltySheets">Accueil</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="<?php echo URL; ?>">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL; ?>home/exampleone">subpage</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL; ?>home/exampletwo">subpage 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo URL; ?>tracabiltySheets">tracabiltySheets</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <button class="btn btn-link nav-link dropdown-toggle" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
+                        <i class="bi bi-gear my-1 theme-icon-active"></i>
+                        <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-                    </li>
-                </ul>
-                <hr class="d-lg-none text-white-50">
-                <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
-                    <li class="nav-item col-6 col-lg-auto">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2 bg-dark" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-light" type="submit">Search</button>
-                        </form>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <button class="btn btn-link nav-link dropdown-toggle" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
-                            <i class="bi bi-gear my-1 theme-icon-active"></i>
-                            <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="<?php echo URL; ?>home/exampleone">Action</a></li>
-                            <li><a class="dropdown-item" href="<?php echo URL; ?>home/exampletwo">Another action</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2 bg-dark" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+
         </div>
     </nav>
