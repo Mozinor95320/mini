@@ -28,7 +28,7 @@ class Application
         if (!$this->url_controller) {
 
             require APP . 'controller/tracabiltySheets.php';
-            $page = new Home();
+            $page = new TracabiltySheets();
             $page->index();
         } elseif (file_exists(APP . 'controller/' . $this->url_controller . '.php')) {
             // here we did check for controller: does such a controller exist ?
