@@ -15,16 +15,7 @@
     </div>
     <!-- main content output -->
     <div class="box">
-        <h3>Amount of Tracabilty Sheets (data from second model)</h3>
-        <div>
-            <?php echo $amountOfTracabiltySheets; ?>
-        </div>
-        <h3>Amount of tracabilty Sheets (via AJAX)</h3>
-        <div>
-            <button id="javascript-ajax-button">Click here to get the amount of tracabilty Sheets via Ajax (will be displayed in #javascript-ajax-result-box)</button>
-            <div id="javascript-ajax-result-box"></div>
-        </div>
-        <h3>List of tracabilty Sheets (data from first model)</h3>
+        <h3>List of tracabilty Sheets</h3>
         <table>
             <thead style="background-color: #ddd; font-weight: bold;">
                 <tr>
