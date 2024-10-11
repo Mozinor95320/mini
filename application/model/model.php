@@ -19,10 +19,10 @@ class Model
     {
         $sql = "SELECT serialNumber, partNumber, workOrder, sheetCreationDate, lastTimeEdit, statusSheetOperator, statusSheetQuality FROM tracabilitySheets LIMIT :limit OFFSET :offset";
         $query = $this->db->prepare($sql);
-        $query->bindValue(':limit', $limit, PDO::PARAM_INT);
-        $query->bindValue(':offset', $offset, PDO::PARAM_INT);
+        $query->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
+        $query->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
         // useful for debugging: you can see the SQL behind above construction by using:
-        echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
         $query->execute();
         return $query->fetchAll();
     }
