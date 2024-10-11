@@ -25,9 +25,8 @@
         <a class="navbar-brand" href="<?php echo URL; ?>tracabiltySheets">
             <img src="public/img/logo parker_crop.png" alt="Parker" height="24">
         </a>
-        <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
-            <i class="bi bi-gear my-1 theme-icon-active"></i>
-            <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
@@ -44,9 +43,10 @@
                     <a class="nav-link" href="<?php echo URL; ?>tracabiltySheets">tracabiltySheets</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown
-                    </a>
+                    <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
+                        <i class="bi bi-gear my-1 theme-icon-active"></i>
+                        <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                    </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Action</a></li>
                         <li><a class="dropdown-item" href="#">Another action</a></li>
