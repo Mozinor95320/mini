@@ -44,7 +44,7 @@
                         <i class="bi bi-gear my-1 theme-icon-active"></i>
                         <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="<?php echo URL; ?>home/exampleone">Action</a></li>
                         <li><a class="dropdown-item" href="<?php echo URL; ?>home/exampletwo">Another action</a></li>
                     </ul>
