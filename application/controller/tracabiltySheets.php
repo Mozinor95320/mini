@@ -70,7 +70,7 @@ class TracabiltySheets extends Controller
 
         // load views. within the views we can echo out $tracabiltySheet easily
         require APP . 'view/_templates/header.php';
-        require APP . 'view/tracabiltySheets/edit.php';
+        require APP . 'view/tracabiltySheets/add.php';
         require APP . 'view/_templates/footer.php';
     }
     public function addTracabiltySheet()

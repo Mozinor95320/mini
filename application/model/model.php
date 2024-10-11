@@ -25,7 +25,6 @@ class Model
         return $query->fetchAll();
     }
 
-
     /**
      * Get all tracabiltySheets from database
      */
