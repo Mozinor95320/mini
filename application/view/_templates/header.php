@@ -14,6 +14,7 @@
     <!-- CSS -->
     <!-- Bootstrap CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="<?php echo URL; ?>css/style.css" rel="stylesheet">
 
 </head>
@@ -46,5 +47,15 @@
                 <input class="form-control me-2 bg-dark" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light" type="submit">Search</button>
             </form>
+            <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-gear"></i> Settings
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Account Settings</a></li>
+            <li><a class="dropdown-item" href="#">Log out</a></li>
+        </ul>
+    </div>
         </div>
     </nav>
