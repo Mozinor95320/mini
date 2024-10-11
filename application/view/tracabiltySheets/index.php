@@ -1,13 +1,13 @@
 <?php
 // Determine the correct icons for operator status
-if ($statusSheetOperator) {
+if ((bool)$tracabiltySheet->statusSheetOperator) {
     $operatorIcon = '<i class="bi bi-check-circle-fill text-success"></i>';
 } else {
     $operatorIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
 }
 
 // Determine the correct icons for quality status
-if ($statusSheetQuality) {
+if ((bool)$tracabiltySheet->statusSheetQuality) {
     $qualityIcon = '<i class="bi bi-check-circle-fill text-success"></i>';
 } else {
     $qualityIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
