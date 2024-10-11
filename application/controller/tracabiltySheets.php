@@ -69,9 +69,8 @@ class TracabiltySheets extends Controller
         // if we have POST data to create a new tracabiltySheet entry
         if (isset($_POST["submit_add_tracabiltySheet"])) {
             // do addTracabiltySheet() in model/model.php
-            $this->model->addTracabiltySheet($_POST["artist"], $_POST["track"],  $_POST["link"]);
+            $this->model->addTracabiltySheet($_POST["workOrder"], $_POST["serialNumber"],  $_POST["partNumber"], $_POST["refPlan"],  $_POST["refMachine"]);
         }
-
         // where to go after tracabiltySheet has been added
         header('location: ' . URL . 'tracabiltySheets/index');
     }

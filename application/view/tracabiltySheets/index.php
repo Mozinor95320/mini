@@ -2,13 +2,19 @@
     <div class="box">
         <h3>Add a tracabilty Sheet</h3>
         <form action="<?php echo URL; ?>tracabiltySheets/addTracabiltySheet" method="POST">
-            <label>Artist</label>
-            <input type="text" name="artist" value="" required />
-            <label>Track</label>
-            <input type="text" name="track" value="" required />
-            <label>Link</label>
-            <input type="text" name="link" value="" />
+            <label>N°OF</label>
+            <input type="text" name="workOrder" value="" required />
+            <label>SN</label>
+            <input type="text" name="serialNumber" value="" required />
+            <label>PN</label>
+            <input type="text" name="partNumber" value="" />
+            <label>Ref Plan</label>
+            <input type="text" name="refPlan" value="" />
+            <label>Ref Machine</label>
+            <input type="text" name="refMachine" value="" />
             <input type="submit" name="submit_add_tracabiltySheet" value="Submit" />
+
+            ($workOrder, $serialNumber, $partNumber, $sheetCreationDate, $refPlan, $refMachine)
         </form>
     </div>
     <!-- main content output -->

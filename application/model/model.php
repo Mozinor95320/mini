@@ -53,17 +53,29 @@ class Model
      * @param string $track Track
      * @param string $link Link
      */
-    public function addTracabiltySheet($artist, $track, $link)
+    public function addTracabiltySheet($workOrder, $serialNumber, $partNumber, $refPlan, $refMachine)
     {
-        $sql = "INSERT INTO song (artist, track, link) VALUES (:artist, :track, :link)";
+
+        $sql = "INSERT INTO tracabilitySheets (workOrder, serialNumber, partNumber, sheetCreationDate, refPlan, refMachine) 
+        VALUES (:workOrder, :serialNumber, :partNumber, CONVERT_TZ(NOW(), '+00:00', '+02:00'), :refPlan, :refMachine)";
         $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link);
+
+        $parameters = array(
+            ':workOrder' => $workOrder,
+            ':serialNumber' => $serialNumber,
+            ':partNumber' => $partNumber,
+            ':refPlan' => $refPlan,
+            ':refMachine' => $refMachine
+        );
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
 
         $query->execute($parameters);
     }
+
+
+
 
     /**
      * Delete a tracabiltySheet in the database
@@ -73,7 +85,7 @@ class Model
      */
     public function deleteTracabiltySheet($tracabiltySheet_id)
     {
-        $sql = "DELETE FROM song WHERE id = :tracabiltySheet_id";
+        $sql = "DELETE FROM tracabilitySheets WHERE id = :tracabiltySheet_id";
         $query = $this->db->prepare($sql);
         $parameters = array(':tracabiltySheet_id' => $tracabiltySheet_id);
 
@@ -113,7 +125,7 @@ class Model
      * @param string $link Link
      * @param int $tracabiltySheet_id Id
      */
-    public function updateTracabiltySheet($params, $tracabiltySheet_id)
+    public function updateTracabiltySheet($parameters, $tracabiltySheet_id)
     {
         $sql = "UPDATE tracabilitySheets SET 
         serialNumber = :serialNumber,
@@ -188,7 +200,8 @@ class Model
         status = :status
     WHERE serialNumber = :tracabiltySheet_id";
         $query = $this->db->prepare($sql);
-        $params[':tracabiltySheet_id'] = $tracabiltySheet_id;
+        //add the parameter below in the arrway
+        $parameters[':tracabiltySheet_id'] = $tracabiltySheet_id;
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
