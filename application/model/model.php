@@ -17,7 +17,7 @@ class Model
 
     public function getPaginatedTracabiltySheets($limit, $offset)
     {
-        $sql = "SELECT id, artist, track, link FROM song LIMIT :limit OFFSET :offset";
+        $sql = "SELECT serialNumber, workOrder, sheetCreationDate FROM tracabilitySheets LIMIT :limit OFFSET :offset";
         $query = $this->db->prepare($sql);
         $query->bindValue(':limit', $limit, PDO::PARAM_INT);
         $query->bindValue(':offset', $offset, PDO::PARAM_INT);
@@ -31,7 +31,7 @@ class Model
      */
     public function getAlltracabiltySheets()
     {
-        $sql = "SELECT id, artist, track, link FROM song";
+        $sql = "SELECT serialNumber, workOrder, sheetCreationDate FROM tracabilitySheets";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -88,7 +88,7 @@ class Model
      */
     public function getTracabiltySheet($tracabiltySheet_id)
     {
-        $sql = "SELECT id, artist, track, link FROM song WHERE id = :tracabiltySheet_id LIMIT 1";
+        $sql = "SELECT * FROM tracabilitySheets WHERE serialNumber = :tracabiltySheet_id LIMIT 1";
         $query = $this->db->prepare($sql);
         $parameters = array(':tracabiltySheet_id' => $tracabiltySheet_id);
 
@@ -113,11 +113,82 @@ class Model
      * @param string $link Link
      * @param int $tracabiltySheet_id Id
      */
-    public function updateTracabiltySheet($artist, $track, $link, $tracabiltySheet_id)
+    public function updateTracabiltySheet($params, $tracabiltySheet_id)
     {
-        $sql = "UPDATE song SET artist = :artist, track = :track, link = :link WHERE id = :tracabiltySheet_id";
+        $sql = "UPDATE tracabilitySheets SET 
+        serialNumber = :serialNumber,
+        partNumber = :partNumber,
+        workOrder = :workOrder,
+        sheetCreationDate = :sheetCreationDate,
+        refPlan = :refPlan,
+        refMachine = :refMachine,
+        material = :material,
+        spoolBatch = :spoolBatch,
+        spoolNumber = :spoolNumber,
+        dateDimAfterCoating = :dateDimAfterCoating,
+        operatorNameDimAfterCoating = :operatorNameDimAfterCoating,
+        lengthL = :lengthL,
+        diameterD = :diameterD,
+        massM = :massM,
+        aspectDimAfterCoating = :aspectDimAfterCoating,
+        profileMassBeforeShrinkFit = :profileMassBeforeShrinkFit,
+        linearMassBeforeShrinkFit = :linearMassBeforeShrinkFit,
+        thickness1BeforeShrinkFit = :thickness1BeforeShrinkFit,
+        thickness2BeforeShrinkFit = :thickness2BeforeShrinkFit,
+        thickness3BeforeShrinkFit = :thickness3BeforeShrinkFit,
+        thickness4BeforeShrinkFit = :thickness4BeforeShrinkFit,
+        thickness5BeforeShrinkFit = :thickness5BeforeShrinkFit,
+        force1BeforeShrinkFit = :force1BeforeShrinkFit,
+        force2BeforeShrinkFit = :force2BeforeShrinkFit,
+        force3BeforeShrinkFit = :force3BeforeShrinkFit,
+        force4BeforeShrinkFit = :force4BeforeShrinkFit,
+        force5BeforeShrinkFit = :force5BeforeShrinkFit,
+        aspectFiber1BeforeShrinkFit = :aspectFiber1BeforeShrinkFit,
+        aspectFiber2BeforeShrinkFit = :aspectFiber2BeforeShrinkFit,
+        aspectFiber3BeforeShrinkFit = :aspectFiber3BeforeShrinkFit,
+        aspectFiber4BeforeShrinkFit = :aspectFiber4BeforeShrinkFit,
+        aspectFiber5BeforeShrinkFit = :aspectFiber5BeforeShrinkFit,
+        averageBeforeShrinkFit = :averageBeforeShrinkFit,
+        sigmaBeforeShrinkFit = :sigmaBeforeShrinkFit,
+        profileMassAfterShrinkFit = :profileMassAfterShrinkFit,
+        linearMassAfterShrinkFit = :linearMassAfterShrinkFit,
+        thickness1AfterShrinkFit = :thickness1AfterShrinkFit,
+        thickness2AfterShrinkFit = :thickness2AfterShrinkFit,
+        thickness3AfterShrinkFit = :thickness3AfterShrinkFit,
+        thickness4AfterShrinkFit = :thickness4AfterShrinkFit,
+        thickness5AfterShrinkFit = :thickness5AfterShrinkFit,
+        force1AfterShrinkFit = :force1AfterShrinkFit,
+        force2AfterShrinkFit = :force2AfterShrinkFit,
+        force3AfterShrinkFit = :force3AfterShrinkFit,
+        force4AfterShrinkFit = :force4AfterShrinkFit,
+        force5AfterShrinkFit = :force5AfterShrinkFit,
+        aspectFiber1AfterShrinkFit = :aspectFiber1AfterShrinkFit,
+        aspectFiber2AfterShrinkFit = :aspectFiber2AfterShrinkFit,
+        aspectFiber3AfterShrinkFit = :aspectFiber3AfterShrinkFit,
+        aspectFiber4AfterShrinkFit = :aspectFiber4AfterShrinkFit,
+        aspectFiber5AfterShrinkFit = :aspectFiber5AfterShrinkFit,
+        averageAfterShrinkFit = :averageAfterShrinkFit,
+        sigmaAfterShrinkFit = :sigmaAfterShrinkFit,
+        bf = :bf,
+        vf = :vf,
+        mt = :mt,
+        mf = :mf,
+        df1 = :df1,
+        df2 = :df2,
+        df3 = :df3,
+        operatorConformityDeclaration = :operatorConformityDeclaration,
+        operatorRemarks = :operatorRemarks,
+        dateOperatorConformityDeclaration = :dateOperatorConformityDeclaration,
+        operatorNameConformityDeclaration = :operatorNameConformityDeclaration,
+        firstAccumulatorLot = :firstAccumulatorLot,
+        qualityConformityDeclaration = :qualityConformityDeclaration,
+        qualityControlDate = :qualityControlDate,
+        qualityInspectorName = :qualityInspectorName,
+        qualityInspectorRemarks = :qualityInspectorRemarks,
+        status = :status
+    WHERE serialNumber = :tracabiltySheet_id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':artist' => $artist, ':track' => $track, ':link' => $link, ':tracabiltySheet_id' => $tracabiltySheet_id);
+        $params[':tracabiltySheet_id'] = $tracabiltySheet_id;
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
@@ -125,13 +196,14 @@ class Model
         $query->execute($parameters);
     }
 
+
     /**
      * Get simple "stats". This is just a simple demo to show
      * how to use more than one model in a controller (see application/controller/tracabiltySheets.php for more)
      */
     public function getAmountOfTracabiltySheets()
     {
-        $sql = "SELECT COUNT(id) AS amount_of_tracabiltySheets FROM song";
+        $sql = "SELECT COUNT(serialNumber) AS amount_of_tracabiltySheets FROM tracabilitySheets";
         $query = $this->db->prepare($sql);
         $query->execute();
 

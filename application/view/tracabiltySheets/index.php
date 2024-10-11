@@ -1,6 +1,4 @@
 <div class="container">
-    <h2>You are in the View: application/view/tracabiltySheets/index.php (everything in this box comes from that file)</h2>
-    <!-- add tracabiltySheet form -->
     <div class="box">
         <h3>Add a tracabilty Sheet</h3>
         <form action="<?php echo URL; ?>tracabiltySheets/addTracabiltySheet" method="POST">
