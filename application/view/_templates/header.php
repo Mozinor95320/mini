@@ -25,8 +25,9 @@
         <a class="navbar-brand" href="<?php echo URL; ?>tracabiltySheets">
             <img src="public/img/logo parker_crop.png" alt="Parker" height="24">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
+            <i class="bi bi-gear my-1 theme-icon-active"></i>
+            <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
@@ -56,6 +57,7 @@
                     </ul>
                 </li>
             </ul>
+
             <form class="d-flex" role="search">
                 <input class="form-control me-2 bg-dark" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-light" type="submit">Search</button>
