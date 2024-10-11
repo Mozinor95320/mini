@@ -17,7 +17,7 @@ class Model
 
     public function getPaginatedTracabiltySheets($limit, $offset)
     {
-        $sql = "SELECT serialNumber, workOrder, sheetCreationDate FROM tracabilitySheets LIMIT :limit OFFSET :offset";
+        $sql = "SELECT serialNumber, partNumber, workOrder, sheetCreationDate, lastTimeEdit, statusSheetOperator, statusSheetQuality FROM tracabilitySheets LIMIT :limit OFFSET :offset";
         $query = $this->db->prepare($sql);
         $query->bindValue(':limit', $limit, PDO::PARAM_INT);
         $query->bindValue(':offset', $offset, PDO::PARAM_INT);
@@ -31,7 +31,7 @@ class Model
      */
     public function getAlltracabiltySheets()
     {
-        $sql = "SELECT serialNumber, workOrder, sheetCreationDate FROM tracabilitySheets";
+        $sql = "SELECT serialNumber, partNumber, workOrder, sheetCreationDate, lastTimeEdit, statusSheetOperator, statusSheetQuality FROM tracabilitySheets";
         $query = $this->db->prepare($sql);
         $query->execute();
 
@@ -57,7 +57,7 @@ class Model
     {
 
         $sql = "INSERT INTO tracabilitySheets (workOrder, serialNumber, partNumber, sheetCreationDate, refPlan, refMachine) 
-        VALUES (:workOrder, :serialNumber, :partNumber, CONVERT_TZ(NOW(), '+00:00', '+02:00'), :refPlan, :refMachine)";
+        VALUES (:workOrder, :serialNumber, :partNumber, NOW(), :refPlan, :refMachine)";
         $query = $this->db->prepare($sql);
 
         $parameters = array(

@@ -58,3 +58,4 @@ define('DB_NAME', 'u230474653_mini');
 define('DB_USER', 'u230474653_Parker92');
 define('DB_PASS', 'Parker92700%');
 define('DB_CHARSET', 'utf8');
+date_default_timezone_set('Europe/Paris');

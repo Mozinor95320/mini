@@ -1,79 +1,94 @@
+<?php
+// Determine the correct icons for operator status
+if ($statusSheetOperator) {
+    $operatorIcon = '<i class="bi bi-check-circle-fill text-success"></i>';
+} else {
+    $operatorIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
+}
+
+// Determine the correct icons for quality status
+if ($statusSheetQuality) {
+    $qualityIcon = '<i class="bi bi-check-circle-fill text-success"></i>';
+} else {
+    $qualityIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
+}
+?>
+
 <div class="container">
-    <div class="box">
-        <h3>Add a tracabilty Sheet</h3>
-        <form action="<?php echo URL; ?>tracabiltySheets/addTracabiltySheet" method="POST">
-            <label>N°OF</label>
-            <input type="text" name="workOrder" value="" required />
-            <label>SN</label>
-            <input type="text" name="serialNumber" value="" required />
-            <label>PN</label>
-            <input type="text" name="partNumber" value="" />
-            <label>Ref Plan</label>
-            <input type="text" name="refPlan" value="" />
-            <label>Ref Machine</label>
-            <input type="text" name="refMachine" value="" />
-            <input type="submit" name="submit_add_tracabiltySheet" value="Submit" />
+    <h3>Liste des fiches de tracabilité:</h3>
+    <table>
+        <?php foreach ($tracabiltySheets as $tracabiltySheet) { ?>
+            <div class="card mt-3">
+                <div class="card-body">
+                    <!-- Serial Number - The most important field -->
+                    <h4 class="card-title text-center">
+                        <strong>SN:</strong> <span class="text-primary"><?= htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></span>
+                    </h4>
 
-            ($workOrder, $serialNumber, $partNumber, $sheetCreationDate, $refPlan, $refMachine)
-        </form>
-    </div>
-    <!-- main content output -->
-    <div class="box">
-        <h3>List of tracabilty Sheets</h3>
-        <table>
-            <thead style="background-color: #ddd; font-weight: bold;">
-                <tr>
-                    <td>Id</td>
-                    <td>Artist</td>
-                    <td>Track</td>
-                    <td>Link</td>
-                    <td>DELETE</td>
-                    <td>EDIT</td>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($tracabiltySheets as $tracabiltySheet) { ?>
-                    <tr>
-                        <td><?php if (isset($tracabiltySheet->id)) echo htmlspecialchars($tracabiltySheet->id, ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td><?php if (isset($tracabiltySheet->artist)) echo htmlspecialchars($tracabiltySheet->artist, ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td><?php if (isset($tracabiltySheet->track)) echo htmlspecialchars($tracabiltySheet->track, ENT_QUOTES, 'UTF-8'); ?></td>
-                        <td>
-                            <?php if (isset($tracabiltySheet->link)) { ?>
-                                <a href="<?php echo htmlspecialchars($tracabiltySheet->link, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($tracabiltySheet->link, ENT_QUOTES, 'UTF-8'); ?></a>
-                            <?php } ?>
-                        </td>
-                        <td><a href="<?php echo URL . 'tracabiltySheets/deleteTracabiltySheet/' . htmlspecialchars($tracabiltySheet->id, ENT_QUOTES, 'UTF-8'); ?>">delete</a></td>
-                        <td><a href="<?php echo URL . 'tracabiltySheets/editTracabiltySheet/' . htmlspecialchars($tracabiltySheet->id, ENT_QUOTES, 'UTF-8'); ?>">edit</a></td>
-                    </tr>
-                <?php } ?>
+                    <!-- Other fields -->
+                    <p class="card-text"><strong>PN:</strong><?= htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></p>
+                    <p class="card-text"><strong>Work Order:</strong><?= htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?></p>
 
-                <div class="pagination">
-                    <?php if ($page > 1): ?>
+                    <!-- Status with Icons -->
+                    <div class="row mt-3">
+                        <div class="col">
+                            <p class="card-text">
+                                <strong>Operator Status:</strong>
+                                <!-- Operator Status Icon -->
+                                <?php echo $operatorIcon; ?>
+                            </p>
+                        </div>
+                        <div class="col">
+                            <p class="card-text">
+                                <strong>Quality Status:</strong>
+                                <!-- Quality Status Icon -->
+                                <?php echo $qualityIcon; ?>
+                            </p>
+                        </div>
+                    </div>
 
-                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>">Précédent</a>
-                    <?php endif; ?>
+                    <a class="btn btn-outline-primary" href="<?php echo URL . 'tracabiltySheets/editTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
+                        <i class="bi bi-folder2-open" style="font-size: 24px;"></i>
+                    </a>
 
-                    <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
-                            <?php echo $i; ?>
-                        </a>
-                    <?php endfor; ?>
+                    <a href="<?php echo URL . 'tracabiltySheets/deleteTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
+                        <i class="bi bi-trash-fill" style="font-size: 24px;"></i></a>
 
-                    <?php if ($page < $totalPages): ?>
-
-                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>">Suivant</a>
-                    <?php endif; ?>
+                    <!-- Dates in the footer -->
+                    <div class="card-footer text-muted">
+                        <div class="d-flex justify-content-between">
+                            <small><strong>Créée le: </strong><?= htmlspecialchars($tracabilitySheet->sheetCreationDate, ENT_QUOTES, 'UTF-8'); ?></small>
+                            <small><strong>Modifiée le: </strong><?= htmlspecialchars($tracabilitySheet->lastTimeEdit, ENT_QUOTES, 'UTF-8'); ?></small>
+                        </div>
+                    </div>
                 </div>
-                <form action="<?php echo URL . 'tracabiltySheets/index/'?>" method="POST">
-                    <label for="limitListTracabilitySheet">Nombre de chansons par page : </label>
-                    <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
-                        <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
-                        <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
-                        <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
-                        <option value="100" <?php if ($limit == 100) echo 'selected'; ?>>100</option>
-                    </select>
-                </form>
-            </tbody>
-        </table>
+            </div>
+        <?php } ?>
+    </table>
+    <div class="pagination">
+        <?php if ($page > 1): ?>
+
+            <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>">Précédent</a>
+        <?php endif; ?>
+
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+                <?php echo $i; ?>
+            </a>
+        <?php endfor; ?>
+
+        <?php if ($page < $totalPages): ?>
+
+            <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>">Suivant</a>
+        <?php endif; ?>
     </div>
+    <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
+        <label for="limitListTracabilitySheet">Nombre de chansons par page : </label>
+        <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
+            <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
+            <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
+            <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
+            <option value="100" <?php if ($limit == 100) echo 'selected'; ?>>100</option>
+        </select>
+    </form>
 </div>

@@ -64,6 +64,15 @@ class TracabiltySheets extends Controller
      * the user back to tracabiltySheets/index via the last line: header(...)
      * This is an example of how to handle a POST request.
      */
+
+    public function createTracabiltySheet()
+    {
+
+        // load views. within the views we can echo out $tracabiltySheet easily
+        require APP . 'view/_templates/header.php';
+        require APP . 'view/tracabiltySheets/edit.php';
+        require APP . 'view/_templates/footer.php';
+    }
     public function addTracabiltySheet()
     {
         // if we have POST data to create a new tracabiltySheet entry
