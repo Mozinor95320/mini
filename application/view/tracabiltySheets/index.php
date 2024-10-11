@@ -1,19 +1,3 @@
-<?php
-// Determine the correct icons for operator status
-if ((bool)$tracabiltySheet->statusSheetOperator) {
-    $operatorIcon = '<i class="bi bi-check-circle-fill text-success"></i>';
-} else {
-    $operatorIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
-}
-
-// Determine the correct icons for quality status
-if ((bool)$tracabiltySheet->statusSheetQuality) {
-    $qualityIcon = '<i class="bi bi-check-circle-fill text-success"></i>';
-} else {
-    $qualityIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
-}
-?>
-
 <div class="container">
     <h3>Liste des fiches de tracabilité:</h3>
     <table>
@@ -28,7 +12,23 @@ if ((bool)$tracabiltySheet->statusSheetQuality) {
                     <!-- Other fields -->
                     <p class="card-text"><strong>PN:</strong><?= htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></p>
                     <p class="card-text"><strong>Work Order:</strong><?= htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?></p>
+                    <?php
 
+                    // Determine the correct icons for operator status
+                    if ((bool)$tracabiltySheet->statusSheetOperator) {
+                        $operatorIcon = '<i class="bi bi-check-circle-fill text-success"></i>';
+                    } else {
+                        $operatorIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
+                    }
+
+                    // Determine the correct icons for quality status
+                    if ((bool)$tracabiltySheet->statusSheetQuality) {
+                        $qualityIcon = '<i class="bi bi-check-circle-fill text-success"></i>';
+                    } else {
+                        $qualityIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
+                    }
+                    ?>
+                    
                     <!-- Status with Icons -->
                     <div class="row mt-3">
                         <div class="col">
