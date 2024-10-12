@@ -23,7 +23,7 @@
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="<?php echo URL; ?>tracabiltySheets">
-            <img src="public/img/logo parker_crop.png" alt="Parker" height="24">
+            <img src="public/img/logo_parker_crop.png" alt="Parker" height="24">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
