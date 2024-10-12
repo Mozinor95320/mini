@@ -32,7 +32,7 @@
                 </li>
             <?php endif; ?>
 
-            <li class="nav-item">
+            <li>
                 <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
                     <label for="limitListTracabilitySheet">Fiches par page : </label>
                     <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
@@ -43,7 +43,7 @@
                     </select>
                 </form>
             </li>
-            <li class="nav-item">
+            <li>
                 <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
                     <div class="btn-group">
                         <button type="button" class="btn btn-outline-primary">
