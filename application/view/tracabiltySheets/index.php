@@ -32,9 +32,9 @@
                 </li>
             <?php endif; ?>
 
-            <li>
+            <li class="nav-item">
                 <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
-                    <label for="limitListTracabilitySheet">Nombre de fiches par page : </label>
+                    <label for="limitListTracabilitySheet">Fiches par page : </label>
                     <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
                         <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
                         <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
