@@ -44,7 +44,7 @@
                 }
                 ?>
                 <!-- Dates in the footer -->
-                <div class="card-footer text-muted">
+                <div class="card-footer">
                     <div class="row">
                         <div class="col">
                             <small><strong>Créée le: </strong><?php if (isset($tracabiltySheet->sheetCreationDate)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></small>
