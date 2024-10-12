@@ -17,7 +17,9 @@ class Model
 
     public function getPaginatedTracabiltySheets($limit, $offset)
     {
-        $sql = "SELECT serialNumber, partNumber, workOrder, sheetCreationDate, lastTimeEdit, statusSheetOperator, statusSheetQuality FROM tracabilitySheets LIMIT :limit OFFSET :offset";
+        /*$sql = "SELECT serialNumber, partNumber, workOrder, sheetCreationDate, lastTimeEdit, statusSheetOperator, statusSheetQuality FROM tracabilitySheets LIMIT :limit OFFSET :offset";
+        */
+        $sql = "SELECT * FROM tracabilitySheets LIMIT :limit OFFSET :offset";
         $query = $this->db->prepare($sql);
         $query->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
         $query->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
