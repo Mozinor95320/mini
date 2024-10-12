@@ -43,52 +43,41 @@
                     $qualityIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
                 }
                 ?>
-                <!-- Dates in the footer -->
-                <div class="card-footer">
-                    <div class="row">
-                        <div class="col">
-                            <small><strong>Créée le: </strong>
-                                <span class="text-primary">
-                                    <?php
-                                    if (isset($tracabiltySheet->lastTimeEdit) && !empty($tracabiltySheet->sheetCreationDate)) {
-                                        echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabiltySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8');
-                                    } else {
-                                        echo "N/A";
-                                    }
-                                    ?>
-                                </span>
-                            </small>
-                        </div>
-                        <div class="col">
-                            <small><strong>Modifiée le: </strong>
-                                <span class="text-primary">
-                                    <?php
-                                    if (isset($tracabiltySheet->lastTimeEdit) && !empty($tracabiltySheet->lastTimeEdit)) {
-                                        echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabiltySheet->lastTimeEdit)), ENT_QUOTES, 'UTF-8');
-                                    } else {
-                                        echo "N/A";
-                                    }
-                                    ?>
-                                </span>
-                            </small>
-                        </div>
-
-                        <?php
-                        if (isset($tracabiltySheet->lastTimeEdit) && !empty($tracabiltySheet->lastTimeEdit)) {
-                            echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabiltySheet->lastTimeEdit)), ENT_QUOTES, 'UTF-8');
-                        } else {
-                            echo "N/A";
-                        }
-                        ?>
-
-
-                        <div class="col text-end">
-                            <!-- Operator Status Icon -->
-                            <?php echo $operatorIcon; ?>
-                            <!-- Quality Status Icon -->
-                            <?php echo $qualityIcon; ?>
-                        </div>
+                <div class="row">
+                    <div class="col">
+                        <small><strong>Créée le: </strong>
+                            <span class="text-primary">
+                                <?php
+                                if (isset($tracabiltySheet->lastTimeEdit) && !empty($tracabiltySheet->sheetCreationDate)) {
+                                    echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabiltySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8');
+                                } else {
+                                    echo "N/A";
+                                }
+                                ?>
+                            </span>
+                        </small>
                     </div>
+                    <div class="col">
+                        <small><strong>Modifiée le: </strong>
+                            <span class="text-primary">
+                                <?php
+                                if (isset($tracabiltySheet->lastTimeEdit) && !empty($tracabiltySheet->lastTimeEdit)) {
+                                    echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabiltySheet->lastTimeEdit)), ENT_QUOTES, 'UTF-8');
+                                } else {
+                                    echo "N/A";
+                                }
+                                ?>
+                            </span>
+                        </small>
+                    </div>
+                    <div class="col text-end">
+                        <strong>Status: </strong>
+                        <!-- Operator Status Icon -->
+                        <?php echo $operatorIcon; ?>
+                        <!-- Quality Status Icon -->
+                        <?php echo $qualityIcon; ?>
+                    </div>
+
                 </div>
             </div>
         </div>
