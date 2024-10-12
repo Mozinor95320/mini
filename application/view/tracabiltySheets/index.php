@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container mt-5">
 
-    <nav clas="mb-3" aria-label="...">
+    <nav clas="mb-3" aria-label="Page navigation example">
         <ul class="pagination">
             <?php if ($page > 1): ?>
                 <li class="page-item">
@@ -10,13 +10,33 @@
                 </li>
             <?php endif; ?>
 
-            <?php for ($i = $page - 2; $i <= $page + 2; $i++): ?>
-                <li class="page-item">
-                    <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
-                        <?php echo $i; ?>
-                    </a>
-                </li>
-            <?php endfor; ?>
+            <?php if ($page == 1) {
+                for ($i = 1; $i <= $page + 2; $i++): ?>
+                    <li class="page-item">
+                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+                            <?php echo $i; ?>
+                        </a>
+                    </li>
+            <?php endfor;
+            } ?>
+            <?php if ($page == 2) {
+                for ($i = 2; $i <= $page + 2; $i++): ?>
+                    <li class="page-item">
+                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+                            <?php echo $i; ?>
+                        </a>
+                    </li>
+            <?php endfor;
+            } ?>
+            <?php if ($page >= 3) {
+                for ($i = $page - 2; $i <= $page + 2; $i++): ?>
+                    <li class="page-item">
+                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+                            <?php echo $i; ?>
+                        </a>
+                    </li>
+            <?php endfor;
+            } ?>
 
             <?php if ($page < $totalPages): ?>
                 <li class="page-item">
