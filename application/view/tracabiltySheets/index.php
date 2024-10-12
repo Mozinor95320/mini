@@ -54,7 +54,7 @@
                         <div class="col">
                             <small><strong>Modifiée le: </strong><?php if (isset($tracabiltySheet->lastTimeEdit)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></small>
                         </div>
-                        <div class="col justify-content-end">
+                        <div class="col text-end">
                             <!-- Operator Status Icon -->
                             <?php echo $operatorIcon; ?>
                             <!-- Quality Status Icon -->
