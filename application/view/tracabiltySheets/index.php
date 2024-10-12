@@ -5,7 +5,7 @@
         <div class="card mt-3">
             <div class="card-body">
                 <!-- Serial Number - The most important field -->
-                <h4 class="card-title text-center">
+                <h4 class="card-title">
                     <strong>SN: </strong> <span class="text-primary"><?php if (isset($tracabiltySheet->serialNumber)) echo htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></span>
                 </h4>
 
