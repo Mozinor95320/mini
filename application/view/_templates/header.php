@@ -30,7 +30,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-link">
                     <a class="nav-link" href="<?php echo URL . 'tracabiltySheets'?>">Home</a>
                 </li>
                 <li>
