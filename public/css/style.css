@@ -1,6 +1,6 @@
 .navbar {
-    background-color: #000; /* Black background */
-    border-bottom: 4px solid orange; /* Orange border at the bottom */
+    background-color: #000 !important; /* Black background */
+    border-bottom: 4px solid orange !important; /* Orange border at the bottom */
 }
 .navbar-nav .nav-link {
     color: #fff !important; /* White text for navbar links */
