@@ -22,8 +22,8 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="<?php echo URL; ?>tracabiltySheets">
-            <img src="public/img/logo_parker_crop.png" alt="Parker" height="24">
+        <a class="navbar-brand" href="<?php echo URL . 'tracabiltySheets'?>">
+            <img src="<?php echo URL; ?>img/logo_parker_crop.png" alt="Parker" height="24">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo URL; ?>">Home</a>
+                    <a class="nav-link" href="<?php echo URL . 'tracabiltySheets'?>">Home</a>
                 </li>
                 <li>
                     <a class="nav-link" href="<?php echo URL . 'tracabiltySheets/createTracabiltySheet'?>">
