@@ -25,3 +25,7 @@
 .navbar-nav .nav-link:hover {
     color: orange !important; /* Orange hover effect on links */
 }
+
+:root {
+    --bs-primary: orange; /* La nouvelle couleur */
+  }
