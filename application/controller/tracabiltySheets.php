@@ -47,9 +47,9 @@ class TracabiltySheets extends Controller
         $totalPages = ceil($amountOfTracabiltySheets / $limit);
 
         // Get the traceability sheets for the current page
-        //$tracabiltySheets = $this->model->getPaginatedTracabiltySheets($limit, $offset);
+        $tracabiltySheets = $this->model->getPaginatedTracabiltySheets($limit, $offset);
 
-        $tracabiltySheets = $this->model->getAlltracabiltySheets();
+        //$tracabiltySheets = $this->model->getAlltracabiltySheets();
 
 
         // load views. within the views we can echo out $tracabiltySheets and $amountOfTracabiltySheets easily
