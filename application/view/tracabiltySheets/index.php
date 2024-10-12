@@ -43,22 +43,6 @@
                     </select>
                 </form>
             </li>
-            <li class="nav-item">
-                <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
-                    <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-secondary">
-                                <i class="bi bi-sort-down-alt"></i>
-                                <span class="visually-hidden">Button</span>
-                            </button>
-
-                            <button type="button" class="btn btn-outline-secondary">
-                                <i class="bi bi-sort-up-alt"></i>
-                                <span class="visually-hidden">Button</span>
-                            </button>
-                        </div>
-                </form>
-            </li>
 
         </ul>
     </nav>
