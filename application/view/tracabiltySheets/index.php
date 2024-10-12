@@ -17,15 +17,15 @@
 
             // Display the page links
             for ($i = $start; $i <= $end; $i++): ?>
-                <li class="page-item">
-                    <a class="page-link "href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>">
+                <li class="page-item" <?php if ($i == $page) echo 'class="active"'; ?>>
+                    <a class="page-link" href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>">
                         <?php echo $i; ?>
                     </a>
                 </li>
             <?php endfor; ?>
 
             <?php if ($page < $totalPages): ?>
-                <li class="page-item <?php if ($i == $page) echo " active"; ?>">
+                <li class="page-item">
                     <a class="page-link" href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
