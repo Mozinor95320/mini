@@ -48,7 +48,7 @@
 
 
     <?php foreach ($tracabiltySheets as $tracabiltySheet) { ?>
-        <div class="card mt-3">
+        <div class="card mb-3">
             <div class="card-body">
                 <!-- Serial Number - The most important field -->
                 <div class="row">
