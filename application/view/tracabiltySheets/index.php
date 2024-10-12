@@ -1,4 +1,32 @@
 <div class="container">
+
+    <nav clas="mb-3" aria-label="...">
+        <ul class="pagination">
+            <?php if ($page > 1): ?>
+                <li class="page-item">
+                    <a class="page-link" href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            <?php endif; ?>
+
+            <?php for ($i = $page - 2; $i <= $page + 2; $i++): ?>
+                <li class="page-item">
+                    <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+                        <?php echo $i; ?>
+                    </a>
+                </li>
+            <?php endfor; ?>
+
+            <?php if ($page < $totalPages): ?>
+                <li class="page-item">
+                    <a class="page-link" href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            <?php endif; ?>
+        </ul>
+    </nav>
     <?php foreach ($tracabiltySheets as $tracabiltySheet) { ?>
         <div class="card mt-3">
             <div class="card-body">
@@ -86,23 +114,6 @@
         </div>
     <?php } ?>
 
-    <div class="pagination">
-        <?php if ($page > 1): ?>
-
-            <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>">Précédent</a>
-        <?php endif; ?>
-
-        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-            <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
-                <?php echo $i; ?>
-            </a>
-        <?php endfor; ?>
-
-        <?php if ($page < $totalPages): ?>
-
-            <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>">Suivant</a>
-        <?php endif; ?>
-    </div>
     <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
         <label for="limitListTracabilitySheet">Nombre de chansons par page : </label>
         <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">

@@ -1,6 +1,5 @@
 <!-- backlink to repo on GitHub, and affiliate link to Rackspace if you want to support the project -->
 <div class="footer">
-    Find <a href="https://github.com/panique/mini">MINI on GitHub</a>.
 </div>
 
 <!-- jQuery, loaded in the recommended protocol-less way -->
