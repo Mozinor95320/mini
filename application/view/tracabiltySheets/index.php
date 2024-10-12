@@ -5,22 +5,24 @@
         <div class="card mt-3">
             <div class="card-body">
                 <!-- Serial Number - The most important field -->
-                <div class="col">
-                    <h4 class="card-title">
-                        <strong>SN: </strong> <span class="text-primary"><?php if (isset($tracabiltySheet->serialNumber)) echo htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></span>
-                    </h4>
+                <div class="row">
+                    <div class="col">
+                        <h4 class="card-title">
+                            <strong>SN: </strong> <span class="text-primary"><?php if (isset($tracabiltySheet->serialNumber)) echo htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></span>
+                        </h4>
 
-                    <!-- Other fields -->
-                    <p class="card-text"><strong>PN: </strong><?php if (isset($tracabiltySheet->partNumber)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></p>
-                    <p class="card-text"><strong>Work Order: </strong><?php if (isset($tracabiltySheet->workOrder)) echo htmlspecialchars($tracabiltySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?></p>
-                </div>
-                <div class="col">
-                    <a class="btn btn-outline-primary" href="<?php echo URL . 'tracabiltySheets/editTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
-                        <i class="bi bi-folder2-open" style="font-size: 24px;"></i>
-                    </a>
+                        <!-- Other fields -->
+                        <p class="card-text"><strong>PN: </strong><?php if (isset($tracabiltySheet->partNumber)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></p>
+                        <p class="card-text"><strong>Work Order: </strong><?php if (isset($tracabiltySheet->workOrder)) echo htmlspecialchars($tracabiltySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?></p>
+                    </div>
+                    <div class="col">
+                        <a class="btn btn-outline-primary" href="<?php echo URL . 'tracabiltySheets/editTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
+                            <i class="bi bi-folder2-open" style="font-size: 24px;"></i>
+                        </a>
 
-                    <a href="<?php echo URL . 'tracabiltySheets/deleteTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
-                        <i class="bi bi-trash-fill" style="font-size: 24px;"></i></a>
+                        <a href="<?php echo URL . 'tracabiltySheets/deleteTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
+                            <i class="bi bi-trash-fill" style="font-size: 24px;"></i></a>
+                    </div>
                 </div>
                 <?php
 
