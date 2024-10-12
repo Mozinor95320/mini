@@ -10,33 +10,19 @@
                 </li>
             <?php endif; ?>
 
-            <?php if ($page == 1) {
-                for ($i = 1; $i <= $page + 2; $i++): ?>
-                    <li class="page-item">
-                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
-                            <?php echo $i; ?>
-                        </a>
-                    </li>
-            <?php endfor;
-            } ?>
-            <?php if ($page == 2) {
-                for ($i = 2; $i <= $page + 2; $i++): ?>
-                    <li class="page-item">
-                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
-                            <?php echo $i; ?>
-                        </a>
-                    </li>
-            <?php endfor;
-            } ?>
-            <?php if ($page >= 3) {
-                for ($i = $page - 2; $i <= $page + 2; $i++): ?>
-                    <li class="page-item">
-                        <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
-                            <?php echo $i; ?>
-                        </a>
-                    </li>
-            <?php endfor;
-            } ?>
+            <?php
+            // Determine the start and end pages to display
+            $start = max(1, $page - 2); // 2 pages before the active page
+            $end = min($totalPages, $page + 2); // 2 pages after the active page
+
+            // Display the page links
+            for ($i = $start; $i <= $end; $i++): ?>
+                <li class="page-item">
+                    <a href="<?php echo URL . 'tracabiltySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>" <?php if ($i == $page) echo 'class="active"'; ?>>
+                        <?php echo $i; ?>
+                    </a>
+                </li>
+            <?php endfor; ?>
 
             <?php if ($page < $totalPages): ?>
                 <li class="page-item">
@@ -45,9 +31,10 @@
                     </a>
                 </li>
             <?php endif; ?>
+
             <li>
                 <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
-                    <label for="limitListTracabilitySheet">Nombre de chansons par page : </label>
+                    <label for="limitListTracabilitySheet">Nombre de fiches par page : </label>
                     <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
                         <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
                         <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
