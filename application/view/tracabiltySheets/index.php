@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col text-end">
                         <a class="btn btn-outline-primary" href="<?php echo URL . 'tracabiltySheets/editTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
                             <i class="bi bi-folder2-open" style="font-size: 24px;"></i>
                         </a>
