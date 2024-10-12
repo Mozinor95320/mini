@@ -56,8 +56,8 @@
                 <!-- Dates in the footer -->
                 <div class="card-footer text-muted">
                     <div class="d-flex justify-content-between">
-                        <small><strong>Créée le: </strong><?= htmlspecialchars($tracabilitySheet->sheetCreationDate, ENT_QUOTES, 'UTF-8'); ?></small>
-                        <small><strong>Modifiée le: </strong><?= htmlspecialchars($tracabilitySheet->lastTimeEdit, ENT_QUOTES, 'UTF-8'); ?></small>
+                        <small><strong>Créée le: </strong><?php if (isset($tracabiltySheet->sheetCreationDate)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></small>
+                        <small><strong>Modifiée le: </strong><?php if (isset($tracabiltySheet->lastTimeEdit)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></small>
                     </div>
                 </div>
             </div>
