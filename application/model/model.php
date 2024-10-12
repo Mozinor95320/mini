@@ -32,7 +32,7 @@ class Model
      */
     public function getAlltracabiltySheets()
     {
-        $sql = "SELECT serialNumber, partNumber, workOrder, sheetCreationDate, lastTimeEdit, statusSheetOperator, statusSheetQuality FROM tracabilitySheets";
+        $sql = "SELECT * FROM tracabilitySheets";
         $query = $this->db->prepare($sql);
         $query->execute();
 
