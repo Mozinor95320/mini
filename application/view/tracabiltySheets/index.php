@@ -7,14 +7,14 @@
                     <div class="col">
 
                         <h4 class="card-title">
-                            <strong>SN: </strong> <span class="text-primary"><?php if (isset($tracabiltySheet->serialNumber)) echo htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></span>
+                            <strong>SN: </strong><span class="text-primary"><?php if (isset($tracabiltySheet->serialNumber)) echo htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></span>
                         </h4>
                         <div class="row">
                             <div class="col">
-                                <p class="card-text"><strong>Work Order: </strong><?php if (isset($tracabiltySheet->workOrder)) echo htmlspecialchars($tracabiltySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?></p>
+                                <p class="card-text"><strong>Work Order: </strong><span class="text-primary"><?php if (isset($tracabiltySheet->workOrder)) echo htmlspecialchars($tracabiltySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?></span></p>
                             </div>
                             <div class="col">
-                                <p class="card-text"><strong>PN: </strong><?php if (isset($tracabiltySheet->partNumber)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></p>
+                                <p class="card-text"><strong>PN: </strong><span class="text-primary"><?php if (isset($tracabiltySheet->partNumber)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></span></p>
                             </div>
                         </div>
                     </div>
