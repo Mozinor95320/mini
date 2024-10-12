@@ -1,20 +1,3 @@
-.pagination a {
-    margin: 0 5px;
-    padding: 8px 16px;
-    background-color: #f1f1f1;
-    text-decoration: none;
-    color: #333;
-}
-
-.pagination a.active {
-    background-color: orange;
-    color: white;
-}
-
-.pagination a:hover {
-    background-color: #ddd;
-}
-
 .navbar {
     background-color: #000; /* Black background */
     border-bottom: 4px solid orange; /* Orange border at the bottom */
