@@ -1,6 +1,6 @@
 <div class="container mt-5">
 
-    <nav clas="mb-3" aria-label="Page navigation example">
+    <div clas="mb-3" aria-label="Page navigation example">
         <ul class="pagination">
             <?php if ($page > 1): ?>
                 <li class="page-item">
@@ -45,7 +45,7 @@
             </li>
 
         </ul>
-    </nav>
+    </div>
 
 
     <?php foreach ($tracabiltySheets as $tracabiltySheet) { ?>
