@@ -1,6 +1,4 @@
 <div class="container">
-    <h3>Liste des fiches de tracabilité:</h3>
-
     <?php foreach ($tracabiltySheets as $tracabiltySheet) { ?>
         <div class="card mt-3">
             <div class="card-body">
