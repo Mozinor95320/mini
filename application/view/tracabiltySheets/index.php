@@ -6,12 +6,20 @@
             <div class="card-body">
                 <!-- Serial Number - The most important field -->
                 <h4 class="card-title text-center">
-                    <strong>SN:</strong> <span class="text-primary"><?php if (isset($tracabiltySheet->serialNumber)) echo htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></span>
+                    <strong>SN: </strong> <span class="text-primary"><?php if (isset($tracabiltySheet->serialNumber)) echo htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></span>
                 </h4>
 
                 <!-- Other fields -->
-                <p class="card-text"><strong>PN:</strong><?php if (isset($tracabiltySheet->partNumber)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></p>
-                <p class="card-text"><strong>Work Order:</strong><?php if (isset($tracabiltySheet->workOrder)) echo htmlspecialchars($tracabiltySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?></p>
+                <p class="card-text"><strong>PN: </strong><?php if (isset($tracabiltySheet->partNumber)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></p>
+                <p class="card-text"><strong>Work Order: </strong><?php if (isset($tracabiltySheet->workOrder)) echo htmlspecialchars($tracabiltySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?></p>
+
+                <a class="btn btn-outline-primary" href="<?php echo URL . 'tracabiltySheets/editTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
+                    <i class="bi bi-folder2-open" style="font-size: 24px;"></i>
+                </a>
+
+                <a href="<?php echo URL . 'tracabiltySheets/deleteTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
+                    <i class="bi bi-trash-fill" style="font-size: 24px;"></i></a>
+
                 <?php
 
                 // Determine the correct icons for operator status
@@ -28,36 +36,21 @@
                     $qualityIcon = '<i class="bi bi-x-circle-fill text-danger"></i>';
                 }
                 ?>
-                <!-- Status with Icons -->
-                <div class="row mt-3">
-                    <div class="col">
-                        <p class="card-text">
-                            <strong>Operator Status:</strong>
-                            <!-- Operator Status Icon -->
-                            <?php echo $operatorIcon; ?>
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="card-text">
-                            <strong>Quality Status:</strong>
-                            <!-- Quality Status Icon -->
-                            <?php echo $qualityIcon; ?>
-                        </p>
-                    </div>
-                </div>
-
-                <a class="btn btn-outline-primary" href="<?php echo URL . 'tracabiltySheets/editTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
-                    <i class="bi bi-folder2-open" style="font-size: 24px;"></i>
-                </a>
-
-                <a href="<?php echo URL . 'tracabiltySheets/deleteTracabiltySheet/' . htmlspecialchars($tracabiltySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>">
-                    <i class="bi bi-trash-fill" style="font-size: 24px;"></i></a>
-
                 <!-- Dates in the footer -->
                 <div class="card-footer text-muted">
-                    <div class="d-flex justify-content-between">
-                        <small><strong>Créée le: </strong><?php if (isset($tracabiltySheet->sheetCreationDate)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></small>
-                        <small><strong>Modifiée le: </strong><?php if (isset($tracabiltySheet->lastTimeEdit)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></small>
+                    <div class="row">
+                        <div class="col">
+                            <small><strong>Créée le: </strong><?php if (isset($tracabiltySheet->sheetCreationDate)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></small>
+                        </div>
+                        <div class="col">
+                            <small><strong>Modifiée le: </strong><?php if (isset($tracabiltySheet->lastTimeEdit)) echo htmlspecialchars($tracabiltySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></small>
+                        </div>
+                        <div class="col">
+                            <!-- Operator Status Icon -->
+                            <?php echo $operatorIcon; ?>
+                            <!-- Quality Status Icon -->
+                            <?php echo $qualityIcon; ?>
+                        </div>
                     </div>
                 </div>
             </div>
