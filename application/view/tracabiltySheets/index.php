@@ -5,11 +5,11 @@
             <div class="card-body">
                 <!-- Serial Number - The most important field -->
                 <h4 class="card-title text-center">
-                    <strong>SN:</strong> <span class="text-primary"><?= htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8');?></span>
+                    <strong>SN:</strong> <span class="text-primary"><?php if (isset($tracabiltySheet->serialNumber)) echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8');?></span>
                 </h4>
 
                 <!-- Other fields -->
-                <p class="card-text"><strong>PN:</strong><?= htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></p>
+                <p class="card-text"><strong>PN:</strong><?php if (isset($tracabiltySheet->partNumber)) echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?></p>
                 <p class="card-text"><strong>Work Order:</strong><?= htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8');?></p>
                 <?php
 
