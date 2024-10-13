@@ -38,7 +38,7 @@
                 <!--Input number of items per page -->
 
                 <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
-                    <input type="hidden" name="limit" id="selectedLimit" value="<?php echo $limit; ?>"> <!-- Champ caché -->
+                    <input type="hidden" name="limitListTracabilitySheet" id="limitListTracabilitySheet" value="<?php echo $limit; ?>"> <!-- Champ caché -->
 
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="itemPerPage">
