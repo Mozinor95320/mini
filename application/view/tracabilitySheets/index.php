@@ -50,14 +50,70 @@
                 <!--Filter by -->
 
                 <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
-                    <label for="limitListTracabilitySheet">Filtré par : </label>
-                    <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
-                        <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
-                        <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
-                        <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
-                        <option value="100" <?php if ($limit == 100) echo 'selected'; ?>>100</option>
-                    </select>
+                    <div class="dropdown">
+                        <!-- Dropdown Button -->
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sélectionner des options
+                        </button>
+
+                        <!-- Dropdown Menu with Checkboxes -->
+                        <ul class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton" style="width: 300px;">
+                            <!-- Case pour sélectionner / désélectionner toutes les options -->
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="selectAll" onchange="toggleAllCheckboxes(this)">
+                                    <label class="form-check-label" for="selectAll">
+                                        Sélectionner/Désélectionner tout
+                                    </label>
+                                </div>
+                            </li>
+                            <hr>
+                            <!-- Autres cases à cocher -->
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input option-checkbox" type="checkbox" id="option1">
+                                    <label class="form-check-label" for="option1">
+                                        Option 1
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input option-checkbox" type="checkbox" id="option2">
+                                    <label class="form-check-label" for="option2">
+                                        Option 2
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input option-checkbox" type="checkbox" id="option3">
+                                    <label class="form-check-label" for="option3">
+                                        Option 3
+                                    </label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="form-check">
+                                    <input class="form-check-input option-checkbox" type="checkbox" id="option4">
+                                    <label class="form-check-label" for="option4">
+                                        Option 4
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </form>
+
+                <script>
+                    // Fonction pour sélectionner/désélectionner toutes les cases
+                    function toggleAllCheckboxes(source) {
+                        const checkboxes = document.querySelectorAll('.option-checkbox');
+                        checkboxes.forEach(checkbox => {
+                            checkbox.checked = source.checked;
+                        });
+                    }
+                </script>
 
                 <!--Var display sort -->
 
