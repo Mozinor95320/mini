@@ -147,18 +147,6 @@
                     }
                 </script>
 
-                <!--Var display sort -->
-
-                <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
-                    <label for="limitListTracabilitySheet">Fiches par page : </label>
-                    <select class="dropdown" name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
-                        <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
-                        <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
-                        <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
-                        <option value="100" <?php if ($limit == 100) echo 'selected'; ?>>100</option>
-                    </select>
-                </form>
-
                 <!--ACC OR DESC -->
                 <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
                     <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
