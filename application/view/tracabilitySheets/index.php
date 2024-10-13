@@ -47,13 +47,37 @@
                     </select>
                 </form>
 
+                <ul class="dropdown">
+                    <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
+                        <i class="bi bi-list-ol my-1 theme-icon-active"></i>
+                        <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text" data-bs-popper="static">
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center active" aria-pressed="false">
+                            10
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center" aria-pressed="false">
+                            20
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="dropdown-item d-flex align-items-center" aria-pressed="false">
+                            30
+                            </button>
+                        </li>
+                    </ul>
+                </ul>
+
                 <!--Filter by -->
 
                 <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
                     <div class="dropdown">
                         <!-- Dropdown Button -->
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sélectionner des options
+                            <i class="bi bi-filter"></i> <!-- Icone de filtre -->
                         </button>
 
                         <!-- Dropdown Menu with Checkboxes -->
