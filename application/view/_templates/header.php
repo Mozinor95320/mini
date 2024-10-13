@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MINI</title>
+    <title>Tracabilité frettage</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -14,15 +14,15 @@
     <!-- CSS -->
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="<?php echo URL . 'css/bootstrap.min.css'?>" rel="stylesheet">
-    <link href="<?php echo URL . 'css/style.css'?>" rel="stylesheet">
+    <link href="<?php echo URL . 'css/bootstrap.min.css';?>" rel="stylesheet">
+    <link href="<?php echo URL . 'css/style.css';?>" rel="stylesheet">
 
 </head>
 
 <body>
     <!-- Navbar -->
     <nav class="navbar sticky-top navbar-expand-lg" style="background-color: #000000; border-bottom: 4px solid #ffa500;">
-        <a class="navbar-brand" href="<?php echo URL . 'tracabiltySheets'?>">
+        <a class="navbar-brand" href="<?php echo URL . 'tracabiltySheets';?>">
             <img src="<?php echo URL; ?>img/logo_parker_crop.png" alt="Parker" height="24">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,10 +31,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-link">
-                    <a class="nav-link" href="<?php echo URL . 'tracabiltySheets'?>">Home</a>
+                    <a class="nav-link" href="<?php echo URL . 'tracabiltySheets';?>">Home</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="<?php echo URL . 'tracabiltySheets/createTracabiltySheet'?>">
+                    <a class="nav-link" href="<?php echo URL . 'tracabiltySheets/createTracabiltySheet';?>">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"></path>
                         </svg>
