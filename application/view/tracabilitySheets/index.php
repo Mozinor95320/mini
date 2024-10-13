@@ -184,6 +184,8 @@
         </div>
     </div>
 
+    <hr>
+
 
     <?php foreach ($tracabilitySheets as $tracabilitySheet) { ?>
         <div class="card mb-3">
