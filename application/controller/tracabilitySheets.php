@@ -146,12 +146,6 @@ class TracabilitySheets extends Controller
         if (isset($_POST["submit_update_tracabilitySheet"])) {
             // do updateTracabilitySheet() from model/model.php
             $params = array(
-                ':serialNumber' => $_POST['serialNumber'],
-                ':partNumber' => $_POST['partNumber'],
-                ':workOrder' => $_POST['workOrder'],
-                ':sheetCreationDate' => $_POST['sheetCreationDate'],
-                ':refPlan' => $_POST['refPlan'],
-                ':refMachine' => $_POST['refMachine'],
                 ':material' => $_POST['material'],
                 ':spoolBatch' => $_POST['spoolBatch'],
                 ':spoolNumber' => $_POST['spoolNumber'],

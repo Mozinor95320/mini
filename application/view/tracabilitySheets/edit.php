@@ -20,63 +20,85 @@
     <!-- Tab Content -->
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
-            <!-- Generic Data-->
-            <div class="card-body">
-                <div class="mb-3 ml-3">
-                    <h2>Informations générales</h2>
-                    <h3>Description de la fiche de tracabilité</h3>
-                </div>
-                <div class="row align-items-center mb-3">
-
-                    <!-- Work Order Field -->
-                    <div class="col-md-6">
-                        <label for="numeroOF" class="form-label">N°OF</label>
-                        <input type="text" class="form-control" id="workOrder" name="workOrder" value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>" readonly>
-
-                    </div>
-
-                    <!-- Serial Number Field -->
-                    <div class="col-md-6">
-                        <label for="numeroOF" class="form-label">SN</label>
-                        <input type="text" class="form-control" id="serialNumber" name="serialNumber" value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>" readonly>
-                    </div>
-                </div>
-                <div class="row align-items-center mb-3">
-
-                    <!-- Part Number Field -->
-                    <div class="col-md-6">
-                        <label for="numeroOF" class="form-label">PN</label>
-                        <input type="text" class="form-control" id="partNumber" name="partNumber" value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>" readonly>
-
-                    </div>
-
-                    <!-- Sheet Creation Date -->
-                    <div class="col-md-6">
-                        <label for="date" class="form-label">Date de création de la fiche</label>
-                        <input type="datetime-local" class="form-control" id="sheetCreationDate" name="sheetCreationDate" value="<?php echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8'); ?>" readonly>
-                    </div>
-                </div>
-                <div class="row align-items-center mb-3">
-
-                    <!-- Plan Reference Field -->
-                    <div class="col-md-6">
-                        <label for="referencePlan" class="form-label">Référence plan</label>
-                        <input type="text" class="form-control" id="refPlan" name="refPlan" value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>" readonly>
-
-                    </div>
-
-                    <!-- Machine Reference Field -->
-                    <div class="col-md-6">
-                        <label for="machine" class="form-label">Machine</label>
-                        <input type="text" class="form-control" id="refMachine" name="refMachine" value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>" readonly>
-                    </div>
-                </div>
-            </div>
-            <h2 class="mb-3">Catégories</h2>
-
-            <!-- Section 1: Fiber Data -->
             <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary" name="submit_update_tracabilitySheet" value="Update">Enregistrer</button>
+
+                            <!-- Exporter en PDF avec logo -->
+                            <button class="btn btn-secondary">
+                                <img src="https://img.icons8.com/material-outlined/24/ffffff/export-pdf.png" alt="PDF Icon" class="me-2">
+                                Exporter en PDF
+                            </button>
+
+                            <!-- Toggle Button -->
+                            <button type="button" class="btn btn-warning" data-bs-toggle="button" aria-pressed="false">
+                                <i class="bi bi-lock"></i> Verrouillage
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Generic Data-->
+                <div class="card-body">
+                    <div class="mb-3 ml-3">
+                        <h2>Informations générales</h2>
+                        <h3>Description de la fiche de tracabilité</h3>
+                    </div>
+                    <div class="row align-items-center mb-3">
+
+                        <!-- Work Order Field -->
+                        <div class="col-md-6">
+                            <label for="numeroOF" class="form-label">N°OF</label>
+                            <input type="text" class="form-control" id="workOrder" name="workOrder" value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+
+                        </div>
+
+                        <!-- Serial Number Field -->
+                        <div class="col-md-6">
+                            <label for="numeroOF" class="form-label">SN</label>
+                            <input type="text" class="form-control" id="serialNumber" name="serialNumber" value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-3">
+
+                        <!-- Part Number Field -->
+                        <div class="col-md-6">
+                            <label for="numeroOF" class="form-label">PN</label>
+                            <input type="text" class="form-control" id="partNumber" name="partNumber" value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+
+                        </div>
+
+                        <!-- Sheet Creation Date -->
+                        <div class="col-md-6">
+                            <label for="date" class="form-label">Date de création de la fiche</label>
+                            <input type="datetime-local" class="form-control" id="sheetCreationDate" name="sheetCreationDate" value="<?php echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8'); ?>" readonly>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-3">
+
+                        <!-- Plan Reference Field -->
+                        <div class="col-md-6">
+                            <label for="referencePlan" class="form-label">Référence plan</label>
+                            <input type="text" class="form-control" id="refPlan" name="refPlan" value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+
+                        </div>
+
+                        <!-- Machine Reference Field -->
+                        <div class="col-md-6">
+                            <label for="machine" class="form-label">Machine</label>
+                            <input type="text" class="form-control" id="refMachine" name="refMachine" value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="mb-3">Catégories</h2>
+
+                <!-- Section 1: Fiber Data -->
+
                 <input type="hidden" name="tracabilitySheet_id" value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>" />
                 <div class="accordion" id="accordionExample">
 
@@ -1106,7 +1128,7 @@
                                     <div class="col-md-4">
                                         <label for="operatorValidation" class="form-label">Opérateur</label>
                                         <input type="text" class="form-control" id="operatorNameConformityDeclaration"
-                                        name="operatorNameConformityDeclaration" value="<?php echo isset($tracabilitySheet->operatorNameConformityDeclaration) && !empty($tracabilitySheet->operatorNameConformityDeclaration) ? htmlspecialchars($tracabilitySheet->operatorNameConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            name="operatorNameConformityDeclaration" value="<?php echo isset($tracabilitySheet->operatorNameConformityDeclaration) && !empty($tracabilitySheet->operatorNameConformityDeclaration) ? htmlspecialchars($tracabilitySheet->operatorNameConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                     </div>
 
@@ -1218,7 +1240,6 @@
                         </div>
                     </div>
                 </div>
-                <input type="submit" name="submit_update_tracabilitySheet" value="Update" />
             </form>
         </div>
 
