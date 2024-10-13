@@ -38,6 +38,8 @@
                 <!--Input number of items per page -->
 
                 <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
+                    <input type="hidden" name="limit" id="selectedLimit" value="<?php echo $limit; ?>"> <!-- Champ caché -->
+
                     <div class="dropdown">
                         <button class="btn btn-primary dropdown-toggle" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="itemPerPage">
                             <i class="bi bi-list-ol my-1 theme-icon-active"></i>
@@ -45,28 +47,35 @@
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="itemPerPage" data-bs-popper="static">
                             <li>
-                                <button type="button" class="dropdown-item d-flex align-items-center <?php echo ($limit == 10) ? 'active' : ''; ?>" aria-pressed="<?php echo ($limit == 10) ? 'true' : 'false'; ?>">
+                                <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 10) ? 'active' : ''; ?>" onclick="setLimit(10)" aria-pressed="<?php echo ($limit == 10) ? 'true' : 'false'; ?>">
                                     10
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="dropdown-item d-flex align-items-center <?php echo ($limit == 20) ? 'active' : ''; ?>" aria-pressed="<?php echo ($limit == 20) ? 'true' : 'false'; ?>">
+                                <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 20) ? 'active' : ''; ?>" onclick="setLimit(20)" aria-pressed="<?php echo ($limit == 20) ? 'true' : 'false'; ?>">
                                     20
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="dropdown-item d-flex align-items-center <?php echo ($limit == 50) ? 'active' : ''; ?>" aria-pressed="<?php echo ($limit == 50) ? 'true' : 'false'; ?>">
+                                <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 50) ? 'active' : ''; ?>" onclick="setLimit(50)" aria-pressed="<?php echo ($limit == 50) ? 'true' : 'false'; ?>">
                                     50
                                 </button>
                             </li>
                             <li>
-                                <button type="button" class="dropdown-item d-flex align-items-center <?php echo ($limit == 100) ? 'active' : ''; ?>" aria-pressed="<?php echo ($limit == 100) ? 'true' : 'false'; ?>">
+                                <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 100) ? 'active' : ''; ?>" onclick="setLimit(100)" aria-pressed="<?php echo ($limit == 100) ? 'true' : 'false'; ?>">
                                     100
                                 </button>
                             </li>
                         </ul>
                     </div>
                 </form>
+
+                <script>
+                    function setLimit(value) {
+                        document.getElementById('selectedLimit').value = value; // Met à jour la valeur du champ caché
+                    }
+                </script>
+
 
 
 
