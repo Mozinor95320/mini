@@ -105,7 +105,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input option-checkbox" type="checkbox" id="option1">
                                     <label class="form-check-label" for="option1">
-                                        Option 1
+                                        Clorutée
                                     </label>
                                 </div>
                             </li>
@@ -113,7 +113,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input option-checkbox" type="checkbox" id="option2">
                                     <label class="form-check-label" for="option2">
-                                        Option 2
+                                        Ouverte
                                     </label>
                                 </div>
                             </li>
@@ -121,7 +121,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input option-checkbox" type="checkbox" id="option3">
                                     <label class="form-check-label" for="option3">
-                                        Option 3
+                                        Certifiée Operateur
                                     </label>
                                 </div>
                             </li>
@@ -129,7 +129,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input option-checkbox" type="checkbox" id="option4">
                                     <label class="form-check-label" for="option4">
-                                        Option 4
+                                        Certifiée Qualité
                                     </label>
                                 </div>
                             </li>
