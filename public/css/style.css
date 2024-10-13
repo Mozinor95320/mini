@@ -9,3 +9,6 @@
   color: #ffa500 !important; /* Orange hover effect on links */
 }
 
+.navbar-toggler {
+  border-color: #ffffff !important;
+}
