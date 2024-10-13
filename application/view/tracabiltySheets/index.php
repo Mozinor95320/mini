@@ -95,7 +95,7 @@
             <!-- Dates and status in the footer -->
             <div class="card-footer">
                 <div class="row">
-                    <div class="col w-40">
+                    <div class="col-md-5">
                         <small><strong>Créée le: </strong>
                             <span class="text-primary">
                                 <?php
@@ -108,7 +108,7 @@
                             </span>
                         </small>
                     </div>
-                    <div class="col w-40">
+                    <div class="col-md-5">
                         <small><strong>Modifiée le: </strong>
                             <span class="text-primary">
                                 <?php
@@ -121,7 +121,7 @@
                             </span>
                         </small>
                     </div>
-                    <div class="col w-20 text-end">
+                    <div class="col-md-2 text-end">
                         <strong>Status: </strong>
                         <!-- Operator Status Icon -->
                         <?php echo $operatorIcon; ?>
