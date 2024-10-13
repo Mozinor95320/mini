@@ -49,38 +49,46 @@
             </form>
 
 
-            <!-- <ul class="navbar-nav flex-row flex-wrap ms-md-auto> -->
-
-
-            <ul class="dropdown-menu dropdown-menu-end show __web-inspector-hide-shortcut__" aria-labelledby="bd-theme-text" data-bs-popper="static">
-                <li>
-                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
-                        <i class="bi bi-gear my-1 theme-icon-active"></i>
-                        <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
-                    </button>
-                </li>
-                <li>
-                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-                        <svg class="bi me-2 opacity-50">
-                            <use href="#moon-stars-fill"></use>
-                        </svg>
-                        Dark
-                        <svg class="bi ms-auto d-none">
-                            <use href="#check2"></use>
-                        </svg>
-                    </button>
-                </li>
-                <li>
-                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
-                        <svg class="bi me-2 opacity-50">
-                            <use href="#circle-half"></use>
-                        </svg>
-                        Auto
-                        <svg class="bi ms-auto d-none">
-                            <use href="#check2"></use>
-                        </svg>
-                    </button>
-                </li>
+            <ul class="navbar-nav flex-row flex-wrap ms-md-auto nav-item dropdown">
+                <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center show" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
+                    <i class="bi bi-gear my-1 theme-icon-active"></i>
+                    <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end show __web-inspector-hide-shortcut__" aria-labelledby="bd-theme-text" data-bs-popper="static">
+                    <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="light" aria-pressed="true">
+                            <svg class="bi me-2 opacity-50">
+                                <use href="#sun-fill"></use>
+                            </svg>
+                            Light
+                            <svg class="bi ms-auto d-none">
+                                <use href="#check2"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                            <svg class="bi me-2 opacity-50">
+                                <use href="#moon-stars-fill"></use>
+                            </svg>
+                            Dark
+                            <svg class="bi ms-auto d-none">
+                                <use href="#check2"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+                            <svg class="bi me-2 opacity-50">
+                                <use href="#circle-half"></use>
+                            </svg>
+                            Auto
+                            <svg class="bi ms-auto d-none">
+                                <use href="#check2"></use>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
             </ul>
         </div>
     </header>
