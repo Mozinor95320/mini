@@ -38,38 +38,37 @@
                 <!--Input number of items per page -->
 
                 <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
-                    <label for="limitListTracabilitySheet">Fiches par page : </label>
-                    <select class="dropdown" name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
-                        <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
-                        <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
-                        <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
-                        <option value="100" <?php if ($limit == 100) echo 'selected'; ?>>100</option>
-                    </select>
+                    <div class="dropdown">
+                        <button class="btn btn-primary dropdown-toggle" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="itemPerPage">
+                            <i class="bi bi-list-ol my-1 theme-icon-active"></i>
+                            <?php echo " " . $limit; ?>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="itemPerPage" data-bs-popper="static">
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center <?php echo ($limit == 10) ? 'active' : ''; ?>" aria-pressed="<?php echo ($limit == 10) ? 'true' : 'false'; ?>">
+                                    10
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center <?php echo ($limit == 20) ? 'active' : ''; ?>" aria-pressed="<?php echo ($limit == 20) ? 'true' : 'false'; ?>">
+                                    20
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center <?php echo ($limit == 50) ? 'active' : ''; ?>" aria-pressed="<?php echo ($limit == 50) ? 'true' : 'false'; ?>">
+                                    50
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button" class="dropdown-item d-flex align-items-center <?php echo ($limit == 100) ? 'active' : ''; ?>" aria-pressed="<?php echo ($limit == 100) ? 'true' : 'false'; ?>">
+                                    100
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
                 </form>
 
-                <div class="dropdown">
-                    <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
-                        <i class="bi bi-list-ol my-1 theme-icon-active"></i>
-                        <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text" data-bs-popper="static">
-                        <li>
-                            <button type="button" class="dropdown-item d-flex align-items-center active" aria-pressed="false">
-                            10
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="dropdown-item d-flex align-items-center" aria-pressed="false">
-                            20
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="dropdown-item d-flex align-items-center" aria-pressed="false">
-                            30
-                            </button>
-                        </li>
-                    </ul>
-                    </div>
+
 
                 <!--Filter by -->
 
@@ -77,7 +76,7 @@
                     <div class="dropdown">
                         <!-- Dropdown Button -->
                         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-funnel-fill"></i> <!-- Icone de filtre -->
+                            <i class="bi bi-funnel-fill"></i> <!-- Filter icon -->
                         </button>
 
                         <!-- Dropdown Menu with Checkboxes -->
@@ -150,6 +149,7 @@
                         <option value="100" <?php if ($limit == 100) echo 'selected'; ?>>100</option>
                     </select>
                 </form>
+
                 <!--ACC OR DESC -->
                 <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
                     <div class="btn-group">
