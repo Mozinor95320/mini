@@ -72,7 +72,7 @@
 
                 <script>
                     function setLimit(value) {
-                        document.getElementById('selectedLimit').value = value; // Met à jour la valeur du champ caché
+                        document.getElementById('limitListTracabilitySheet').value = value; // Met à jour la valeur du champ caché
                     }
                 </script>
 
