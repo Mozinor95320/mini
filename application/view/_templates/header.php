@@ -21,7 +21,7 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar sticky-top navbar-expand-lg">
+    <header class="navbar sticky-top navbar-expand-lg">
         <a class="navbar-brand" href="<?php echo URL . 'tracabiltySheets'; ?>">
             <img src="<?php echo URL; ?>img/logo_parker_crop.png" alt="Parker" height="24">
         </a>
@@ -50,20 +50,20 @@
 
 
             <ul class="navbar-nav flex-row flex-wrap ms-md-auto py-md-2>
-                <li class="nav-item dropdown">
-                    <button class="btn btn-link nav-link dropdown-toggle" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
-                        <i class="bi bi-gear my-1 theme-icon-active"></i>
-                        <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
+                <li class=" nav-item dropdown">
+                <button class="btn btn-link nav-link dropdown-toggle" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
+                    <i class="bi bi-gear my-1 theme-icon-active"></i>
+                    <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
                 </li>
             </ul>
         </div>
-    </nav>
+    </header>

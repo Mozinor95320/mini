@@ -1,11 +1,14 @@
-
 .navbar {
-    background-color: #000000 !important; /* Black background */
-    border-bottom: 4px solid #ffa500 !important; /* Orange border at the bottom */
+  background-color: #000000 !important; /* Black background */
+  border-bottom: 4px solid #ffa500 !important; /* Orange border at the bottom */
 }
 .navbar-nav .nav-link {
-    color: #ffffff !important; /* White text for navbar links */
+  color: #ffffff !important; /* White text for navbar links */
 }
 .navbar-nav .nav-link:hover {
-    color: #ffa500 !important; /* Orange hover effect on links */
+  color: #ffa500 !important; /* Orange hover effect on links */
+}
+
+.custom-navbar .navbar-toggler {
+  border-color: #ffa500 !important;
 }
