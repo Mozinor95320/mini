@@ -1,185 +1,189 @@
 <div class="container mt-4">
-    <div class="row mb-3">
-        <div class="col-12">
-            <div class="d-flex justify-content-between align-items-center flex-wrap">
-                <!--Choice of the current page -->
-                <ul class="pagination">
-                    <?php if ($page > 1): ?>
-                        <li class="page-item">
-                            <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
+
+    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with pagination and search">
+
+        <div class="btn-group me-2">
+            <!--Choice of the current page -->
+            <ul class="pagination">
+                <?php if ($page > 1): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+
+                <?php
+                // Determine the start and end pages to display
+                $start = max(1, $page - 2); // 2 pages before the active page
+                $end = min($totalPages, $page + 2); // 2 pages after the active page
+
+                // Display the page links
+                for ($i = $start; $i <= $end; $i++): ?>
+                    <li class="page-item<?php if ($i == $page) echo " active"; ?>">
+                        <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>">
+                            <?php echo $i; ?>
+                        </a>
+                    </li>
+                <?php endfor; ?>
+
+                <?php if ($page < $totalPages): ?>
+                    <li class="page-item">
+                        <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
+            </ul>
+        </div>
+
+        <div class="btn-group me-2">
+            <!-- Groupe de boutons -->
+            <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
+                <input type="hidden" name="limitListTracabilitySheet" id="limitListTracabilitySheet" value="<?php echo $limit; ?>"> <!-- Champ caché -->
+
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="itemPerPage">
+                        <i class="bi bi-list-ol my-1 theme-icon-active"></i>
+                        <?php echo " " . $limit; ?>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="itemPerPage" data-bs-popper="static">
+                        <li>
+                            <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 10) ? 'active' : ''; ?>" onclick="setLimit(10)" aria-pressed="<?php echo ($limit == 10) ? 'true' : 'false'; ?>">
+                                10
+                            </button>
                         </li>
-                    <?php endif; ?>
-
-                    <?php
-                    // Determine the start and end pages to display
-                    $start = max(1, $page - 2); // 2 pages before the active page
-                    $end = min($totalPages, $page + 2); // 2 pages after the active page
-
-                    // Display the page links
-                    for ($i = $start; $i <= $end; $i++): ?>
-                        <li class="page-item<?php if ($i == $page) echo " active"; ?>">
-                            <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>">
-                                <?php echo $i; ?>
-                            </a>
+                        <li>
+                            <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 20) ? 'active' : ''; ?>" onclick="setLimit(20)" aria-pressed="<?php echo ($limit == 20) ? 'true' : 'false'; ?>">
+                                20
+                            </button>
                         </li>
-                    <?php endfor; ?>
-
-                    <?php if ($page < $totalPages): ?>
-                        <li class="page-item">
-                            <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
+                        <li>
+                            <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 50) ? 'active' : ''; ?>" onclick="setLimit(50)" aria-pressed="<?php echo ($limit == 50) ? 'true' : 'false'; ?>">
+                                50
+                            </button>
                         </li>
-                    <?php endif; ?>
-                </ul>
+                        <li>
+                            <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 100) ? 'active' : ''; ?>" onclick="setLimit(100)" aria-pressed="<?php echo ($limit == 100) ? 'true' : 'false'; ?>">
+                                100
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
 
-                <!--Input number of items per page -->
-
-                <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
-                    <input type="hidden" name="limitListTracabilitySheet" id="limitListTracabilitySheet" value="<?php echo $limit; ?>"> <!-- Champ caché -->
-
-                    <div class="dropdown">
-                        <button class="btn btn-primary dropdown-toggle" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="itemPerPage">
-                            <i class="bi bi-list-ol my-1 theme-icon-active"></i>
-                            <?php echo " " . $limit; ?>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="itemPerPage" data-bs-popper="static">
-                            <li>
-                                <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 10) ? 'active' : ''; ?>" onclick="setLimit(10)" aria-pressed="<?php echo ($limit == 10) ? 'true' : 'false'; ?>">
-                                    10
-                                </button>
-                            </li>
-                            <li>
-                                <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 20) ? 'active' : ''; ?>" onclick="setLimit(20)" aria-pressed="<?php echo ($limit == 20) ? 'true' : 'false'; ?>">
-                                    20
-                                </button>
-                            </li>
-                            <li>
-                                <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 50) ? 'active' : ''; ?>" onclick="setLimit(50)" aria-pressed="<?php echo ($limit == 50) ? 'true' : 'false'; ?>">
-                                    50
-                                </button>
-                            </li>
-                            <li>
-                                <button type="submit" class="dropdown-item d-flex align-items-center <?php echo ($limit == 100) ? 'active' : ''; ?>" onclick="setLimit(100)" aria-pressed="<?php echo ($limit == 100) ? 'true' : 'false'; ?>">
-                                    100
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                </form>
-
-                <script>
-                    function setLimit(value) {
-                        document.getElementById('limitListTracabilitySheet').value = value; // Met à jour la valeur du champ caché
-                    }
-                </script>
+        <script>
+            function setLimit(value) {
+                document.getElementById('limitListTracabilitySheet').value = value; // Met à jour la valeur du champ caché
+            }
+        </script>
 
 
 
 
-                <!--Filter by -->
+        <!--Filter by -->
+        <div class="btn-group me-2">
+            <!-- Groupe de boutons -->
+            <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
+                <div class="dropdown">
+                    <!-- Dropdown Button -->
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-funnel-fill"></i> <!-- Filter icon -->
+                    </button>
 
-                <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
-                    <div class="dropdown">
-                        <!-- Dropdown Button -->
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-funnel-fill"></i> <!-- Filter icon -->
-                        </button>
+                    <!-- Dropdown Menu with Checkboxes -->
+                    <ul class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton" style="width: 300px;">
+                        <!-- Case pour sélectionner / désélectionner toutes les options -->
+                        <li>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="selectAll" onchange="toggleAllCheckboxes(this)">
+                                <label class="form-check-label" for="selectAll">
+                                    Sélectionner/Désélectionner tout
+                                </label>
+                            </div>
+                        </li>
+                        <hr>
+                        <!-- Autres cases à cocher -->
+                        <li>
+                            <div class="form-check">
+                                <input class="form-check-input option-checkbox" type="checkbox" id="option1">
+                                <label class="form-check-label" for="option1">
+                                    Clorutée
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input class="form-check-input option-checkbox" type="checkbox" id="option2">
+                                <label class="form-check-label" for="option2">
+                                    Ouverte
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input class="form-check-input option-checkbox" type="checkbox" id="option3">
+                                <label class="form-check-label" for="option3">
+                                    Certifiée Operateur
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-check">
+                                <input class="form-check-input option-checkbox" type="checkbox" id="option4">
+                                <label class="form-check-label" for="option4">
+                                    Certifiée Qualité
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
 
-                        <!-- Dropdown Menu with Checkboxes -->
-                        <ul class="dropdown-menu p-3" aria-labelledby="dropdownMenuButton" style="width: 300px;">
-                            <!-- Case pour sélectionner / désélectionner toutes les options -->
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="selectAll" onchange="toggleAllCheckboxes(this)">
-                                    <label class="form-check-label" for="selectAll">
-                                        Sélectionner/Désélectionner tout
-                                    </label>
-                                </div>
-                            </li>
-                            <hr>
-                            <!-- Autres cases à cocher -->
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input option-checkbox" type="checkbox" id="option1">
-                                    <label class="form-check-label" for="option1">
-                                        Clorutée
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input option-checkbox" type="checkbox" id="option2">
-                                    <label class="form-check-label" for="option2">
-                                        Ouverte
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input option-checkbox" type="checkbox" id="option3">
-                                    <label class="form-check-label" for="option3">
-                                        Certifiée Operateur
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="form-check">
-                                    <input class="form-check-input option-checkbox" type="checkbox" id="option4">
-                                    <label class="form-check-label" for="option4">
-                                        Certifiée Qualité
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </form>
+        <script>
+            // Fonction pour sélectionner/désélectionner toutes les cases
+            function toggleAllCheckboxes(source) {
+                const checkboxes = document.querySelectorAll('.option-checkbox');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = source.checked;
+                });
+            }
+        </script>
 
-                <script>
-                    // Fonction pour sélectionner/désélectionner toutes les cases
-                    function toggleAllCheckboxes(source) {
-                        const checkboxes = document.querySelectorAll('.option-checkbox');
-                        checkboxes.forEach(checkbox => {
-                            checkbox.checked = source.checked;
-                        });
-                    }
-                </script>
+        <!--ACC OR DESC -->
 
-                <!--ACC OR DESC -->
-                <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
-                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Date de création</a></li>
-                            <li><a class="dropdown-item" href="#">Date de modication</a></li>
-                            <li><a class="dropdown-item" href="#">Serial Number</a></li>
-                            <li><a class="dropdown-item" href="#">Part Number</a></li>
-                            <li><a class="dropdown-item" href="#">Work Order</a></li>
-                        </ul>
-                    </div>
-                        <button type="button" class="btn btn-outline-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-down" viewBox="0 0 16 16">
-                                <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"></path>
-                            </svg>
-                            <span class="visually-hidden">Button</span>
-                        </button>
-                        <button type="button" class="btn btn-outline-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-up" viewBox="0 0 16 16">
-                                <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.5.5 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"></path>
-                            </svg>
-                            <span class="visually-hidden">Button</span>
-                        </button>
-                    </div>
-                </form>
-
-            </div>
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+            <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Date de création</a></li>
+                        <li><a class="dropdown-item" href="#">Date de modication</a></li>
+                        <li><a class="dropdown-item" href="#">Serial Number</a></li>
+                        <li><a class="dropdown-item" href="#">Part Number</a></li>
+                        <li><a class="dropdown-item" href="#">Work Order</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-outline-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-down" viewBox="0 0 16 16">
+                        <path d="M3.5 2.5a.5.5 0 0 0-1 0v8.793l-1.146-1.147a.5.5 0 0 0-.708.708l2 1.999.007.007a.497.497 0 0 0 .7-.006l2-2a.5.5 0 0 0-.707-.708L3.5 11.293zm3.5 1a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"></path>
+                    </svg>
+                    <span class="visually-hidden">Button</span>
+                </button>
+                <button type="button" class="btn btn-outline-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sort-up" viewBox="0 0 16 16">
+                        <path d="M3.5 12.5a.5.5 0 0 1-1 0V3.707L1.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.5.5 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L3.5 3.707zm3.5-9a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5M7.5 6a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h1a.5.5 0 0 0 0-1z"></path>
+                    </svg>
+                    <span class="visually-hidden">Button</span>
+                </button>
+            </form>
         </div>
     </div>
+
 
     <?php foreach ($tracabilitySheets as $tracabilitySheet) { ?>
         <div class="card mb-3">
