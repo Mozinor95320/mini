@@ -49,7 +49,7 @@
             </form>
 
 
-            <ul class="d-none navbar-nav flex-row flex-wrap ms-md-auto me-md-2 nav-item dropdown">
+            <ul class="d-none d-lg-block navbar-nav flex-row flex-wrap ms-md-auto me-md-2 nav-item dropdown">
                 <button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="true" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (light)">
                     <i class="bi bi-gear my-1 theme-icon-active"></i>
                     <span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
