@@ -15,7 +15,7 @@ class Model
         }
     }
 
-    public function getPaginatedTracabiltySheets($limit, $offset)
+    public function getPaginatedTracabilitySheets($limit, $offset)
     {
         $sql = "SELECT serialNumber, partNumber, workOrder, sheetCreationDate, lastTimeEdit, statusSheetOperator, statusSheetQuality FROM tracabilitySheets LIMIT :limit OFFSET :offset";
         $query = $this->db->prepare($sql);
@@ -38,9 +38,9 @@ class Model
     }
 
     /**
-     * Get all tracabiltySheets from database
+     * Get all tracabilitySheets from database
      */
-    public function getAlltracabiltySheets()
+    public function getAllTracabilitySheets()
     {
         $sql = "SELECT * FROM tracabilitySheets";
         $query = $this->db->prepare($sql);
@@ -54,7 +54,7 @@ class Model
     }
 
     /**
-     * Add a tracabiltySheet to database
+     * Add a tracabilitySheet to database
      * TODO put this explanation into readme and remove it from here
      * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
      * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
@@ -64,7 +64,7 @@ class Model
      * @param string $track Track
      * @param string $link Link
      */
-    public function addTracabiltySheet($workOrder, $serialNumber, $partNumber, $refPlan, $refMachine)
+    public function addTracabilitySheet($workOrder, $serialNumber, $partNumber, $refPlan, $refMachine)
     {
 
         $sql = "INSERT INTO tracabilitySheets (workOrder, serialNumber, partNumber, sheetCreationDate, refPlan, refMachine) 
@@ -89,16 +89,16 @@ class Model
 
 
     /**
-     * Delete a tracabiltySheet in the database
+     * Delete a tracabilitySheet in the database
      * Please note: this is just an example! In a real application you would not simply let everybody
      * add/update/delete stuff!
-     * @param int $tracabiltySheet_id Id of tracabiltySheet
+     * @param int $tracabilitySheet_id Id of tracabilitySheet
      */
-    public function deleteTracabiltySheet($tracabiltySheet_id)
+    public function deleteTracabilitySheet($tracabilitySheet_id)
     {
-        $sql = "DELETE FROM tracabilitySheets WHERE id = :tracabiltySheet_id";
+        $sql = "DELETE FROM tracabilitySheets WHERE id = :tracabilitySheet_id";
         $query = $this->db->prepare($sql);
-        $parameters = array(':tracabiltySheet_id' => $tracabiltySheet_id);
+        $parameters = array(':tracabilitySheet_id' => $tracabilitySheet_id);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
@@ -107,13 +107,13 @@ class Model
     }
 
     /**
-     * Get a tracabiltySheet from database
+     * Get a tracabilitySheet from database
      */
-    public function getTracabiltySheet($tracabiltySheet_id)
+    public function getTracabilitySheet($tracabilitySheet_id)
     {
-        $sql = "SELECT * FROM tracabilitySheets WHERE serialNumber = :tracabiltySheet_id LIMIT 1";
+        $sql = "SELECT * FROM tracabilitySheets WHERE serialNumber = :tracabilitySheet_id LIMIT 1";
         $query = $this->db->prepare($sql);
-        $parameters = array(':tracabiltySheet_id' => $tracabiltySheet_id);
+        $parameters = array(':tracabilitySheet_id' => $tracabilitySheet_id);
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
@@ -125,7 +125,7 @@ class Model
     }
 
     /**
-     * Update a tracabiltySheet in database
+     * Update a tracabilitySheet in database
      * // TODO put this explaination into readme and remove it from here
      * Please note that it's not necessary to "clean" our input in any way. With PDO all input is escaped properly
      * automatically. We also don't use strip_tags() etc. here so we keep the input 100% original (so it's possible
@@ -134,9 +134,9 @@ class Model
      * @param string $artist Artist
      * @param string $track Track
      * @param string $link Link
-     * @param int $tracabiltySheet_id Id
+     * @param int $tracabilitySheet_id Id
      */
-    public function updateTracabiltySheet($parameters, $tracabiltySheet_id)
+    public function updateTracabilitySheet($parameters, $tracabilitySheet_id)
     {
         $sql = "UPDATE tracabilitySheets SET 
         serialNumber = :serialNumber,
@@ -209,10 +209,10 @@ class Model
         qualityInspectorName = :qualityInspectorName,
         qualityInspectorRemarks = :qualityInspectorRemarks,
         status = :status
-    WHERE serialNumber = :tracabiltySheet_id";
+    WHERE serialNumber = :tracabilitySheet_id";
         $query = $this->db->prepare($sql);
         //add the parameter below in the arrway
-        $parameters[':tracabiltySheet_id'] = $tracabiltySheet_id;
+        $parameters[':tracabilitySheet_id'] = $tracabilitySheet_id;
 
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
@@ -223,15 +223,15 @@ class Model
 
     /**
      * Get simple "stats". This is just a simple demo to show
-     * how to use more than one model in a controller (see application/controller/tracabiltySheets.php for more)
+     * how to use more than one model in a controller (see application/controller/tracabilitySheets.php for more)
      */
-    public function getAmountOfTracabiltySheets()
+    public function getAmountOfTracabilitySheets()
     {
-        $sql = "SELECT COUNT(serialNumber) AS amount_of_tracabiltySheets FROM tracabilitySheets";
+        $sql = "SELECT COUNT(serialNumber) AS amount_of_tracabilitySheets FROM tracabilitySheets";
         $query = $this->db->prepare($sql);
         $query->execute();
 
         // fetch() is the PDO method that get exactly one result
-        return $query->fetch()->amount_of_tracabiltySheets;
+        return $query->fetch()->amount_of_tracabilitySheets;
     }
 }

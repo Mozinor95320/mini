@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class TracabiltySheets
+ * Class tracabilitySheets
  * This is a demo class.
  *
  * Please note:
@@ -9,11 +9,11 @@
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class TracabiltySheets extends Controller
+class TracabilitySheets extends Controller
 {
     /**
      * PAGE: index
-     * This method handles what happens when you move to http://yourproject/tracabiltySheets/index
+     * This method handles what happens when you move to http://yourproject/tracabilitySheets/index
      */
 
 
@@ -41,110 +41,110 @@ class TracabiltySheets extends Controller
         $offset = ($page - 1) * $limit;
 
         // Get the total number of traceability sheets
-        $amountOfTracabiltySheets = $this->model->getAmountOfTracabiltySheets();
+        $amountOfTracabilitySheets = $this->model->getAmountOfTracabilitySheets();
 
         // Calculate the total number of pages
-        $totalPages = ceil($amountOfTracabiltySheets / $limit);
+        $totalPages = ceil($amountOfTracabilitySheets / $limit);
 
         // Get the traceability sheets for the current page
-        $tracabiltySheets = $this->model->getPaginatedTracabiltySheets($limit, $offset);
+        $tracabilitySheets = $this->model->getPaginatedTracabilitySheets($limit, $offset);
 
-        //$tracabiltySheets = $this->model->getAlltracabiltySheets();
+        //$tracabilitySheets = $this->model->getAllTracabilitySheets();
 
 
-        // load views. within the views we can echo out $tracabiltySheets and $amountOfTracabiltySheets easily
+        // load views. within the views we can echo out $tracabilitySheets and $amountOfTracabilitySheets easily
         require APP . 'view/_templates/header.php';
-        require APP . 'view/tracabiltySheets/index.php';
+        require APP . 'view/tracabilitySheets/index.php';
         require APP . 'view/_templates/footer.php';
     }
 
     /**
-     * ACTION: addTracabiltySheet
-     * This method handles what happens when you move to http://yourproject/tracabiltySheets/addTracabiltySheet
-     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "add a tracabiltySheet" form on tracabiltySheets/index
+     * ACTION: addTracabilitySheet
+     * This method handles what happens when you move to http://yourproject/tracabilitySheets/addTracabilitySheet
+     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "add a tracabilitySheet" form on tracabilitySheets/index
      * directs the user after the form submit. This method handles all the POST data from the form and then redirects
-     * the user back to tracabiltySheets/index via the last line: header(...)
+     * the user back to tracabilitySheets/index via the last line: header(...)
      * This is an example of how to handle a POST request.
      */
 
-    public function createTracabiltySheet()
+    public function createTracabilitySheet()
     {
 
-        // load views. within the views we can echo out $tracabiltySheet easily
+        // load views. within the views we can echo out $tracabilitySheet easily
         require APP . 'view/_templates/header.php';
-        require APP . 'view/tracabiltySheets/add.php';
+        require APP . 'view/tracabilitySheets/add.php';
         require APP . 'view/_templates/footer.php';
     }
-    public function addTracabiltySheet()
+    public function addTracabilitySheet()
     {
-        // if we have POST data to create a new tracabiltySheet entry
-        if (isset($_POST["submit_add_tracabiltySheet"])) {
-            // do addTracabiltySheet() in model/model.php
-            $this->model->addTracabiltySheet($_POST["workOrder"], $_POST["serialNumber"],  $_POST["partNumber"], $_POST["refPlan"],  $_POST["refMachine"]);
+        // if we have POST data to create a new tracabilitySheet entry
+        if (isset($_POST["submit_add_tracabilitySheet"])) {
+            // do addTracabilitySheet() in model/model.php
+            $this->model->addTracabilitySheet($_POST["workOrder"], $_POST["serialNumber"],  $_POST["partNumber"], $_POST["refPlan"],  $_POST["refMachine"]);
         }
-        // where to go after tracabiltySheet has been added
-        header('location: ' . URL . 'tracabiltySheets/index');
+        // where to go after tracabilitySheet has been added
+        header('location: ' . URL . 'tracabilitySheets/index');
     }
 
     /**
-     * ACTION: deleteTracabiltySheet
-     * This method handles what happens when you move to http://yourproject/tracabiltySheets/deleteTracabiltySheet
-     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "delete a tracabiltySheet" button on tracabiltySheets/index
+     * ACTION: deleteTracabilitySheet
+     * This method handles what happens when you move to http://yourproject/tracabilitySheets/deleteTracabilitySheet
+     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "delete a tracabilitySheet" button on tracabilitySheets/index
      * directs the user after the click. This method handles all the data from the GET request (in the URL!) and then
-     * redirects the user back to tracabiltySheets/index via the last line: header(...)
+     * redirects the user back to tracabilitySheets/index via the last line: header(...)
      * This is an example of how to handle a GET request.
-     * @param int $tracabiltySheet_id Id of the to-delete racabiltySheet
+     * @param int $tracabilitySheet_id Id of the to-delete racabiltySheet
      */
-    public function deleteTracabiltySheet($tracabiltySheet_id)
+    public function deleteTracabilitySheet($tracabilitySheet_id)
     {
         // if we have an id of a tracabilty Sheet that should be deleted
-        if (isset($tracabiltySheet_id)) {
-            // do deleteTracabiltySheet() in model/model.php
-            $this->model->deleteTracabiltySheet($tracabiltySheet_id);
+        if (isset($tracabilitySheet_id)) {
+            // do deleteTracabilitySheet() in model/model.php
+            $this->model->deleteTracabilitySheet($tracabilitySheet_id);
         }
 
-        // where to go after TracabiltySheet has been deleted
-        header('location: ' . URL . 'tracabiltySheets/index');
+        // where to go after tracabilitySheet has been deleted
+        header('location: ' . URL . 'tracabilitySheets/index');
     }
 
     /**
-     * ACTION: editTracabiltySheet
-     * This method handles what happens when you move to http://yourproject/tracabiltySheets/editTracabiltySheet
-     * @param int $tracabiltySheet_id Id of the to-edit tracabiltySheet
+     * ACTION: editTracabilitySheet
+     * This method handles what happens when you move to http://yourproject/tracabilitySheets/editTracabilitySheet
+     * @param int $tracabilitySheet_id Id of the to-edit tracabilitySheet
      */
-    public function editTracabiltySheet($tracabiltySheet_id)
+    public function editTracabilitySheet($tracabilitySheet_id)
     {
-        // if we have an id of a tracabiltySheet that should be edited
-        if (isset($tracabiltySheet_id)) {
-            // do getTracabiltySheet() in model/model.php
-            $tracabiltySheet = $this->model->getTracabiltySheet($tracabiltySheet_id);
+        // if we have an id of a tracabilitySheet that should be edited
+        if (isset($tracabilitySheet_id)) {
+            // do getTracabilitySheet() in model/model.php
+            $tracabilitySheet = $this->model->getTracabilitySheet($tracabilitySheet_id);
 
             // in a real application we would also check if this db entry exists and therefore show the result or
             // redirect the user to an error page or similar
 
-            // load views. within the views we can echo out $tracabiltySheet easily
+            // load views. within the views we can echo out $tracabilitySheet easily
             require APP . 'view/_templates/header.php';
-            require APP . 'view/tracabiltySheets/edit.php';
+            require APP . 'view/tracabilitySheets/edit.php';
             require APP . 'view/_templates/footer.php';
         } else {
-            // redirect user to tracabiltySheets index page (as we don't have a tracabiltySheet_id)
-            header('location: ' . URL . 'tracabiltySheets/index');
+            // redirect user to tracabilitySheets index page (as we don't have a tracabilitySheet_id)
+            header('location: ' . URL . 'tracabilitySheets/index');
         }
     }
 
     /**
-     * ACTION: updateTracabiltySheet
-     * This method handles what happens when you move to http://yourproject/tracabiltySheets/updateTracabiltySheet
-     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "update a tracabiltySheet" form on tracabiltySheets/edit
+     * ACTION: updateTracabilitySheet
+     * This method handles what happens when you move to http://yourproject/tracabilitySheets/updateTracabilitySheet
+     * IMPORTANT: This is not a normal page, it's an ACTION. This is where the "update a tracabilitySheet" form on tracabilitySheets/edit
      * directs the user after the form submit. This method handles all the POST data from the form and then redirects
-     * the user back to tracabiltySheets/index via the last line: header(...)
+     * the user back to tracabilitySheets/index via the last line: header(...)
      * This is an example of how to handle a POST request.
      */
-    public function updateTracabiltySheet()
+    public function updateTracabilitySheet()
     {
-        // if we have POST data to create a new tracabiltySheet entry
-        if (isset($_POST["submit_update_tracabiltySheet"])) {
-            // do updateTracabiltySheet() from model/model.php
+        // if we have POST data to create a new tracabilitySheet entry
+        if (isset($_POST["submit_update_tracabilitySheet"])) {
+            // do updateTracabilitySheet() from model/model.php
             $params = array(
                 ':serialNumber' => $_POST['serialNumber'],
                 ':partNumber' => $_POST['partNumber'],
@@ -218,11 +218,11 @@ class TracabiltySheets extends Controller
                 ':status' => $_POST['status']
             );
 
-            $this->model->updateTracabiltySheet($params, $_POST['tracabiltySheet_id']);
+            $this->model->updateTracabilitySheet($params, $_POST['tracabilitySheet_id']);
         }
 
-        // where to go after tracabiltySheet has been added
-        header('location: ' . URL . 'tracabiltySheets/index');
+        // where to go after tracabilitySheet has been added
+        header('location: ' . URL . 'tracabilitySheets/index');
     }
 
     /**
@@ -231,9 +231,9 @@ class TracabiltySheets extends Controller
      */
     public function ajaxGetStats()
     {
-        $amountOfTracabiltySheets = $this->model->getAmountOfTracabiltySheets();
+        $amountOfTracabilitySheets = $this->model->getAmountOfTracabilitySheets();
 
         // simply echo out something. A supersimple API would be possible by echoing JSON here
-        echo $amountOfTracabiltySheets;
+        echo $amountOfTracabilitySheets;
     }
 }
