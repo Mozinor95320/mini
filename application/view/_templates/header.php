@@ -21,7 +21,7 @@
 
 <body>
     <!-- Navbar -->
-    <header class="navbar sticky-top navbar-expand-lg">
+    <header class="navbar sticky-top navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="<?php echo URL . 'tracabiltySheets'; ?>">
             <img src="<?php echo URL; ?>img/logo_parker_crop.png" alt="Parker" height="24">
         </a>
