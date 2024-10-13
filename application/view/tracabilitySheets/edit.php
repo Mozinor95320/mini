@@ -1,47 +1,47 @@
 <div class="container mt-4">
+    <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
 
+        <div class="row mb-3">
+            <div class="col-12">
+                <div class="d-flex justify-content-between align-items-center flex-wrap">
 
-    <div class="mb-3">
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary" name="submit_update_tracabilitySheet" value="Update">Enregistrer</button>
 
-        <!-- Nav Tabs -->
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Données de production</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Frettage</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Essais de traction</a>
-            </li>
-        </ul>
-    </div>
+                    <!-- Exporter en PDF avec logo -->
+                    <button class="btn btn-secondary">
+                        <img src="https://img.icons8.com/material-outlined/24/ffffff/export-pdf.png" alt="PDF Icon" class="me-2">
+                        Exporter en PDF
+                    </button>
 
-    <!-- Tab Content -->
-    <div class="tab-content" id="myTabContent">
-        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="d-flex justify-content-between align-items-center flex-wrap">
-
-                            <!-- Submit Button -->
-                            <button type="submit" class="btn btn-primary" name="submit_update_tracabilitySheet" value="Update">Enregistrer</button>
-
-                            <!-- Exporter en PDF avec logo -->
-                            <button class="btn btn-secondary">
-                                <img src="https://img.icons8.com/material-outlined/24/ffffff/export-pdf.png" alt="PDF Icon" class="me-2">
-                                Exporter en PDF
-                            </button>
-
-                            <!-- Toggle Button -->
-                            <button type="button" class="btn btn-warning" data-bs-toggle="button" aria-pressed="false">
-                                <i class="bi bi-lock"></i> Verrouillage
-                            </button>
-                        </div>
-                    </div>
+                    <!-- Toggle Button -->
+                    <button type="button" class="btn btn-warning" data-bs-toggle="button" aria-pressed="false">
+                        <i class="bi bi-lock"></i> Verrouillage
+                    </button>
                 </div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+
+            <!-- Nav Tabs -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Données de production</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Frettage</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Essais de traction</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
                 <!-- Generic Data-->
                 <div class="card-body">
@@ -1240,68 +1240,68 @@
                         </div>
                     </div>
                 </div>
-            </form>
-        </div>
-
-        <!-- TAB 2 - WINDIND CHARTS -->
-        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-            <!-- Chart GENERAL-->
-            <div class="container">
-                <h1 class="text-center mt-5">Graphique général</h1>
-                <div class="mb-3">
-                    <div class="chart-container">
-                        <canvas id="myChartGeneral"></canvas>
-                    </div>
-                    <button onclick="resetZoomChartGeneral()" class="btn btn-danger">Réinitialiser le Zoom</button>
-                </div>
             </div>
 
-            <!-- Chart Pre Tension-->
-            <div class="container">
-                <h1 class="text-center mt-5">Graphique pré-tension</h1>
-                <div class="mb-3">
-                    <div class="row">
+            <!-- TAB 2 - WINDIND CHARTS -->
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                <!-- Chart GENERAL-->
+                <div class="container">
+                    <h1 class="text-center mt-5">Graphique général</h1>
+                    <div class="mb-3">
                         <div class="chart-container">
-                            <canvas id="myChartPreTension"></canvas>
+                            <canvas id="myChartGeneral"></canvas>
                         </div>
-                        <button onclick="resetZoomChartPreTension()" class="btn btn-danger">Réinitialiser le Zoom</button>
+                        <button onclick="resetZoomChartGeneral()" class="btn btn-danger">Réinitialiser le Zoom</button>
+                    </div>
+                </div>
+
+                <!-- Chart Pre Tension-->
+                <div class="container">
+                    <h1 class="text-center mt-5">Graphique pré-tension</h1>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="chart-container">
+                                <canvas id="myChartPreTension"></canvas>
+                            </div>
+                            <button onclick="resetZoomChartPreTension()" class="btn btn-danger">Réinitialiser le Zoom</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Post Tension-->
+                <div class="container">
+                    <h1 class="text-center mt-5">Graphique post-tension</h1>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="chart-container">
+                                <canvas id="myChartPostTension"></canvas>
+                            </div>
+                            <button onclick="resetZoomChartPostTension()" class="btn btn-danger">Réinitialiser le Zoom</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Temperature-->
+                <div class="container">
+                    <h1 class="text-center mt-5">Graphique température</h1>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="chart-container">
+                                <canvas id="myChartTemperature"></canvas>
+                            </div>
+                            <button onclick="resetZoomChartTemperature()" class="btn btn-danger">Réinitialiser le Zoom</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Chart Post Tension-->
-            <div class="container">
-                <h1 class="text-center mt-5">Graphique post-tension</h1>
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="chart-container">
-                            <canvas id="myChartPostTension"></canvas>
-                        </div>
-                        <button onclick="resetZoomChartPostTension()" class="btn btn-danger">Réinitialiser le Zoom</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Chart Temperature-->
-            <div class="container">
-                <h1 class="text-center mt-5">Graphique température</h1>
-                <div class="mb-3">
-                    <div class="row">
-                        <div class="chart-container">
-                            <canvas id="myChartTemperature"></canvas>
-                        </div>
-                        <button onclick="resetZoomChartTemperature()" class="btn btn-danger">Réinitialiser le Zoom</button>
-                    </div>
-                </div>
+            <!-- TAB 3 - TENSILE TEST CHARTS-->
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <p>Contenu de l'onglet 3.</p>
             </div>
         </div>
-
-        <!-- TAB 3 - TENSILE TEST CHARTS-->
-        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-            <p>Contenu de l'onglet 3.</p>
-        </div>
-    </div>
+    </form>
 </div>
 
 <script src="<?php echo URL; ?>js/tolerances.js"></script>
