@@ -1,50 +1,53 @@
 <div class="container mt-4">
     <div class="row mb-3">
-        <div clas="col d-inline" aria-label="Page navigation example">
-            <ul class="pagination">
-                <?php if ($page > 1): ?>
-                    <li class="page-item">
-                        <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                <?php endif; ?>
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <!--Choice of the current page -->
+                <ul class="pagination">
+                    <?php if ($page > 1): ?>
+                        <li class="page-item">
+                            <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($page - 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
 
-                <?php
-                // Determine the start and end pages to display
-                $start = max(1, $page - 2); // 2 pages before the active page
-                $end = min($totalPages, $page + 2); // 2 pages after the active page
+                    <?php
+                    // Determine the start and end pages to display
+                    $start = max(1, $page - 2); // 2 pages before the active page
+                    $end = min($totalPages, $page + 2); // 2 pages after the active page
 
-                // Display the page links
-                for ($i = $start; $i <= $end; $i++): ?>
-                    <li class="page-item<?php if ($i == $page) echo " active"; ?>">
-                        <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>">
-                            <?php echo $i; ?>
-                        </a>
-                    </li>
-                <?php endfor; ?>
+                    // Display the page links
+                    for ($i = $start; $i <= $end; $i++): ?>
+                        <li class="page-item<?php if ($i == $page) echo " active"; ?>">
+                            <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($i, ENT_QUOTES, 'UTF-8'); ?>">
+                                <?php echo $i; ?>
+                            </a>
+                        </li>
+                    <?php endfor; ?>
 
-                <?php if ($page < $totalPages): ?>
-                    <li class="page-item">
-                        <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-            </ul>
-        </div>
+                    <?php if ($page < $totalPages): ?>
+                        <li class="page-item">
+                            <a class="page-link" href="<?php echo URL . 'tracabilitySheets/index/' . htmlspecialchars($page + 1, ENT_QUOTES, 'UTF-8'); ?>" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                </ul>
 
-        <div class="col d-inline">
-            <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
-                <label for="limitListTracabilitySheet">Fiches par page : </label>
-                <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
-                    <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
-                    <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
-                    <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
-                    <option value="100" <?php if ($limit == 100) echo 'selected'; ?>>100</option>
-                </select>
-            </form>
+                <!--Input number of items per page -->
 
+                <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
+                    <label for="limitListTracabilitySheet">Fiches par page : </label>
+                    <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
+                        <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
+                        <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
+                        <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
+                        <option value="100" <?php if ($limit == 100) echo 'selected'; ?>>100</option>
+                    </select>
+                </form>
+
+            </div>
         </div>
     </div>
 
