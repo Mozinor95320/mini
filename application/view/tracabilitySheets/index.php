@@ -39,7 +39,7 @@
 
                 <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
                     <label for="limitListTracabilitySheet">Fiches par page : </label>
-                    <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
+                    <select class="dropdown" name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
                         <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
                         <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
                         <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
@@ -119,7 +119,7 @@
 
                 <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
                     <label for="limitListTracabilitySheet">Fiches par page : </label>
-                    <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
+                    <select class="dropdown" name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
                         <option value="10" <?php if ($limit == 10) echo 'selected'; ?>>10</option>
                         <option value="20" <?php if ($limit == 20) echo 'selected'; ?>>20</option>
                         <option value="50" <?php if ($limit == 50) echo 'selected'; ?>>50</option>
