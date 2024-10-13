@@ -32,14 +32,14 @@
                     <!-- Work Order Field -->
                     <div class="col-md-6">
                         <label for="numeroOF" class="form-label">N°OF</label>
-                        <input type="text" class="form-control" id="workOrder" value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+                        <input type="text" class="form-control" id="workOrder" name="workOrder" value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>" readonly>
 
                     </div>
 
                     <!-- Serial Number Field -->
                     <div class="col-md-6">
                         <label for="numeroOF" class="form-label">SN</label>
-                        <input type="text" class="form-control" id="serialNumber" value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+                        <input type="text" class="form-control" id="serialNumber" name="serialNumber" value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>" readonly>
                     </div>
                 </div>
                 <div class="row align-items-center mb-3">
@@ -47,14 +47,14 @@
                     <!-- Part Number Field -->
                     <div class="col-md-6">
                         <label for="numeroOF" class="form-label">PN</label>
-                        <input type="text" class="form-control" id="partNumber" value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+                        <input type="text" class="form-control" id="partNumber" name="partNumber" value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>" readonly>
 
                     </div>
 
                     <!-- Sheet Creation Date -->
                     <div class="col-md-6">
                         <label for="date" class="form-label">Date de création de la fiche</label>
-                        <input type="datetime-local" class="form-control" id="sheetCreationDate" value="<?php echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8'); ?>" readonly>
+                        <input type="datetime-local" class="form-control" id="sheetCreationDate" name="sheetCreationDate" value="<?php echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8'); ?>" readonly>
                     </div>
                 </div>
                 <div class="row align-items-center mb-3">
@@ -62,14 +62,14 @@
                     <!-- Plan Reference Field -->
                     <div class="col-md-6">
                         <label for="referencePlan" class="form-label">Référence plan</label>
-                        <input type="text" class="form-control" id="refPlan" value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+                        <input type="text" class="form-control" id="refPlan" name="refPlan" value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>" readonly>
 
                     </div>
 
                     <!-- Machine Reference Field -->
                     <div class="col-md-6">
                         <label for="machine" class="form-label">Machine</label>
-                        <input type="text" class="form-control" id="refMachine" value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>" readonly>
+                        <input type="text" class="form-control" id="refMachine" name="refMachine" value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>" readonly>
                     </div>
                 </div>
             </div>
@@ -104,13 +104,13 @@
                                     <!-- Sppol Batch Reference Field -->
                                     <div class="col-md-6">
                                         <label for="bobine" class="form-label">Bobine</label>
-                                        <input type="text" class="form-control" id="spoolBatch" value="<?php echo isset($tracabilitySheet->spoolBatch) && !empty($tracabilitySheet->spoolBatch) ? htmlspecialchars($tracabilitySheet->spoolBatch, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                        <input type="text" class="form-control" id="spoolBatch" name="spoolBatch" value="<?php echo isset($tracabilitySheet->spoolBatch) && !empty($tracabilitySheet->spoolBatch) ? htmlspecialchars($tracabilitySheet->spoolBatch, ENT_QUOTES, 'UTF-8') : ""; ?>">
                                     </div>
 
                                     <!-- Spool Number Field -->
                                     <div class="col-md-6">
                                         <label for="lot" class="form-label">Lot</label>
-                                        <input type="number" class="form-control" id="spoolNumber" value="<?php echo isset($tracabilitySheet->spoolNumber) && !empty($tracabilitySheet->spoolNumber) ? htmlspecialchars($tracabilitySheet->spoolNumber, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                        <input type="number" class="form-control" id="spoolNumber" name="spoolNumber" value="<?php echo isset($tracabilitySheet->spoolNumber) && !empty($tracabilitySheet->spoolNumber) ? htmlspecialchars($tracabilitySheet->spoolNumber, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@
                                 <!-- Date Dimension After Coating -->
                                 <div class="mb-3">
                                     <label for="dateEnduction" class="form-label">Date</label>
-                                    <input type="datetime-local" class="form-control" id="dateDimAfterCoating" value="<?php echo isset($tracabilitySheet->dateDimAfterCoating) && !empty($tracabilitySheet->dateDimAfterCoating) ? htmlspecialchars($tracabilitySheet->dateDimAfterCoating, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                    <input type="datetime-local" class="form-control" id="dateDimAfterCoating" name="dateDimAfterCoating" value="<?php echo isset($tracabilitySheet->dateDimAfterCoating) && !empty($tracabilitySheet->dateDimAfterCoating) ? htmlspecialchars($tracabilitySheet->dateDimAfterCoating, ENT_QUOTES, 'UTF-8') : ""; ?>">
                                 </div>
 
 
@@ -162,7 +162,7 @@
                                     <div class="col-md-4">
                                         <label for="longueur" class="form-label">Longueur L</label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="lengthL" placeholder="Entrez la longueur" value="<?php echo isset($tracabilitySheet->lengthL) && !empty($tracabilitySheet->lengthL) ? htmlspecialchars($tracabilitySheet->lengthL, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="lengthL" name="lengthL" placeholder="Entrez la longueur" value="<?php echo isset($tracabilitySheet->lengthL) && !empty($tracabilitySheet->lengthL) ? htmlspecialchars($tracabilitySheet->lengthL, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                             <!-- Tolerance with dynamic color -->
                                             <span class="input-group-text" id="toleranceLengthL">413,5 (-6/+0)</span>
@@ -176,7 +176,7 @@
                                     <div class="col-md-4 mb-3">
                                         <label for="diametre" class="form-label">Diamètre D</label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="diameterD" placeholder="Entrez le diamètre" value="<?php echo isset($tracabilitySheet->diameterD) && !empty($tracabilitySheet->diameterD) ? htmlspecialchars($tracabilitySheet->diameterD, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="diameterD" name="diameterD" placeholder="Entrez le diamètre" value="<?php echo isset($tracabilitySheet->diameterD) && !empty($tracabilitySheet->diameterD) ? htmlspecialchars($tracabilitySheet->diameterD, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                             <!-- Tolerance with dynamic color -->
                                             <span class="input-group-text" id="toleranceDiameterD">163(-0/+0,9)</span>
@@ -190,7 +190,7 @@
                                     <div class="col-md-4 mb-3">
                                         <label for="masseM" class="form-label">Masse M</label>
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="massM" placeholder="Entrez la masse" value="<?php echo isset($tracabilitySheet->massM) && !empty($tracabilitySheet->massM) ? htmlspecialchars($tracabilitySheet->massM, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="massM" name="massM" placeholder="Entrez la masse" value="<?php echo isset($tracabilitySheet->massM) && !empty($tracabilitySheet->massM) ? htmlspecialchars($tracabilitySheet->massM, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -265,7 +265,7 @@
                                     <!--  Input - Profile Mass Before Shrink Fit-->
                                     <div class="col-md-3">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="profileMassBeforeShrinkFit" placeholder="Entrez la masse du profilé" oninput="calculateMasseLineiqueAvant()" value="<?= htmlspecialchars($tracabilitySheet->profileMassBeforeShrinkFit) ?>">
+                                            <input type="number" class="form-control" id="profileMassBeforeShrinkFit" name="profileMassBeforeShrinkFit" placeholder="Entrez la masse du profilé" oninput="calculateMasseLineiqueAvant()" value="<?= htmlspecialchars($tracabilitySheet->profileMassBeforeShrinkFit) ?>">
 
                                             <!-- Unit of measurement -->
                                             <span class="input-group-text">g</span>
@@ -282,7 +282,7 @@
                                     <!--  Input readonly - Linear Mass Before Shrink Fit-->
                                     <div class="col-md-3">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="linearMassBeforeShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->linearMassBeforeShrinkFit) && !empty($tracabilitySheet->linearMassBeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->linearMassBeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="linearMassBeforeShrinkFit" name="linearMassBeforeShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->linearMassBeforeShrinkFit) && !empty($tracabilitySheet->linearMassBeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->linearMassBeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -302,7 +302,7 @@
                                     <!--  Thickness Sample 1 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness1BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness1BeforeShrinkFit) && !empty($tracabilitySheet->thickness1BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness1BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness1BeforeShrinkFit" name="thickness1BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness1BeforeShrinkFit) && !empty($tracabilitySheet->thickness1BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness1BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -316,7 +316,7 @@
                                     <!--  Force Sample 1 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force1BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force1BeforeShrinkFit) && !empty($tracabilitySheet->force1BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force1BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force1BeforeShrinkFit" name="force1BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force1BeforeShrinkFit) && !empty($tracabilitySheet->force1BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force1BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                             <!-- Tolerance with dynamic color -->
                                             <span class="input-group-text" id="toleranceForce1BeforeShrinkFit">Min 1820</span>
@@ -349,7 +349,7 @@
                                     <!--  Thickness Sample 2 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness2BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness2BeforeShrinkFit) && !empty($tracabilitySheet->thickness2BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness2BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness2BeforeShrinkFit" name="thickness2BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness2BeforeShrinkFit) && !empty($tracabilitySheet->thickness2BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness2BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                             <!-- Tolerance with dynamic color -->
                                             <span class="input-group-text" id="toleranceThickness2BeforeShrinkFit">0,23-0,30</span>
@@ -362,7 +362,7 @@
                                     <!--  Force Sample 2 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force2BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force2BeforeShrinkFit) && !empty($tracabilitySheet->force2BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force2BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force2BeforeShrinkFit" name="force2BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force2BeforeShrinkFit) && !empty($tracabilitySheet->force2BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force2BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -396,7 +396,7 @@
                                     <!--  Thickness Sample 3 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness3BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness3BeforeShrinkFit) && !empty($tracabilitySheet->thickness3BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness3BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness3BeforeShrinkFit" name="thickness3BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness3BeforeShrinkFit) && !empty($tracabilitySheet->thickness3BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness3BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
 
@@ -411,7 +411,7 @@
                                     <!--  Force Sample 3 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force3BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force3BeforeShrinkFit) && !empty($tracabilitySheet->force3BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force3BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force3BeforeShrinkFit" name="force3BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force3BeforeShrinkFit) && !empty($tracabilitySheet->force3BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force3BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -445,7 +445,7 @@
                                     <!--  Thickness Sample 4 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness4BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness4BeforeShrinkFit) && !empty($tracabilitySheet->thickness4BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness4BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness4BeforeShrinkFit" name="thickness4BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness4BeforeShrinkFit) && !empty($tracabilitySheet->thickness4BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness4BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -459,7 +459,7 @@
                                     <!--  Force Sample 4 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force4BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force4BeforeShrinkFit) && !empty($tracabilitySheet->force4BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force4BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force4BeforeShrinkFit" name="force4BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force4BeforeShrinkFit) && !empty($tracabilitySheet->force4BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force4BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -493,7 +493,7 @@
                                     <!--  Thickness Sample 5 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness5BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness5BeforeShrinkFit) && !empty($tracabilitySheet->thickness5BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness5BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness5BeforeShrinkFit" name="thickness5BeforeShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness5BeforeShrinkFit) && !empty($tracabilitySheet->thickness5BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness5BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -507,7 +507,7 @@
                                     <!--  Force Sample 5 Before Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force5BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force5BeforeShrinkFit) && !empty($tracabilitySheet->force5BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force5BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force5BeforeShrinkFit" name="force5BeforeShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force5BeforeShrinkFit) && !empty($tracabilitySheet->force5BeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->force5BeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -545,7 +545,7 @@
                                     <!--  Value - Mean Force Tensile test Before Shrink Fit -->
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="averageBeforeShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->averageBeforeShrinkFit) && !empty($tracabilitySheet->averageBeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->averageBeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="averageBeforeShrinkFit" name="averageBeforeShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->averageBeforeShrinkFit) && !empty($tracabilitySheet->averageBeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->averageBeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -570,7 +570,7 @@
                                     <!--  Value - Standart deviation Force Tensile test Before Shrink Fit -->
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="sigmaBeforeShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->sigmaBeforeShrinkFit) && !empty($tracabilitySheet->sigmaBeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->sigmaBeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="sigmaBeforeShrinkFit" name="sigmaBeforeShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->sigmaBeforeShrinkFit) && !empty($tracabilitySheet->sigmaBeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->sigmaBeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Unit of measurement -->
@@ -603,7 +603,7 @@
                                     <!--  Input - Profile Mass After Shrink Fit-->
                                     <div class="col-md-3">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="profileMassAfterShrinkFit" placeholder="Entrez la masse du profilé" oninput="calculateMasseLineiqueAvant()" value="<?php echo isset($tracabilitySheet->profileMassAfterShrinkFit) && !empty($tracabilitySheet->profileMassAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->profileMassAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="profileMassAfterShrinkFit" name="profileMassAfterShrinkFit" placeholder="Entrez la masse du profilé" oninput="calculateMasseLineiqueAvant()" value="<?php echo isset($tracabilitySheet->profileMassAfterShrinkFit) && !empty($tracabilitySheet->profileMassAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->profileMassAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Unit of measurement -->
@@ -621,7 +621,7 @@
                                     <!--  Input readonly - Linear Mass After Shrink Fit-->
                                     <div class="col-md-3">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="linearMassAfterShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->linearMassAfterShrinkFit) && !empty($tracabilitySheet->linearMassAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->linearMassAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="linearMassAfterShrinkFit" name="linearMassAfterShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->linearMassAfterShrinkFit) && !empty($tracabilitySheet->linearMassAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->linearMassAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -642,7 +642,7 @@
                                     <!--  Thickness Sample 1 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness1AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness1AfterShrinkFit) && !empty($tracabilitySheet->thickness1AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness1AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness1AfterShrinkFit" name="thickness1AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness1AfterShrinkFit) && !empty($tracabilitySheet->thickness1AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness1AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -656,7 +656,7 @@
                                     <!--  Force Sample 1 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force1AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force1AfterShrinkFit) && !empty($tracabilitySheet->force1AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force1AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force1AfterShrinkFit" name="force1AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force1AfterShrinkFit) && !empty($tracabilitySheet->force1AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force1AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -689,7 +689,7 @@
                                     <!--  Thickness Sample 2 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness2AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness2AfterShrinkFit) && !empty($tracabilitySheet->thickness2AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness2AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness2AfterShrinkFit" name="thickness2AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness2AfterShrinkFit) && !empty($tracabilitySheet->thickness2AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness2AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -703,7 +703,7 @@
                                     <!--  Force Sample 2 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force2AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force2AfterShrinkFit) && !empty($tracabilitySheet->force2AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force2AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force2AfterShrinkFit" name="force2AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force2AfterShrinkFit) && !empty($tracabilitySheet->force2AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force2AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -737,7 +737,7 @@
                                     <!--  Thickness Sample 3 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness3AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness3AfterShrinkFit) && !empty($tracabilitySheet->thickness3AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness3AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness3AfterShrinkFit" name="thickness3AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness3AfterShrinkFit) && !empty($tracabilitySheet->thickness3AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness3AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -751,7 +751,7 @@
                                     <!--  Force Sample 3 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force3AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force3AfterShrinkFit) && !empty($tracabilitySheet->force3AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force3AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force3AfterShrinkFit" name="force3AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force3AfterShrinkFit) && !empty($tracabilitySheet->force3AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force3AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -785,7 +785,7 @@
                                     <!--  Thickness Sample 4 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness4AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness4AfterShrinkFit) && !empty($tracabilitySheet->thickness4AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness4AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness4AfterShrinkFit" name="thickness4AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness4AfterShrinkFit) && !empty($tracabilitySheet->thickness4AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness4AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -799,7 +799,7 @@
                                     <!--  Force Sample 4 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force4AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force4AfterShrinkFit) && !empty($tracabilitySheet->force4AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force4AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force4AfterShrinkFit" name="force4AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force4AfterShrinkFit) && !empty($tracabilitySheet->force4AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force4AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -833,7 +833,7 @@
                                     <!--  Thickness Sample 5 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="thickness5AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness5AfterShrinkFit) && !empty($tracabilitySheet->thickness5AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness5AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="thickness5AfterShrinkFit" name="thickness5AfterShrinkFit" placeholder="Entrez l'épaisseur" value="<?php echo isset($tracabilitySheet->thickness5AfterShrinkFit) && !empty($tracabilitySheet->thickness5AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->thickness5AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -847,7 +847,7 @@
                                     <!--  Force Sample 5 After Shrink Fit -->
                                     <div class="col-md-4">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="force5AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force5AfterShrinkFit) && !empty($tracabilitySheet->force5AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force5AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="force5AfterShrinkFit" name="force5AfterShrinkFit" placeholder="Entrez la force" oninput="calculateMoyenneEcartTypeAvant()" value="<?php echo isset($tracabilitySheet->force5AfterShrinkFit) && !empty($tracabilitySheet->force5AfterShrinkFit) ? htmlspecialchars($tracabilitySheet->force5AfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -885,7 +885,7 @@
                                     <!--  Value - Mean Force Tensile test After Shrink Fit -->
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="averageAfterShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->averageAfterShrinkFit) && !empty($tracabilitySheet->averageAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->averageAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="averageAfterShrinkFit" name="averageAfterShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->averageAfterShrinkFit) && !empty($tracabilitySheet->averageAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->averageAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -910,7 +910,7 @@
                                     <!--  Value - Standart deviation Force Tensile test After Shrink Fit -->
                                     <div class="col-md-6">
                                         <div class="input-group">
-                                            <input type="number" class="form-control" id="sigmaAfterShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->sigmaAfterShrinkFit) && !empty($tracabilitySheet->sigmaAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->sigmaAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="number" class="form-control" id="sigmaAfterShrinkFit" name="sigmaAfterShrinkFit" placeholder="Calculée automatiquement" readonly value="<?php echo isset($tracabilitySheet->sigmaAfterShrinkFit) && !empty($tracabilitySheet->sigmaAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->sigmaAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Unit of measurement -->
@@ -941,7 +941,7 @@
                                     <div class="col-md-4">
                                         <label for="df1" class="form-label">DF1</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="df1" value="<?php echo isset($tracabilitySheet->df1) && !empty($tracabilitySheet->df1) ? htmlspecialchars($tracabilitySheet->df1, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="text" class="form-control" id="df1" name="df1" value="<?php echo isset($tracabilitySheet->df1) && !empty($tracabilitySheet->df1) ? htmlspecialchars($tracabilitySheet->df1, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -956,7 +956,7 @@
                                     <div class="col-md-4">
                                         <label for="df2" class="form-label">DF2</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="df2" value="<?php echo isset($tracabilitySheet->df2) && !empty($tracabilitySheet->df2) ? htmlspecialchars($tracabilitySheet->df2, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="text" class="form-control" id="df2" name="df2" value="<?php echo isset($tracabilitySheet->df2) && !empty($tracabilitySheet->df2) ? htmlspecialchars($tracabilitySheet->df2, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -971,7 +971,7 @@
                                     <div class="col-md-4">
                                         <label for="df3" class="form-label">DF3</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="df3" value="<?php echo isset($tracabilitySheet->df3) && !empty($tracabilitySheet->df3) ? htmlspecialchars($tracabilitySheet->df3, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="text" class="form-control" id="df3" name="df3" value="<?php echo isset($tracabilitySheet->df3) && !empty($tracabilitySheet->df3) ? htmlspecialchars($tracabilitySheet->df3, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -991,7 +991,7 @@
                                     <div class="col-md-6">
                                         <label for="mt" class="form-label">MT</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="mt" value="<?php echo isset($tracabilitySheet->mt) && !empty($tracabilitySheet->mt) ? htmlspecialchars($tracabilitySheet->mt, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="text" class="form-control" id="mt" name="mt" value="<?php echo isset($tracabilitySheet->mt) && !empty($tracabilitySheet->mt) ? htmlspecialchars($tracabilitySheet->mt, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -1006,7 +1006,7 @@
                                     <div class="col-md-6">
                                         <label for="mf" class="form-label">MF</label>
                                         <div class="input-group">
-                                            <input type="text" class="form-control" id="mf" readonly value="<?php echo isset($tracabilitySheet->mf) && !empty($tracabilitySheet->mf) ? htmlspecialchars($tracabilitySheet->mf, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                            <input type="text" class="form-control" id="mf" name="mf" readonly value="<?php echo isset($tracabilitySheet->mf) && !empty($tracabilitySheet->mf) ? htmlspecialchars($tracabilitySheet->mf, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
                                             <!-- Tolerance with dynamic color -->
@@ -1095,7 +1095,7 @@
                                 <!-- Date Operator Conformity Declaration -->
                                 <div class="mb-3">
                                     <label for="dateOperatorValidation" class="form-label">Date validation par l'opérateur</label>
-                                    <input type="datetime-local" class="form-control" id="dateOperatorConformityDeclaration" value="<?php echo isset($tracabilitySheet->dateOperatorConformityDeclaration) && !empty($tracabilitySheet->dateOperatorConformityDeclaration) ? htmlspecialchars($tracabilitySheet->dateOperatorConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                    <input type="datetime-local" class="form-control" id="dateOperatorConformityDeclaration" name="dateOperatorConformityDeclaration" value="<?php echo isset($tracabilitySheet->dateOperatorConformityDeclaration) && !empty($tracabilitySheet->dateOperatorConformityDeclaration) ? htmlspecialchars($tracabilitySheet->dateOperatorConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                 </div>
 
@@ -1105,7 +1105,8 @@
                                     <!-- Operator Name Conformity Declaration -->
                                     <div class="col-md-4">
                                         <label for="operatorValidation" class="form-label">Opérateur</label>
-                                        <input type="text" class="form-control" id="operatorNameConformityDeclaration" value="<?php echo isset($tracabilitySheet->operatorNameConformityDeclaration) && !empty($tracabilitySheet->operatorNameConformityDeclaration) ? htmlspecialchars($tracabilitySheet->operatorNameConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                        <input type="text" class="form-control" id="operatorNameConformityDeclaration"
+                                        name="operatorNameConformityDeclaration" value="<?php echo isset($tracabilitySheet->operatorNameConformityDeclaration) && !empty($tracabilitySheet->operatorNameConformityDeclaration) ? htmlspecialchars($tracabilitySheet->operatorNameConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                     </div>
 
@@ -1147,7 +1148,7 @@
                                 <!-- Operator Remarks -->
                                 <div class="mb-3">
                                     <label for="remarqueValidation" class="form-label">Remarque</label>
-                                    <textarea class="form-control" id="operatorRemarks" rows="4" placeholder="Entrez votre commentaire..." maxlength="255"><?php echo isset($tracabilitySheet->operatorRemarks) && !empty($tracabilitySheet->operatorRemarks) ? htmlspecialchars($tracabilitySheet->operatorRemarks, ENT_QUOTES, 'UTF-8') : ""; ?>
+                                    <textarea class="form-control" id="operatorRemarks" name="operatorRemarks" rows="4" placeholder="Entrez votre commentaire..." maxlength="255"><?php echo isset($tracabilitySheet->operatorRemarks) && !empty($tracabilitySheet->operatorRemarks) ? htmlspecialchars($tracabilitySheet->operatorRemarks, ENT_QUOTES, 'UTF-8') : ""; ?>
                                 </textarea>
                                     <div id="charCount" class="form-text">0/255 caractères</div>
 
@@ -1170,7 +1171,7 @@
                                 <!-- Date Quality Control Conformity Declaration -->
                                 <div class="mb-3">
                                     <label for="dateValidation" class="form-label">Date de validation par le contrôle</label>
-                                    <input type="datetime-local" class="form-control" id="qualityControlDate" value="<?php echo isset($tracabilitySheet->qualityControlDate) && !empty($tracabilitySheet->qualityControlDate) ? htmlspecialchars($tracabilitySheet->qualityControlDate, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                    <input type="datetime-local" class="form-control" id="qualityControlDate" name="qualityControlDate" value="<?php echo isset($tracabilitySheet->qualityControlDate) && !empty($tracabilitySheet->qualityControlDate) ? htmlspecialchars($tracabilitySheet->qualityControlDate, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                 </div>
 
@@ -1179,7 +1180,7 @@
                                     <!-- Quality Inspector Name -->
                                     <div class="col-md-6">
                                         <label for="operateurValidation" class="form-label">Contrôleur</label>
-                                        <input type="text" class="form-control" id="qualityInspectorName" value="<?php echo isset($tracabilitySheet->qualityInspectorName) && !empty($tracabilitySheet->qualityInspectorName) ? htmlspecialchars($tracabilitySheet->qualityInspectorName, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                        <input type="text" class="form-control" id="qualityInspectorName" name="qualityInspectorName" value="<?php echo isset($tracabilitySheet->qualityInspectorName) && !empty($tracabilitySheet->qualityInspectorName) ? htmlspecialchars($tracabilitySheet->qualityInspectorName, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                     </div>
 
@@ -1210,7 +1211,7 @@
                                 <!-- Quality Inspector Remarks -->
                                 <div class="mb-3">
                                     <label for="remarqueValidation" class="form-label">Remarque</label>
-                                    <textarea class="form-control" id="qualityInspectorRemarks" rows="4" placeholder="Entrez votre commentaire..." maxlength="255"><?php echo isset($tracabilitySheet->qualityInspectorRemarks) && !empty($tracabilitySheet->qualityInspectorRemarks) ? htmlspecialchars($tracabilitySheet->qualityInspectorRemarks, ENT_QUOTES, 'UTF-8') : ""; ?></textarea>
+                                    <textarea class="form-control" id="qualityInspectorRemarks" name="qualityInspectorRemarks" rows="4" placeholder="Entrez votre commentaire..." maxlength="255"><?php echo isset($tracabilitySheet->qualityInspectorRemarks) && !empty($tracabilitySheet->qualityInspectorRemarks) ? htmlspecialchars($tracabilitySheet->qualityInspectorRemarks, ENT_QUOTES, 'UTF-8') : ""; ?></textarea>
                                     <div id="charCount2" class="form-text">0/255 caractères</div>
                                 </div>
                             </div>
