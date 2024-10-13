@@ -161,7 +161,7 @@
 
                 <!--ACC OR DESC -->
                 <form action="<?php echo URL . 'tracabiltySheets/index/' ?>" method="POST">
-                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">>
+                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
