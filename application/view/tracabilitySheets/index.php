@@ -1,6 +1,6 @@
 <div class="container mt-4">
     <div class="row mb-3">
-        <div clas="col" aria-label="Page navigation example">
+        <div clas="col d-inline" aria-label="Page navigation example">
             <ul class="pagination">
                 <?php if ($page > 1): ?>
                     <li class="page-item">
@@ -34,7 +34,7 @@
             </ul>
         </div>
 
-        <div class="col">
+        <div class="col d-inline">
             <form action="<?php echo URL . 'tracabilitySheets/index/' ?>" method="POST">
                 <label for="limitListTracabilitySheet">Fiches par page : </label>
                 <select name="limitListTracabilitySheet" id="limitListTracabilitySheet" onchange="this.form.submit()">
