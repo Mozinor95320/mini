@@ -234,9 +234,8 @@ class Model
         // fetch() is the PDO method that get exactly one result
         return $query->fetch()->amount_of_tracabilitySheets;
     }
-
-    public function getWindindChart($tracabilitySheet_id)
-    {
+    
+    public function getWindindChart($tracabilitySheet_id){
         $sql = "SELECT timeLog, dancerArmPressureSetpoint, dancerArmTensionActual, postTensionActual, preTensionSetpoint, preTensionActual, hotAirBlowerSetpoint, nozzleHeaterActual, nozzleHeaterSetpoint, tapeHeaterActual, tapeHeaterSetpoint FROM windingMachineReccord WHERE serialNumber = :tracabilitySheet_id";
         $query = $this->db->prepare($sql);
         //add the parameter below in the arrway
@@ -246,6 +245,11 @@ class Model
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
 
         $query->execute($parameters);
-        return $query->fetchAll(PDO::FETCH_ASSOC);
+        $results = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        // On renvoie simplement les données brutes
+        header('Content-Type: application/json');
+        echo json_encode($results);
     }
+
 }

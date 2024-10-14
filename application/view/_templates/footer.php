@@ -6,10 +6,6 @@
 <!-- more http://www.paulirish.com/2010/the-protocol-relative-url/ -->
 <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
 
-<!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
-<script>
-    var url = "<?php echo URL; ?>";
-</script>
 <!-- Bootstrap JS Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <!-- our JavaScript -->
