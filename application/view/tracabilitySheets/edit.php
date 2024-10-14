@@ -1309,5 +1309,6 @@
     var url = "<?php echo URL; ?>";
     var serialNumberSheet = "<?php echo $tracabilitySheet->serialNumber; ?>";
 </script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="<?php echo URL; ?>js/tolerances.js"></script>
 <script src="<?php echo URL; ?>js/windingCharts.js"></script>
