@@ -230,4 +230,12 @@ class TracabilitySheets extends Controller
         // simply echo out something. A supersimple API would be possible by echoing JSON here
         echo $amountOfTracabilitySheets;
     }
+
+    public function ajaxGetWindingChart($tracabilitySheet_id)
+    {
+        $dataWindingChart = $this->model->getWindindChart($tracabilitySheet_id);
+
+        // simply echo out something. A supersimple API would be possible by echoing JSON here
+        echo $dataWindingChart;
+    }
 }
