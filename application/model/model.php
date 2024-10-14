@@ -245,11 +245,7 @@ class Model
         //echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
 
         $query->execute($parameters);
-        $results = $query->fetchAll(PDO::FETCH_ASSOC);
-
-        // On renvoie simplement les données brutes
-        header('Content-Type: application/json');
-        echo json_encode($results);
+        return $results = $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
 }

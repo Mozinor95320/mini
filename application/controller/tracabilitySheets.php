@@ -236,6 +236,8 @@ class TracabilitySheets extends Controller
         $dataWindingChart = $this->model->getWindindChart($tracabilitySheet_id);
 
         // simply echo out something. A supersimple API would be possible by echoing JSON here
-        echo $dataWindingChart;
+        header('Content-Type: application/json');
+        echo json_encode($dataWindingChart);
+
     }
 }
