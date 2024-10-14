@@ -1309,6 +1309,9 @@
     var url = "<?php echo URL; ?>";
     var serialNumberSheet = "<?php echo $tracabilitySheet->serialNumber; ?>";
 </script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Inclure Luxon et l'adaptateur de dates de Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon"></script>
 <script src="<?php echo URL; ?>js/tolerances.js"></script>
 <script src="<?php echo URL; ?>js/windingCharts.js"></script>
