@@ -242,7 +242,7 @@ class Model
         $parameters[':tracabilitySheet_id'] = $tracabilitySheet_id;
 
         // useful for debugging: you can see the SQL behind above construction by using:
-        echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
+        //echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
 
         $query->execute($parameters);
         $results = $query->fetchAll(PDO::FETCH_ASSOC);
