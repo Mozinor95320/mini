@@ -236,7 +236,7 @@ class Model
     }
     
     public function getWindindChart($tracabilitySheet_id){
-        $sql = "SELECT timeLog, dancerArmPressureSetpoint, dancerArmTensionActual, postTensionActual, preTensionSetpoint, preTensionActual, hotAirBlowerSetpoint, nozzleHeaterActual, nozzleHeaterSetpoint, tapeHeaterActual, tapeHeaterSetpoint FROM windingMachineReccord WHERE serialNumber = :tracabilitySheet_id";
+        $sql = "SELECT timeLog, dancerArmPressureSetpoint, dancerArmTensionActual, postTensionActual, preTensionSetpoint, preTensionActual, hotAirBlowerSetpoint, nozzleHeaterActual, nozzleHeaterSetpoint, tapeHeaterActual, tapeHeaterSetpoint FROM windingMachineReccord WHERE idTracabiltySheet = :tracabilitySheet_id";
         $query = $this->db->prepare($sql);
         //add the parameter below in the arrway
         $parameters[':tracabilitySheet_id'] = $tracabilitySheet_id;
