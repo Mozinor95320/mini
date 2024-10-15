@@ -12,3 +12,21 @@
 .navbar-toggler {
   border-color: #ffffff !important;
 }
+
+/* Classe pour couleur de tolérance dans la plage acceptable */
+.bg-tolerance-ok {
+  background-color: #28a745 !important; /* Vert */
+  color: white;
+}
+
+/* Classe pour couleur de tolérance en dehors de la plage acceptable */
+.bg-tolerance-wrong {
+  background-color: #dc3545 !important; /* Rouge */
+  color: white;
+}
+
+/* Classe pour couleur de tolérance quand aucune valeur n'est entrée */
+.bg-tolerance-default {
+  background-color: #f8f9fa !important; /* Gris */
+  color: #212529 !important;
+}
