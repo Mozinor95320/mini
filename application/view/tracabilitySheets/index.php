@@ -269,7 +269,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <small><strong>Créée le: </strong>
-                        <span class="text-primary">
+                        <span class="text-black">
                             <?php
                                 if (isset($tracabilitySheet->lastTimeEdit) && !empty($tracabilitySheet->sheetCreationDate)) {
                                     echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8');
@@ -282,7 +282,7 @@
                 </div>
                 <div class="col-md-5">
                     <small><strong>Modifiée le: </strong>
-                        <span class="text-primary">
+                        <span class="text-black">
                             <?php
                                 if (isset($tracabilitySheet->lastTimeEdit) && !empty($tracabilitySheet->lastTimeEdit)) {
                                     echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabilitySheet->lastTimeEdit)), ENT_QUOTES, 'UTF-8');
