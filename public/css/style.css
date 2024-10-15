@@ -15,7 +15,7 @@
 
 /* Classe pour couleur de tolérance dans la plage acceptable */
 .bg-tolerance-ok {
-  background-color: #28a745 !important; /* Vert */
+  background-color: #36553d !important; /* Vert */
   color: white;
 }
 
@@ -29,4 +29,11 @@
 .bg-tolerance-default {
   background-color: #f8f9fa !important; /* Gris */
   color: #212529 !important;
+}
+
+.card-footer {
+  background-color: #ffa500 !important; 
+}
+.card-body {
+  background-color: #000000 !important; 
 }
