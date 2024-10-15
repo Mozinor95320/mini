@@ -19,8 +19,8 @@ class Model
     {
         $sql = "SELECT serialNumber, partNumber, workOrder, sheetCreationDate, lastTimeEdit, statusSheetOperator, statusSheetQuality FROM tracabilitySheets LIMIT :limit OFFSET :offset";
         $query = $this->db->prepare($sql);
-        $query->bindValue(':limit', (int)$limit, PDO::PARAM_INT);
-        $query->bindValue(':offset', (int)$offset, PDO::PARAM_INT);
+        $query->bindValue(':limit', (int) $limit, PDO::PARAM_INT);
+        $query->bindValue(':offset', (int) $offset, PDO::PARAM_INT);
         // useful for debugging: you can see the SQL behind above construction by using:
         // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters);  exit();
 
@@ -234,8 +234,9 @@ class Model
         // fetch() is the PDO method that get exactly one result
         return $query->fetch()->amount_of_tracabilitySheets;
     }
-    
-    public function getWindindChart($tracabilitySheet_id){
+
+    public function getWindindChart($tracabilitySheet_id)
+    {
         $sql = "SELECT timeLog, dancerArmPressureSetpoint, dancerArmTensionActual, postTensionActual, preTensionSetpoint, preTensionActual, hotAirBlowerSetpoint, nozzleHeaterActual, nozzleHeaterSetpoint, tapeHeaterActual, tapeHeaterSetpoint FROM windingMachineReccords WHERE idTracabiltySheet = :tracabilitySheet_id";
         $query = $this->db->prepare($sql);
         //add the parameter below in the arrway
