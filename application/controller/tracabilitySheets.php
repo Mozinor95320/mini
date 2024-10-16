@@ -56,6 +56,8 @@ class TracabilitySheets extends Controller
         require APP . 'view/_templates/header.php';
         require APP . 'view/tracabilitySheets/index.php';
         require APP . 'view/_templates/footer.php';
+
+
     }
 
     /**
@@ -70,6 +72,10 @@ class TracabilitySheets extends Controller
     public function createTracabilitySheet()
     {
 
+        $machines = $this->model->getAllMachines();
+        $partNumbers = $this->model->getAllPartNumbers();
+
+
         // load views. within the views we can echo out $tracabilitySheet easily
         require APP . 'view/_templates/header.php';
         require APP . 'view/tracabilitySheets/add.php';
@@ -82,6 +88,8 @@ class TracabilitySheets extends Controller
             // do addTracabilitySheet() in model/model.php
             $this->model->addTracabilitySheet($_POST["workOrder"], $_POST["serialNumber"],  $_POST["partNumber"], $_POST["refPlan"],  $_POST["refMachine"]);
         }
+
+        
         // where to go after tracabilitySheet has been added
         header('location: ' . URL . 'tracabilitySheets/index');
     }
