@@ -6,7 +6,7 @@
             <div class="col-12 align-items-center">
                 <label for="serialNumber" class="form-label">SN</label>
                 <input type="text" class="form-control" id="serialNumber" name="serialNumber" placeholder="Entrez le SN"
-                    value="" required required data-bs-toggle="tooltip" data-bs-placement="right" title="">
+                    value="" required>
                 <div class="invalid-feedback">
                     Please enter a valid and unique serial number.
                 </div>
@@ -94,11 +94,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const refPlanSelect = document.getElementById('refPlan');
     const refMachineSelect = document.getElementById('refMachine');
 
-    // Initialize Bootstrap tooltips
-    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-    const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl);
-    });
 
 
     let serialNumbers = <?php echo json_encode($serialNumbers); ?>; // To store serial numbers from the database
@@ -123,21 +118,15 @@ document.addEventListener("DOMContentLoaded", function() {
         if (value === "") {
             serialNumberInput.classList.remove('is-valid');
             serialNumberInput.classList.add('is-invalid');
-            serialNumberInput.setAttribute('title', 'Serial Number cannot be empty.');
-            tooltip.show();
             return false;
         } else if (serialNumbers.includes(value)) {
             // If the serial number already exists in the database
             serialNumberInput.classList.remove('is-valid');
             serialNumberInput.classList.add('is-invalid');
-            serialNumberInput.setAttribute('title', 'This serial number already exists. Please enter a unique one.');
-            tooltip.show();
             return false;
         } else {
             serialNumberInput.classList.remove('is-invalid');
             serialNumberInput.classList.add('is-valid');
-            serialNumberInput.setAttribute('title', ''); // Remove the error message from the tooltip
-            tooltip.hide();
             return true;
         }
     }
