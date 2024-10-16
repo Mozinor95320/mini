@@ -27,7 +27,6 @@
                 <div class="input-group">
                     <select class="form-select" id="partNumber" name="partNumber" required>
                         <!-- Unit of measurement -->
-                        <span class="input-group-text"><i class="bi bi-camera"></i></span>
                         <option selected disabled>Sélectionner le PN</option>
                         <?php foreach ($partNumbers as $partNumber) { ?>
                         <option <?php echo $partNumber->partNumber; ?>></option>
