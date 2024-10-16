@@ -1,5 +1,6 @@
-<div class="container mt-4">
-    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3">
+<div class="container mt-4" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+    <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top mt-5">
         <a class="navbar-brand" href="#">Navbar</a>
 
         <ul class="nav nav-pills">
@@ -39,9 +40,6 @@
     </nav>
 
     <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
-
-        <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
-            data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
 
 
 
@@ -1320,7 +1318,6 @@
             <h3 id="scrollspyHeading10">Graphiques essais de traction</h3>
             <p>Future graphique de frettage</p>
 
-        </div>
     </form>
 </div>
 <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
