@@ -1,5 +1,5 @@
-<div class="container mt-4" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
-data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+<div class="container mt-4" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-offset="50"
+data-bs-smooth-scroll="true"  tabindex="0">
     <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top mt-5">
         <a class="navbar-brand" href="#">Navbar</a>
 
