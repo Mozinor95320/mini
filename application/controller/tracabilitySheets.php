@@ -74,6 +74,7 @@ class TracabilitySheets extends Controller
 
         $machines = $this->model->getAllMachines();
         $partNumbers = $this->model->getAllPartNumbers();
+        $serialNumbers = $this->model->getAllSerialNumberTracabilitySheets();
 
 
         // load views. within the views we can echo out $tracabilitySheet easily
