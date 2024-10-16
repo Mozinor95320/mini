@@ -1,5 +1,5 @@
 <div class="container mt-3">
-    <h3>Créer une fiche de tracabilité:</h3>
+    <h3 class="mb-3">Créer une fiche de tracabilité:</h3>
     <form action="<?php echo URL; ?>tracabilitySheets/addTracabilitySheet" method="POST">
 
         <div class="row mb-3">
