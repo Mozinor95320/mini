@@ -349,7 +349,7 @@
 
             <!--  Tensile Test Sample 1 Before Shrink Fit -->
 
-            <h5 for="meche1" class="form-label">Mèche 1</h5>
+            <h6 for="meche1">Mèche 1</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 1 Before Shrink Fit -->
