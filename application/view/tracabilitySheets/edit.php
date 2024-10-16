@@ -1218,7 +1218,7 @@
 
                 <!-- Operator Conformity Declaration -->
                 <div class="col-md-4">
-                    <label for="conformiteValidation" class="form-label">Conformité</label>
+                    <h6>Conformité</h6>
                     <div class="col-md-6">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" id="operatorConformityDeclarationOk" name="operatorConformityDeclarationOk" value="1"
@@ -1235,7 +1235,7 @@
 
                 <!-- First Accumulator Lot -->
                 <div class="col-md-4">
-                    <label for="firstAccumulator" class="form-label">Premier du Lot</label>
+                    <h6>Premier du Lot</h6>
                     <div class="col-md-6">
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" id="firstAccumulatorLotYes" name="firstAccumulatorLotYes" value="1"
