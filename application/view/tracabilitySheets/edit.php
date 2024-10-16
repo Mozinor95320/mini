@@ -349,7 +349,7 @@
 
             <!--  Tensile Test Sample 1 Before Shrink Fit -->
 
-            <h6 for="meche1">Mèche 1</h6>
+            <h6>Mèche 1</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 1 Before Shrink Fit -->
@@ -402,7 +402,7 @@
 
             <!--  Tensile Test Sample 2 Before Shrink Fit -->
 
-            <label for="meche2" class="form-label">Mèche 2</label>
+            <h6>Mèche 2</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 2 Before Shrink Fit -->
@@ -455,7 +455,7 @@
 
             <!--  Tensile Test Sample 3 Before Shrink Fit -->
 
-            <label for="meche3" class="form-label">Mèche 3</label>
+            <h6>Mèche 3</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 3 Before Shrink Fit -->
@@ -510,7 +510,7 @@
 
             <!--  Tensile Test Sample 4 Before Shrink Fit -->
 
-            <label for="meche4" class="form-label">Mèche 4</label>
+            <h6>Mèche 4</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 4 Before Shrink Fit -->
@@ -564,7 +564,7 @@
 
             <!--  Tensile Test Sample 5 Before Shrink Fit -->
 
-            <label for="meche5" class="form-label">Mèche 5</label>
+            <h6>Mèche 5</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 5 Before Shrink Fit -->
@@ -726,7 +726,7 @@
 
             <!--  Tensile Test Sample 1 After Shrink Fit -->
 
-            <label for="meche1" class="form-label">Mèche 1</label>
+            <h6>Mèche 1</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 1 After Shrink Fit -->
@@ -778,7 +778,7 @@
 
 
             <!--  Tensile Test Sample 2 After Shrink Fit -->
-            <label for="meche2" class="form-label">Mèche 2</label>
+            <h6>Mèche 2</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 2 After Shrink Fit -->
@@ -831,7 +831,7 @@
 
             <!--  Tensile Test Sample 3 After Shrink Fit -->
 
-            <label for="meche3" class="form-label">Mèche 3</label>
+            <h6>Mèche 3</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 3 After Shrink Fit -->
@@ -884,7 +884,7 @@
 
             <!--  Tensile Test Sample 4 After Shrink Fit -->
 
-            <label for="meche4" class="form-label">Mèche 4</label>
+            <h6>Mèche 4</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 4 After Shrink Fit -->
@@ -937,7 +937,7 @@
 
             <!--  Tensile Test Sample 5 After Shrink Fit -->
 
-            <label for="meche5" class="form-label">Mèche 5</label>
+            <h6>Mèche 5</h6>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 5 After Shrink Fit -->
