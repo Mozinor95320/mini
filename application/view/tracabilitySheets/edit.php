@@ -28,6 +28,11 @@
 
                     <!-- Toggle Button -->
                     <!-- Bouton toggle on/off -->
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Activer/Désactiver</label>
+                    </div>
+
                     <button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false"
                         autocomplete="off">
                         On/Off
