@@ -254,7 +254,7 @@
 
             <!-- Aspect Dimension After Coating -->
             <div class="mb-3">
-                <label class="form-label d-block">Aspect</label>
+                <h6 class="form-label d-block">Aspect</h6>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" id="aspectDimAfterCoatingOk" name="aspectDimAfterCoatingOk" value="1"
                         <?php if ((bool)$tracabilitySheet->aspectDimAfterCoating === true) echo 'checked'; ?>>
@@ -1137,16 +1137,16 @@
 
                 <!--  Shrink Fit OK Oil Side BF-->
                 <div class="col-md-6">
-                    <label class="form-label d-block">BF</label>
+                    <h6 class="form-label d-block">BF</h6>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="bf" value="1"
+                        <input class="form-check-input" type="radio" id="bfOk" name="bfOk" value="1"
                             <?php if ((bool)$tracabilitySheet->bf === true) echo 'checked'; ?>>
-                        <label class="form-check-label" for="aspectOk">OK</label>
+                        <label class="form-check-label" for="bfOk">OK</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="bf" value="0"
+                        <input class="form-check-input" type="radio" id="bfNok" name="bfNok" value="0"
                             <?php if ((bool)$tracabilitySheet->bf === false) echo 'checked'; ?>>
-                        <label class="form-check-label" for="aspectNok">NOK</label>
+                        <label class="form-check-label" for="bfNok">NOK</label>
                     </div>
                 </div>
 
@@ -1154,14 +1154,14 @@
                 <div class="col-md-6">
                     <label class="form-label d-block">VF</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="vf" value="1"
+                        <input class="form-check-input" type="radio" id="vfOk" name="vfOk" value="1"
                             <?php if ((bool)$tracabilitySheet->vf === true) echo 'checked'; ?>>
-                        <label class="form-check-label" for="aspectOk">OK</label>
+                        <label class="form-check-label" for="vfOk">OK</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="vf" value="0"
+                        <input class="form-check-input" type="radio" id="vfNok" name="vfNok" value="0"
                             <?php if ((bool)$tracabilitySheet->vf === false) echo 'checked'; ?>>
-                        <label class="form-check-label" for="aspectNok">NOK</label>
+                        <label class="form-check-label" for="vfNok">NOK</label>
                     </div>
                 </div>
             </div>
@@ -1221,14 +1221,14 @@
                     <label for="conformiteValidation" class="form-label">Conformité</label>
                     <div class="col-md-6">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="operatorConformityDeclaration" value="1"
+                            <input class="form-check-input" type="radio" id="operatorConformityDeclarationOk" name="operatorConformityDeclarationOk" value="1"
                                 <?php if ((bool)$tracabilitySheet->operatorConformityDeclaration === true) echo 'checked'; ?>>
-                            <label class="form-check-label" for="aspectOk">Oui</label>
+                            <label class="form-check-label" for="operatorConformityDeclarationOk">Oui</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="operatorConformityDeclaration" value="0"
+                            <input class="form-check-input" type="radio" id="operatorConformityDeclarationNok" name="operatorConformityDeclarationNok" value="0"
                                 <?php if ((bool)$tracabilitySheet->operatorConformityDeclaration === false) echo 'checked'; ?>>
-                            <label class="form-check-label" for="aspectNok">Non</label>
+                            <label class="form-check-label" for="operatorConformityDeclarationNok">Non</label>
                         </div>
                     </div>
                 </div>
@@ -1238,14 +1238,14 @@
                     <label for="firstAccumulator" class="form-label">Premier du Lot</label>
                     <div class="col-md-6">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="firstAccumulatorLot" value="1"
+                            <input class="form-check-input" type="radio" id="firstAccumulatorLotYes" name="firstAccumulatorLotYes" value="1"
                                 <?php if ((bool)$tracabilitySheet->firstAccumulatorLot === true) echo 'checked'; ?>>
-                            <label class="form-check-label" for="aspectOk">Oui</label>
+                            <label class="form-check-label" for="firstAccumulatorLotYes">Oui</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="firstAccumulatorLot" value="0"
+                            <input class="form-check-input" type="radio" id="firstAccumulatorLotNo" name="firstAccumulatorLotNo" value="0"
                                 <?php if ((bool)$tracabilitySheet->firstAccumulatorLot === false) echo 'checked'; ?>>
-                            <label class="form-check-label" for="aspectNok">Non</label>
+                            <label class="form-check-label" for="firstAccumulatorLotNo">Non</label>
                         </div>
                     </div>
                 </div>
@@ -1291,19 +1291,19 @@
 
                 <!-- Quality Control Conformity Declaration - Label-->
                 <div class="col-md-6">
-                    <label for="conformiteValidation" class="form-label">Conformité</label>
+                    <h6>Conformité</h6>
 
                     <!-- Quality Control Conformity Declaration - CheckBox-->
                     <div class="col-md-6">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="qualityConformityDeclaration" value="1"
+                            <input class="form-check-input" type="radio" id="qualityConformityDeclarationOk" name="qualityConformityDeclarationOk" value="1"
                                 <?php if ((bool)$tracabilitySheet->qualityConformityDeclaration === true) echo 'checked'; ?>>
-                            <label class="form-check-label" for="aspectOk">Oui</label>
+                            <label class="form-check-label" for="qualityConformityDeclarationOk">Oui</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="qualityConformityDeclaration" value="0"
+                            <input class="form-check-input" type="radio" id="qualityConformityDeclarationNok" name="qualityConformityDeclarationNok" value="0"
                                 <?php if ((bool)$tracabilitySheet->qualityConformityDeclaration === false) echo 'checked'; ?>>
-                            <label class="form-check-label" for="aspectNok">Non</label>
+                            <label class="form-check-label" for="qualityConformityDeclarationNok">Non</label>
                         </div>
                         <label>
                     </div>
