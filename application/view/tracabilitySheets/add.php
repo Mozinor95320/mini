@@ -9,7 +9,7 @@
         </div>
 
         <div class="row mb-3">
-            <div class="col-6 d-flex align-items-center">
+            <div class="col-6 align-items-center">
                 <div class="input-group">
                     <label for="WorkOrder" class="form-label me-2">N°OF</label>
                     <input type="text" class="form-control" id="workOrder" name="workOrder"
@@ -20,7 +20,7 @@
 
             </div>
 
-            <div class="col-6 d-flex align-items-center">
+            <div class="col-6 align-items-center">
 
                 <div class="input-group">
                     <label for="partNumber" class="form-label me-2">PN</label>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="row mb-3">
-            <div class="col-6 d-flex align-items-center">
+            <div class="col-6 align-items-center">
 
                 <label for="refPlan" class="form-label me-2">Ref Plan</label>
                 <input type="text" class="form-control" id="refPlan" name="refPlan"
@@ -42,7 +42,7 @@
 
             </div>
 
-            <div class="col-6 d-flex align-items-center">
+            <div class="col-6 align-items-center">
 
 
                 <label for="refMachine" class="form-label me-2">Ref Machine</label>
