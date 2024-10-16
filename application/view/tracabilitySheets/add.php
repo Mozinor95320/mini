@@ -1,5 +1,5 @@
 <div class="container">
-    <h3>Ajouter une fiche de tracabilité</h3>
+    <h3>Créer une fiche de tracabilité:</h3>
     <form action="<?php echo URL; ?>tracabilitySheets/addTracabilitySheet" method="POST">
 
         <div class="row mb-3">
@@ -52,6 +52,6 @@
         </div>
 
 
-        <input class="btn btn-primary" type="submit" name="submit_add_tracabilitySheet" value="Submit" />
+        <input class="btn btn-primary" type="submit" name="submit_add_tracabilitySheet" value="Créer" />
     </form>
 </div>
