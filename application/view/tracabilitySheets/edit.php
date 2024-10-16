@@ -1224,15 +1224,11 @@
                                     <div class="col-md-6">
                                         <label class="form-label d-block">BF</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="bf" value="1"
-                                                <?php if ($tracabilitySheet->bf === true)
-                                                                                                                    echo 'checked'; ?>>
+                                            <input class="form-check-input" type="radio" name="bf" value="1" <?php if ((bool)$tracabilitySheet->bf === true) echo 'checked'; ?>>
                                             <label class="form-check-label" for="aspectOk">OK</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="bf" value="0"
-                                                <?php if ($tracabilitySheet->bf === false)
-                                                                                                                    echo 'checked'; ?>>
+                                            <input class="form-check-input" type="radio" name="bf" value="0" <?php if ((bool)$tracabilitySheet->bf === false) echo 'checked'; ?>>
                                             <label class="form-check-label" for="aspectNok">NOK</label>
                                         </div>
                                     </div>
@@ -1241,15 +1237,11 @@
                                     <div class="col-md-6">
                                         <label class="form-label d-block">VF</label>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="vf" value="1"
-                                                <?php if ($tracabilitySheet->vf === true)
-                                                                                                                    echo 'checked'; ?>>
+                                            <input class="form-check-input" type="radio" name="vf" value="1" <?php if ((bool)$tracabilitySheet->vf === true) echo 'checked'; ?>>
                                             <label class="form-check-label" for="aspectOk">OK</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="vf" value="0"
-                                                <?php if ($tracabilitySheet->vf === false)
-                                                                                                                    echo 'checked'; ?>>
+                                            <input class="form-check-input" type="radio" name="vf" value="0" <?php if ((bool)$tracabilitySheet->vf === false) echo 'checked'; ?>>
                                             <label class="form-check-label" for="aspectNok">NOK</label>
                                         </div>
                                     </div>
@@ -1326,17 +1318,11 @@
                                         <label for="conformiteValidation" class="form-label">Conformité</label>
                                         <div class="col-md-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio"
-                                                    name="operatorConformityDeclaration" value="1"
-                                                    <?php if ($tracabilitySheet->operatorConformityDeclaration === true)
-                                                                                                                                                echo 'checked'; ?>>
+                                                <input class="form-check-input" type="radio" name="operatorConformityDeclaration" value="1" <?php if ((bool)$tracabilitySheet->operatorConformityDeclaration === true) echo 'checked'; ?>>
                                                 <label class="form-check-label" for="aspectOk">Oui</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio"
-                                                    name="operatorConformityDeclaration" value="0"
-                                                    <?php if ($tracabilitySheet->operatorConformityDeclaration === false)
-                                                                                                                                                echo 'checked'; ?>>
+                                                <input class="form-check-input" type="radio" name="operatorConformityDeclaration" value="0" <?php if ((bool)$tracabilitySheet->operatorConformityDeclaration === false) echo 'checked'; ?>>
                                                 <label class="form-check-label" for="aspectNok">Non</label>
                                             </div>
                                         </div>
@@ -1347,17 +1333,11 @@
                                         <label for="firstAccumulator" class="form-label">Premier du Lot</label>
                                         <div class="col-md-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="firstAccumulatorLot"
-                                                    value="1"
-                                                    <?php if ($tracabilitySheet->firstAccumulatorLot === true)
-                                                                                                                                        echo 'checked'; ?>>
+                                                <input class="form-check-input" type="radio" name="firstAccumulatorLot" value="1" <?php if ((bool)$tracabilitySheet->firstAccumulatorLot === true) echo 'checked'; ?>>
                                                 <label class="form-check-label" for="aspectOk">Oui</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="firstAccumulatorLot"
-                                                    value="0"
-                                                    <?php if ($tracabilitySheet->firstAccumulatorLot === false)
-                                                                                                                                        echo 'checked'; ?>>
+                                                <input class="form-check-input" type="radio" name="firstAccumulatorLot" value="0" <?php if ((bool)$tracabilitySheet->firstAccumulatorLot === false) echo 'checked'; ?>>
                                                 <label class="form-check-label" for="aspectNok">Non</label>
                                             </div>
                                         </div>
@@ -1420,17 +1400,11 @@
                                         <!-- Quality Control Conformity Declaration - CheckBox-->
                                         <div class="col-md-6">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio"
-                                                    name="qualityConformityDeclaration" value="1"
-                                                    <?php if ($tracabilitySheet->qualityConformityDeclaration === true)
-                                                                                                                                                echo 'checked'; ?>>
+                                                <input class="form-check-input" type="radio" name="qualityConformityDeclaration" value="1" <?php if ((bool)$tracabilitySheet->qualityConformityDeclaration === true) echo 'checked'; ?>>
                                                 <label class="form-check-label" for="aspectOk">Oui</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio"
-                                                    name="qualityConformityDeclaration" value="0"
-                                                    <?php if ($tracabilitySheet->qualityConformityDeclaration === false)
-                                                                                                                                                echo 'checked'; ?>>
+                                                <input class="form-check-input" type="radio" name="qualityConformityDeclaration" value="0" <?php if ((bool)$tracabilitySheet->qualityConformityDeclaration === false) echo 'checked'; ?>>
                                                 <label class="form-check-label" for="aspectNok">Non</label>
                                             </div>
                                             <label>
