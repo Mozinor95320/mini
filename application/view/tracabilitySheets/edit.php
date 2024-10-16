@@ -278,18 +278,12 @@
                                 <div class="mb-3">
                                     <label class="form-label d-block">Aspect</label>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="aspectDimAfterCoating"
-                                            value="1"
-                                            <?php if ($tracabilitySheet->aspectDimAfterCoating === true)
-                                                                                                                                echo 'checked'; ?>>
+                                        <input class="form-check-input" type="radio" name="aspectDimAfterCoating" value="1" <?php if ($tracabilitySheet->aspectDimAfterCoating === true) echo 'checked'; ?>>
 
                                         <label class="form-check-label" for="aspectOk">OK</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="aspectDimAfterCoating"
-                                            value="0"
-                                            <?php if ($tracabilitySheet->aspectDimAfterCoating === false)
-                                                                                                                                echo 'checked'; ?>>
+                                        <input class="form-check-input" type="radio" name="aspectDimAfterCoating" value="0" <?php if ($tracabilitySheet->aspectDimAfterCoating === false) echo 'checked'; ?>>
                                         <label class="form-check-label" for="aspectNok">NOK</label>
                                     </div>
                                 </div>
