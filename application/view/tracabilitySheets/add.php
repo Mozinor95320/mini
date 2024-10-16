@@ -8,7 +8,7 @@
                 <input type="text" class="form-control" id="serialNumber" name="serialNumber" placeholder="Entrez le SN"
                     value="" required>
                 <div class="invalid-feedback">
-                    Please enter a valid and unique serial number.
+                    Une fiche de tracabilité est déjà associée à ce numéro de série.
                 </div>
 
             </div>
@@ -22,6 +22,9 @@
                         placeholder="Entrez le numéro d'OF" value="" required />
                     <!-- Unit of measurement -->
                     <span class="input-group-text"><i class="bi bi-camera"></i></span>
+                    <div class="invalid-feedback">
+                        Une fiche de tracabilité est déjà associée à ce numéro de série.
+                    </div>
                 </div>
 
             </div>
@@ -37,6 +40,9 @@
                             <?php echo $partNumber->partNumber; ?></option>
                         <?php } ?>
                     </select>
+                    <div class="invalid-feedback">
+                        Merci de sélectionner un PN dans la liste.
+                    </div>
                 </div>
             </div>
 
@@ -56,6 +62,9 @@
                     </option>
                     <?php } ?>
                 </select>
+                <div class="invalid-feedback">
+                    Merci de sélectionner un plan dans la liste.
+                </div>
             </div>
 
             <!-- Machine Reference -->
@@ -71,6 +80,9 @@
                     </option>
                     <?php } ?>
                 </select>
+                <div class="invalid-feedback">
+                    Merci de sélectionner une machine dans la liste.
+                </div>
             </div>
 
         </div>
