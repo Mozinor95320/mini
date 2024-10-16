@@ -9,9 +9,9 @@
         </div>
 
         <div class="row mb-3">
-            <div class="col-6">
+            <div class="col-6 d-flex align-items-center">
                 <div class="input-group">
-                    <label for="WorkOrder" class="form-label">N°OF</label>
+                    <label for="WorkOrder" class="form-label me-2">N°OF</label>
                     <input type="text" class="form-control" id="workOrder" name="workOrder"
                         placeholder="Entrez le numéro d'OF" value="" required />
                     <!-- Unit of measurement -->
@@ -20,10 +20,10 @@
 
             </div>
 
-            <div class="col-6">
+            <div class="col-6 d-flex align-items-center">
 
                 <div class="input-group">
-                    <label for="partNumber" class="form-label">PN</label>
+                    <label for="partNumber" class="form-label me-2">PN</label>
                     <input type="text" class="form-control" id="partNumber" name="partNumber" placeholder="Entrez le PN"
                         value="" required />
                     <!-- Unit of measurement -->
@@ -34,18 +34,18 @@
         </div>
 
         <div class="row mb-3">
-            <div class="col-6">
+            <div class="col-6 d-flex align-items-center">
 
-                <label for="refPlan" class="form-label">Ref Plan</label>
+                <label for="refPlan" class="form-label me-2">Ref Plan</label>
                 <input type="text" class="form-control" id="refPlan" name="refPlan"
                     placeholder="Entrez la référence du plan" value="" required />
 
             </div>
 
-            <div class="col-6">
+            <div class="col-6 d-flex align-items-center">
 
 
-                <label for="refMachine" class="form-label">Ref Machine</label>
+                <label for="refMachine" class="form-label me-2">Ref Machine</label>
                 <input type="text" class="form-control" id="refMachine" name="refMachine"
                     placeholder="Entrez la référence de la machine" value="" required />
             </div>
