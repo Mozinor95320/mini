@@ -29,7 +29,7 @@
                         <!-- Unit of measurement -->
                         <option selected disabled>Sélectionner le PN</option>
                         <?php foreach ($partNumbers as $partNumber) { ?>
-                        <option <?php echo $partNumber->partNumber; ?>>
+                        <option value="<?php echo $partNumber->partNumber; ?>">
                             <?php echo $partNumber->partNumber; ?></option>
                         <?php } ?>
                     </select>
@@ -46,8 +46,8 @@
                 <select class="form-select" id="refPlan" name="refPlan" required>
                     <option selected disabled>Sélectionner le plan</option>
                     <?php foreach ($partNumbers as $partNumber) { ?>
-                    <option
-                        <?php echo $partNumber->blueprintsReference . " rev: " . $partNumber->blueprintsRevision ;  ?>>
+                    <option value=
+                        "<?php echo $partNumber->blueprintsReference . " rev: " . $partNumber->blueprintsRevision ;  ?>">
                         <?php echo $partNumber->blueprintsReference . " rev: " . $partNumber->blueprintsRevision ;  ?>
                     </option>
                     <?php } ?>
@@ -62,7 +62,7 @@
                 <select class="form-select" id="refMachine" name="refMachine" required>
                     <option selected disabled>Sélectionner la machine</option>
                     <?php foreach ($machines as $machine) { ?>
-                    <option <?php echo $machine->machineName;  ?>>
+                    <option value="<?php echo $machine->machineName;  ?>">
                         <?php echo $machine->machineName;  ?>
                     </option>
                     <?php } ?>
