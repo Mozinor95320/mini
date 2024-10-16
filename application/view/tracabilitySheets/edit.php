@@ -101,7 +101,7 @@
                             <label for="date" class="form-label">Date de création de la fiche</label>
                             <input type="datetime-local" class="form-control" id="sheetCreationDate"
                                 name="sheetCreationDate"
-                                value="<?php echo htmlspecialchars(date("Y-m-d\TH:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8'); ?>"
+                                value="<?php echo htmlspecialchars($tracabilitySheet->sheetCreationDate, ENT_QUOTES, 'UTF-8'); ?>"
                                 readonly>
                         </div>
                     </div>
@@ -218,7 +218,7 @@
                                     <label for="dateEnduction" class="form-label">Date</label>
                                     <input type="datetime-local" class="form-control" id="dateDimAfterCoating"
                                         name="dateDimAfterCoating"
-                                        value="<?php echo isset($tracabilitySheet->dateDimAfterCoating) && !empty($tracabilitySheet->dateDimAfterCoating) ? htmlspecialchars(date("Y-m-d\TH:i:s", strtotime($tracabilitySheet->dateDimAfterCoating)), ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                        value="<?php echo isset($tracabilitySheet->dateDimAfterCoating) && !empty($tracabilitySheet->dateDimAfterCoating) ? htmlspecialchars($tracabilitySheet->dateDimAfterCoating, ENT_QUOTES, 'UTF-8') : ""; ?>">
                                 </div>
 
 
@@ -1311,7 +1311,7 @@
                                         l'opérateur</label>
                                     <input type="datetime-local" class="form-control"
                                         id="dateOperatorConformityDeclaration" name="dateOperatorConformityDeclaration"
-                                        value="<?php echo isset($tracabilitySheet->dateOperatorConformityDeclaration) && !empty($tracabilitySheet->dateOperatorConformityDeclaration) ? htmlspecialchars(date("Y-m-d\TH:i:s", strtotime($tracabilitySheet->dateOperatorConformityDeclaration, ENT_QUOTES)), 'UTF-8') : ""; ?>">
+                                        value="<?php echo isset($tracabilitySheet->dateOperatorConformityDeclaration) && !empty($tracabilitySheet->dateOperatorConformityDeclaration) ? htmlspecialchars($tracabilitySheet->dateOperatorConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                 </div>
 
@@ -1402,7 +1402,7 @@
                                         contrôle</label>
                                     <input type="datetime-local" class="form-control" id="qualityControlDate"
                                         name="qualityControlDate"
-                                        value="<?php echo isset($tracabilitySheet->qualityControlDate) && !empty($tracabilitySheet->qualityControlDate) ? htmlspecialchars(date("Y-m-d\TH:i:s", strtotime($tracabilitySheet->qualityControlDate)), ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                        value="<?php echo isset($tracabilitySheet->qualityControlDate) && !empty($tracabilitySheet->qualityControlDate) ? htmlspecialchars($tracabilitySheet->qualityControlDate, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
                                 </div>
 
