@@ -271,7 +271,7 @@
                     <small><strong>Créée le: </strong>
                         <span class="text-black">
                             <?php
-                                if (isset($tracabilitySheet->lastTimeEdit) && !empty($tracabilitySheet->sheetCreationDate)) {
+                                if (isset($tracabilitySheet->sheetCreationDate) && !empty($tracabilitySheet->sheetCreationDate)) {
                                     echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8');
                                 } else {
                                     echo "N/A";
