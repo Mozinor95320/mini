@@ -72,7 +72,7 @@
 
                 <!-- Work Order Field -->
                 <div class="col-md-6">
-                    <label for="numeroOF" class="form-label">N°OF</label>
+                    <label for="workOrder" class="form-label">N°OF</label>
                     <input type="text" class="form-control" id="workOrder" name="workOrder"
                         value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>"
                         readonly>
@@ -81,7 +81,7 @@
 
                 <!-- Serial Number Field -->
                 <div class="col-md-6">
-                    <label for="numeroOF" class="form-label">SN</label>
+                    <label for="serialNumber" class="form-label">SN</label>
                     <input type="text" class="form-control" id="serialNumber" name="serialNumber"
                         value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>"
                         readonly>
@@ -91,7 +91,7 @@
 
                 <!-- Part Number Field -->
                 <div class="col-md-6">
-                    <label for="numeroOF" class="form-label">PN</label>
+                    <label for="partNumber" class="form-label">PN</label>
                     <input type="text" class="form-control" id="partNumber" name="partNumber"
                         value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>"
                         readonly>
@@ -100,7 +100,7 @@
 
                 <!-- Sheet Creation Date -->
                 <div class="col-md-6">
-                    <label for="date" class="form-label">Date de création de la fiche</label>
+                    <label for="sheetCreationDate" class="form-label">Date de création de la fiche</label>
                     <input type="datetime-local" class="form-control" id="sheetCreationDate" name="sheetCreationDate"
                         value="<?php echo htmlspecialchars($tracabilitySheet->sheetCreationDate, ENT_QUOTES, 'UTF-8'); ?>"
                         readonly>
@@ -110,7 +110,7 @@
 
                 <!-- Plan Reference Field -->
                 <div class="col-md-6">
-                    <label for="referencePlan" class="form-label">Référence plan</label>
+                    <label for="refPlan" class="form-label">Référence plan</label>
                     <input type="text" class="form-control" id="refPlan" name="refPlan"
                         value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>"
                         readonly>
@@ -119,7 +119,7 @@
 
                 <!-- Machine Reference Field -->
                 <div class="col-md-6">
-                    <label for="machine" class="form-label">Machine</label>
+                    <label for="refMachine" class="form-label">Machine</label>
                     <input type="text" class="form-control" id="refMachine" name="refMachine"
                         value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>"
                         readonly>
@@ -148,14 +148,14 @@
             <div class="row mb-3">
                 <!-- Sppol Batch Reference Field -->
                 <div class="col-md-6">
-                    <label for="bobine" class="form-label">Bobine</label>
+                    <label for="spoolBatch" class="form-label">Bobine</label>
                     <input type="text" class="form-control" id="spoolBatch" name="spoolBatch"
                         value="<?php echo isset($tracabilitySheet->spoolBatch) && !empty($tracabilitySheet->spoolBatch) ? htmlspecialchars($tracabilitySheet->spoolBatch, ENT_QUOTES, 'UTF-8') : ""; ?>">
                 </div>
 
                 <!-- Spool Number Field -->
                 <div class="col-md-6">
-                    <label for="lot" class="form-label">Lot</label>
+                    <label for="spoolNumber" class="form-label">Lot</label>
                     <input type="number" class="form-control" id="spoolNumber" name="spoolNumber"
                         value="<?php echo isset($tracabilitySheet->spoolNumber) && !empty($tracabilitySheet->spoolNumber) ? htmlspecialchars($tracabilitySheet->spoolNumber, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
@@ -195,7 +195,7 @@
             <h4 id="scrollspyHeading3">Dimensions après enduction</h4>
             <!-- Date Dimension After Coating -->
             <div class="mb-3">
-                <label for="dateEnduction" class="form-label">Date</label>
+                <label for="dateDimAfterCoating" class="form-label">Date</label>
                 <input type="datetime-local" class="form-control" id="dateDimAfterCoating" name="dateDimAfterCoating"
                     value="<?php echo isset($tracabilitySheet->dateDimAfterCoating) && !empty($tracabilitySheet->dateDimAfterCoating) ? htmlspecialchars($tracabilitySheet->dateDimAfterCoating, ENT_QUOTES, 'UTF-8') : ""; ?>">
             </div>
@@ -205,7 +205,7 @@
 
                 <!-- Dimensions length L -->
                 <div class="col-md-4">
-                    <label for="longueur" class="form-label">Longueur L</label>
+                    <label for="lengthL" class="form-label">Longueur L</label>
                     <div class="input-group">
                         <input type="number" class="form-control" id="lengthL" name="lengthL"
                             placeholder="Entrez la longueur"
@@ -221,7 +221,7 @@
 
                 <!-- Dimension diameter D -->
                 <div class="col-md-4 mb-3">
-                    <label for="diametre" class="form-label">Diamètre D</label>
+                    <label for="diameterD" class="form-label">Diamètre D</label>
                     <div class="input-group">
                         <input type="number" class="form-control" id="diameterD" name="diameterD"
                             placeholder="Entrez le diamètre"
@@ -237,7 +237,7 @@
 
                 <!-- Mass M -->
                 <div class="col-md-4 mb-3">
-                    <label for="masseM" class="form-label">Masse M</label>
+                    <label for="massM" class="form-label">Masse M</label>
                     <div class="input-group">
                         <input type="number" class="form-control" id="massM" name="massM" placeholder="Entrez la masse"
                             value="<?php echo isset($tracabilitySheet->massM) && !empty($tracabilitySheet->massM) ? htmlspecialchars($tracabilitySheet->massM, ENT_QUOTES, 'UTF-8') : ""; ?>">
@@ -305,7 +305,7 @@
                 <!--  Label - Profile Mass Before Shrink Fit-->
                 <div class="col-md-3">
                     <div class="d-flex justify-content-end">
-                        <label for="masseM" class="form-label">Masse du profilé (48±0,5 cm)</label>
+                        <label for="profileMassBeforeShrinkFit" class="form-label">Masse du profilé (48±0,5 cm)</label>
                     </div>
                 </div>
 
@@ -325,7 +325,7 @@
                 <!--  Label - Linear Mass Before Shrink Fit-->
                 <div class="col-md-3">
                     <div class="d-flex justify-content-end">
-                        <label for="masseLineiqueProfil" class="form-label">Masse linéique du
+                        <label for="linearMassBeforeShrinkFit" class="form-label">Masse linéique du
                             profilé</label>
                     </div>
                 </div>
@@ -622,7 +622,7 @@
 
                 <!--  label - Mean Force Tensile test Before Shrink Fit -->
                 <div class="col-md-6 d-flex justify-content-end">
-                    <label for="mean" class="form-label">Moyenne</label>
+                    <label for="averageBeforeShrinkFit" class="form-label">Moyenne</label>
                 </div>
 
                 <!--  Value - Mean Force Tensile test Before Shrink Fit -->
@@ -650,7 +650,7 @@
 
                 <!--  label - Standart deviation Force Tensile test Before Shrink Fit -->
                 <div class="col-md-6 d-flex justify-content-end">
-                    <label for="standartDeviation" class="form-label">Écart type</label>
+                    <label for="sigmaBeforeShrinkFit" class="form-label">Écart type</label>
                 </div>
 
                 <!--  Value - Standart deviation Force Tensile test Before Shrink Fit -->
@@ -680,7 +680,7 @@
                 <!--  Label - Profile Mass After Shrink Fit-->
                 <div class="col-md-3">
                     <div class="d-flex justify-content-end">
-                        <label for="masseM" class="form-label">Masse du profilé (48±0,5 cm)</label>
+                        <label for="profileMassAfterShrinkFit" class="form-label">Masse du profilé (48±0,5 cm)</label>
                     </div>
                 </div>
 
@@ -701,7 +701,7 @@
                 <!--  Label - Linear Mass After Shrink Fit-->
                 <div class="col-md-3">
                     <div class="d-flex justify-content-end">
-                        <label for="masseLineiqueProfil" class="form-label">Masse linéique du
+                        <label for="linearMassAfterShrinkFit" class="form-label">Masse linéique du
                             profilé</label>
                     </div>
                 </div>
@@ -994,7 +994,7 @@
 
                 <!--  label - Mean Force Tensile test After Shrink Fit -->
                 <div class="col-md-6 d-flex justify-content-end">
-                    <label for="mean" class="form-label">Moyenne</label>
+                    <label for="averageAfterShrinkFit" class="form-label">Moyenne</label>
                 </div>
 
                 <!--  Value - Mean Force Tensile test After Shrink Fit -->
@@ -1022,7 +1022,7 @@
 
                 <!--  label - Standart deviation Force Tensile test After Shrink Fit -->
                 <div class="col-md-6 d-flex justify-content-end">
-                    <label for="standartDeviation" class="form-label">Écart type</label>
+                    <label for="sigmaAfterShrinkFit" class="form-label">Écart type</label>
                 </div>
 
                 <!--  Value - Standart deviation Force Tensile test After Shrink Fit -->
@@ -1199,7 +1199,7 @@
 
             <!-- Date Operator Conformity Declaration -->
             <div class="mb-3">
-                <label for="dateOperatorValidation" class="form-label">Date validation par
+                <label for="dateOperatorConformityDeclaration" class="form-label">Date validation par
                     l'opérateur</label>
                 <input type="datetime-local" class="form-control" id="dateOperatorConformityDeclaration"
                     name="dateOperatorConformityDeclaration"
@@ -1209,7 +1209,7 @@
             <div class="row mb-3">
                 <!-- Operator Name Conformity Declaration -->
                 <div class="col-md-4">
-                    <label for="operatorValidation" class="form-label">Opérateur</label>
+                    <label for="operatorNameConformityDeclaration" class="form-label">Opérateur</label>
                     <input type="text" class="form-control" id="operatorNameConformityDeclaration"
                         name="operatorNameConformityDeclaration"
                         value="<?php echo isset($tracabilitySheet->operatorNameConformityDeclaration) && !empty($tracabilitySheet->operatorNameConformityDeclaration) ? htmlspecialchars($tracabilitySheet->operatorNameConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
@@ -1253,7 +1253,7 @@
 
             <!-- Operator Remarks -->
             <div class="mb-3">
-                <label for="remarqueValidation" class="form-label">Remarque</label>
+                <label for="operatorRemarks" class="form-label">Remarque</label>
                 <textarea class="form-control" id="operatorRemarks" name="operatorRemarks" rows="4"
                     placeholder="Entrez votre commentaire..." maxlength="255"><?php echo isset($tracabilitySheet->operatorRemarks) && !empty($tracabilitySheet->operatorRemarks) ? htmlspecialchars($tracabilitySheet->operatorRemarks, ENT_QUOTES, 'UTF-8') : ""; ?>
                                 </textarea>
@@ -1270,7 +1270,7 @@
 
             <!-- Date Quality Control Conformity Declaration -->
             <div class="mb-3">
-                <label for="dateValidation" class="form-label">Date de validation par le
+                <label for="qualityControlDate" class="form-label">Date de validation par le
                     contrôle</label>
                 <input type="datetime-local" class="form-control" id="qualityControlDate" name="qualityControlDate"
                     value="<?php echo isset($tracabilitySheet->qualityControlDate) && !empty($tracabilitySheet->qualityControlDate) ? htmlspecialchars($tracabilitySheet->qualityControlDate, ENT_QUOTES, 'UTF-8') : ""; ?>">
@@ -1281,7 +1281,7 @@
 
                 <!-- Quality Inspector Name -->
                 <div class="col-md-6">
-                    <label for="operateurValidation" class="form-label">Contrôleur</label>
+                    <label for="qualityInspectorName" class="form-label">Contrôleur</label>
                     <input type="text" class="form-control" id="qualityInspectorName" name="qualityInspectorName"
                         value="<?php echo isset($tracabilitySheet->qualityInspectorName) && !empty($tracabilitySheet->qualityInspectorName) ? htmlspecialchars($tracabilitySheet->qualityInspectorName, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
@@ -1313,7 +1313,7 @@
 
             <!-- Quality Inspector Remarks -->
             <div class="mb-3">
-                <label for="remarqueValidation" class="form-label">Remarque</label>
+                <label for="qualityInspectorRemarks" class="form-label">Remarque</label>
                 <textarea class="form-control" id="qualityInspectorRemarks" name="qualityInspectorRemarks" rows="4"
                     placeholder="Entrez votre commentaire..."
                     maxlength="255"><?php echo isset($tracabilitySheet->qualityInspectorRemarks) && !empty($tracabilitySheet->qualityInspectorRemarks) ? htmlspecialchars($tracabilitySheet->qualityInspectorRemarks, ENT_QUOTES, 'UTF-8') : ""; ?></textarea>
