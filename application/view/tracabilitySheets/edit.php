@@ -38,7 +38,7 @@
 
             <!-- Exporter en PDF avec logo -->
             <button class="btn btn-secondary me-3">
-                <i class="bi bi-file-earmark-arrow-down"></i>PDF
+                <i class="bi bi-file-earmark-arrow-down"></i>
             </button>
 
             <!-- Toggle Button -->
