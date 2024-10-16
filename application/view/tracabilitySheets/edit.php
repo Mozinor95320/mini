@@ -1,5 +1,5 @@
 <div class="container mt-4">
-    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 fixed-top">
+    <nav id="navbar-example2" class="navbar bg-body-tertiary px-3 mb-3 sticky-top">
         <a class="navbar-brand" href="#">Navbar</a>
 
         <ul class="nav nav-pills">
