@@ -101,7 +101,7 @@
                             <label for="date" class="form-label">Date de création de la fiche</label>
                             <input type="datetime-local" class="form-control" id="sheetCreationDate"
                                 name="sheetCreationDate"
-                                value="<?php echo htmlspecialchars(date("d/m/Y H:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8'); ?>"
+                                value="<?php echo htmlspecialchars(date("Y-m-d\TH:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8'); ?>"
                                 readonly>
                         </div>
                     </div>
