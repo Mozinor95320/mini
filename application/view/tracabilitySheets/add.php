@@ -10,8 +10,8 @@
 
         <div class="row mb-3">
             <div class="col-6 align-items-center">
+                <label for="WorkOrder" class="form-label me-2">N°OF</label>
                 <div class="input-group">
-                    <label for="WorkOrder" class="form-label me-2">N°OF</label>
                     <input type="text" class="form-control" id="workOrder" name="workOrder"
                         placeholder="Entrez le numéro d'OF" value="" required />
                     <!-- Unit of measurement -->
@@ -21,9 +21,8 @@
             </div>
 
             <div class="col-6 align-items-center">
-
+                <label for="partNumber" class="form-label me-2">PN</label>
                 <div class="input-group">
-                    <label for="partNumber" class="form-label me-2">PN</label>
                     <input type="text" class="form-control" id="partNumber" name="partNumber" placeholder="Entrez le PN"
                         value="" required />
                     <!-- Unit of measurement -->
