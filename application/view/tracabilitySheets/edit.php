@@ -3,15 +3,9 @@
         <a class="navbar-brand" href="#">Navbar</a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading1">First</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading2">Second</a>
-            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                    aria-expanded="false">Dropdown</a>
+                    aria-expanded="false">Tracabilité</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
                     <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
@@ -21,12 +15,19 @@
                     <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
                 </ul>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading1">Frettage</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#scrollspyHeading2">Essais de Tracation</a>
+            </li>
+
         </ul>
 
         <!-- Boutons dans la navbar -->
         <div class="d-flex ms-auto">
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary me-2" name="submit_update_tracabilitySheet" value="Update">
+            <button type="submit" class="btn btn-primary me-3" name="submit_update_tracabilitySheet" value="Update">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy"
                     viewBox="0 0 16 16">
                     <path d="M11 2H9v3h2z" />
@@ -36,7 +37,7 @@
             </button>
 
             <!-- Exporter en PDF avec logo -->
-            <button class="btn btn-secondary me-2">
+            <button class="btn btn-secondary me-3">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
                     <path
@@ -53,6 +54,21 @@
             </div>
         </div>
     </nav>
+
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+        <h4 id="scrollspyHeading1">First heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading2">Second heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading3">Third heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading4">Fourth heading</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading5">Fifth heading</h4>
+        <p>...</p>
+    </div>
+
 
     <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
 
