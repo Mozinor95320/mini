@@ -36,25 +36,6 @@
             </li>
 
         </ul>
-
-        <!-- Boutons dans la navbar -->
-        <div class="d-flex ms-auto">
-            <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary me-3" name="submit_update_tracabilitySheet" value="Update">
-                <i class="bi bi-floppy2-fill"></i>
-            </button>
-
-            <!-- Exporter en PDF avec logo -->
-            <button class="btn btn-secondary me-3">
-                <i class="bi bi-file-earmark-arrow-down"></i>
-            </button>
-
-            <!-- Toggle Button -->
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-                <label class="form-check-label" for="flexSwitchCheckDefault">Activer/Désactiver</label>
-            </div>
-        </div>
     </nav>
 
     <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
