@@ -1152,7 +1152,7 @@
 
                 <!--  Shrink Fit OK Gaz Side VF-->
                 <div class="col-md-6">
-                    <label class="form-label d-block">VF</label>
+                    <h6 class="d-block">VF</h6>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" id="vfOk" name="vfOk" value="1"
                             <?php if ((bool)$tracabilitySheet->vf === true) echo 'checked'; ?>>
@@ -1305,7 +1305,6 @@
                                 <?php if ((bool)$tracabilitySheet->qualityConformityDeclaration === false) echo 'checked'; ?>>
                             <label class="form-check-label" for="qualityConformityDeclarationNok">Non</label>
                         </div>
-                        <label>
                     </div>
                 </div>
             </div>
