@@ -26,7 +26,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading1">Fiche traca</a>
+                <a class="nav-link" href="#scrollspyHeading0">Fiche traca</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#scrollspyHeading9">Frettage</a>
@@ -66,7 +66,8 @@
 
 
             <!-- SECTION 1 - Generic DATA -->
-            <h4 id="scrollspyHeading1" class="mb-3">>Informations générales</h4>
+            <h3 id="scrollspyHeading0" class="mb-3">Fiche traca:</h3>
+            <h4 id="scrollspyHeading1" class="mb-3">Informations générales</h4>
             <div class="row align-items-center mb-3">
 
                 <!-- Work Order Field -->
