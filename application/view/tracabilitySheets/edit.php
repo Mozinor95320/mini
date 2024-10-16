@@ -254,7 +254,7 @@
 
             <!-- Aspect Dimension After Coating -->
             <div class="mb-3">
-                <h6 class="form-label d-block">Aspect</h6>
+                <h6 class="d-block">Aspect</h6>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" id="aspectDimAfterCoatingOk" name="aspectDimAfterCoatingOk" value="1"
                         <?php if ((bool)$tracabilitySheet->aspectDimAfterCoating === true) echo 'checked'; ?>>
@@ -1137,7 +1137,7 @@
 
                 <!--  Shrink Fit OK Oil Side BF-->
                 <div class="col-md-6">
-                    <h6 class="form-label d-block">BF</h6>
+                    <h6 class="d-block">BF</h6>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" id="bfOk" name="bfOk" value="1"
                             <?php if ((bool)$tracabilitySheet->bf === true) echo 'checked'; ?>>
