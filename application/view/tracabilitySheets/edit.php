@@ -218,7 +218,9 @@
                                     <label for="dateEnduction" class="form-label">Date</label>
                                     <input type="datetime-local" class="form-control" id="dateDimAfterCoating"
                                         name="dateDimAfterCoating"
-                                        value="<?php echo isset($tracabilitySheet->dateDimAfterCoating) && !empty($tracabilitySheet->dateDimAfterCoating) ? htmlspecialchars($tracabilitySheet->dateDimAfterCoating, ENT_QUOTES, 'UTF-8') : ""; ?>">
+                                        value="<?php echo htmlspecialchars(date("Y-m-d\TH:i:s", strtotime($tracabilitySheet->sheetCreationDate)), ENT_QUOTES, 'UTF-8'); ?>"
+                                        readonly>
+                                        value="<?php echo isset($tracabilitySheet->dateDimAfterCoating) && !empty($tracabilitySheet->dateDimAfterCoating) ? htmlspecialchars(date("Y-m-d\TH:i:s", strtotime($tracabilitySheet->dateDimAfterCoating)), ENT_QUOTES, 'UTF-8') : ""; ?>">
                                 </div>
 
 
