@@ -27,19 +27,10 @@
                     </button>
 
                     <!-- Toggle Button -->
-                    <!-- Bouton toggle on/off -->
                     <div class="form-check form-switch">
                         <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
                         <label class="form-check-label" for="flexSwitchCheckDefault">Activer/Désactiver</label>
                     </div>
-
-                    <button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false"
-                        autocomplete="off">
-                        On/Off
-                    </button>
-                    <button type="button" class="btn btn-warning" data-bs-toggle="button" aria-pressed="false">
-                        <i class="bi bi-lock"></i> Verrouillage
-                    </button>
                 </div>
             </div>
         </div>
@@ -71,68 +62,66 @@
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
                 <!-- Generic Data-->
-                <div class="card-body">
-                    <div class="mb-3 ml-3">
-                        <h2>Informations générales</h2>
-                        <h3>Description de la fiche de tracabilité</h3>
+
+                <div class="mb-3 ml-3">
+                    <h3>Informations générales</h3>
+                </div>
+                <div class="row align-items-center mb-3">
+
+                    <!-- Work Order Field -->
+                    <div class="col-md-6">
+                        <label for="numeroOF" class="form-label">N°OF</label>
+                        <input type="text" class="form-control" id="workOrder" name="workOrder"
+                            value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>"
+                            readonly>
+
                     </div>
-                    <div class="row align-items-center mb-3">
 
-                        <!-- Work Order Field -->
-                        <div class="col-md-6">
-                            <label for="numeroOF" class="form-label">N°OF</label>
-                            <input type="text" class="form-control" id="workOrder" name="workOrder"
-                                value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>"
-                                readonly>
-
-                        </div>
-
-                        <!-- Serial Number Field -->
-                        <div class="col-md-6">
-                            <label for="numeroOF" class="form-label">SN</label>
-                            <input type="text" class="form-control" id="serialNumber" name="serialNumber"
-                                value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>"
-                                readonly>
-                        </div>
+                    <!-- Serial Number Field -->
+                    <div class="col-md-6">
+                        <label for="numeroOF" class="form-label">SN</label>
+                        <input type="text" class="form-control" id="serialNumber" name="serialNumber"
+                            value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>"
+                            readonly>
                     </div>
-                    <div class="row align-items-center mb-3">
+                </div>
+                <div class="row align-items-center mb-3">
 
-                        <!-- Part Number Field -->
-                        <div class="col-md-6">
-                            <label for="numeroOF" class="form-label">PN</label>
-                            <input type="text" class="form-control" id="partNumber" name="partNumber"
-                                value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>"
-                                readonly>
+                    <!-- Part Number Field -->
+                    <div class="col-md-6">
+                        <label for="numeroOF" class="form-label">PN</label>
+                        <input type="text" class="form-control" id="partNumber" name="partNumber"
+                            value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>"
+                            readonly>
 
-                        </div>
-
-                        <!-- Sheet Creation Date -->
-                        <div class="col-md-6">
-                            <label for="date" class="form-label">Date de création de la fiche</label>
-                            <input type="datetime-local" class="form-control" id="sheetCreationDate"
-                                name="sheetCreationDate"
-                                value="<?php echo htmlspecialchars($tracabilitySheet->sheetCreationDate, ENT_QUOTES, 'UTF-8'); ?>"
-                                readonly>
-                        </div>
                     </div>
-                    <div class="row align-items-center mb-3">
 
-                        <!-- Plan Reference Field -->
-                        <div class="col-md-6">
-                            <label for="referencePlan" class="form-label">Référence plan</label>
-                            <input type="text" class="form-control" id="refPlan" name="refPlan"
-                                value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>"
-                                readonly>
+                    <!-- Sheet Creation Date -->
+                    <div class="col-md-6">
+                        <label for="date" class="form-label">Date de création de la fiche</label>
+                        <input type="datetime-local" class="form-control" id="sheetCreationDate"
+                            name="sheetCreationDate"
+                            value="<?php echo htmlspecialchars($tracabilitySheet->sheetCreationDate, ENT_QUOTES, 'UTF-8'); ?>"
+                            readonly>
+                    </div>
+                </div>
+                <div class="row align-items-center mb-3">
 
-                        </div>
+                    <!-- Plan Reference Field -->
+                    <div class="col-md-6">
+                        <label for="referencePlan" class="form-label">Référence plan</label>
+                        <input type="text" class="form-control" id="refPlan" name="refPlan"
+                            value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>"
+                            readonly>
 
-                        <!-- Machine Reference Field -->
-                        <div class="col-md-6">
-                            <label for="machine" class="form-label">Machine</label>
-                            <input type="text" class="form-control" id="refMachine" name="refMachine"
-                                value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>"
-                                readonly>
-                        </div>
+                    </div>
+
+                    <!-- Machine Reference Field -->
+                    <div class="col-md-6">
+                        <label for="machine" class="form-label">Machine</label>
+                        <input type="text" class="form-control" id="refMachine" name="refMachine"
+                            value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>"
+                            readonly>
                     </div>
                 </div>
                 <h2 class="mb-3">Catégories</h2>
