@@ -136,7 +136,7 @@
             <h4 id="scrollspyHeading2">Données Fibre</h4>
             <!-- Material Reference Field -->
             <div class="mb-3">
-                <label for="matiere" class="form-label">Matière</label>
+                <label for="material" class="form-label">Matière</label>
                 <select class="form-select" id="material" name="material">
                     <option selected disabled>Sélectionner la matière</option>
                     <option <?php if ($tracabilitySheet->material == 'TWARON 2200 / PA12-2159 0.24 x 8')
@@ -256,15 +256,15 @@
             <div class="mb-3">
                 <label class="form-label d-block">Aspect</label>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="aspectDimAfterCoating" value="1"
+                    <input class="form-check-input" type="radio" id="aspectDimAfterCoatingOk" name="aspectDimAfterCoatingOk" value="1"
                         <?php if ((bool)$tracabilitySheet->aspectDimAfterCoating === true) echo 'checked'; ?>>
 
-                    <label class="form-check-label" for="aspectOk">OK</label>
+                    <label class="form-check-label" for="aspectDimAfterCoatingOk">OK</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="aspectDimAfterCoating" value="0"
+                    <input class="form-check-input" type="radio" id="aspectDimAfterCoatingNok" name="aspectDimAfterCoatingNok" value="0"
                         <?php if ((bool)$tracabilitySheet->aspectDimAfterCoating === false) echo 'checked'; ?>>
-                    <label class="form-check-label" for="aspectNok">NOK</label>
+                    <label class="form-check-label" for="aspectDimAfterCoatingNok">NOK</label>
                 </div>
             </div>
 
@@ -349,7 +349,7 @@
 
             <!--  Tensile Test Sample 1 Before Shrink Fit -->
 
-            <label for="meche1" class="form-label">Mèche 1</label>
+            <h5 for="meche1" class="form-label">Mèche 1</h5>
             <div class="row mb-3">
 
                 <!--  Thickness Sample 1 Before Shrink Fit -->
