@@ -3,9 +3,11 @@
     <form action="<?php echo URL; ?>tracabilitySheets/addTracabilitySheet" method="POST">
 
         <div class="row mb-3">
-            <label for="serialNumber" class="form-label">SN</label>
-            <input type="text" class="form-control" id="serialNumber" name="serialNumber" placeholder="Entrez le SN"
-                value="" required />
+            <div class="col-12 align-items-center">
+                <label for="serialNumber" class="form-label">SN</label>
+                <input type="text" class="form-control" id="serialNumber" name="serialNumber" placeholder="Entrez le SN"
+                    value="" required />
+            </div>
         </div>
 
         <div class="row mb-3">
