@@ -1,5 +1,11 @@
 <div class="container mt-4">
-
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?php echo URL . 'tracabilitySheets'; ?>">Home</a></li>
+            <li class="breadcrumb-item"><a href="<?php echo URL . 'tracabilitySheets'; ?>">Bliblothèque de fiches</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Fiche n°<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></li>
+        </ol>
+    </nav>
     <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
         <!-- SECTION 1 - Generic DATA -->
         <section>
