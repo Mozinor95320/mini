@@ -1339,13 +1339,4 @@
 var url = "<?php echo URL; ?>";
 var serialNumberSheet = "<?php echo $tracabilitySheet->serialNumber; ?>";
 </script>
-<!-- Chart.js -->
-<!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<!-- Moment.js -->
-<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-<!-- Adapter pour Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
-<script src="<?php echo URL; ?>js/windingCharts.js"></script>
-<script src="<?php echo URL; ?>js/tolerances.js"></script>
+
