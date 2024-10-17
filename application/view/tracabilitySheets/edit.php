@@ -8,8 +8,8 @@
     </nav>
     <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
         <!-- SECTION 1 - Generic DATA -->
-        <section class="sectionEditTraca"">
-            <h4 id="scrollspyHeading1" class="mb-3">Informations générales</h4>
+        <section class="sectionEditTraca px-2 mb-3">
+            <h4 class="bg-primary" id="scrollspyHeading1" class="mb-3">Informations générales</h4>
             <div class="row align-items-center mb-3">
 
                 <!-- Work Order Field -->
@@ -71,8 +71,8 @@
 
 
         <!-- SECTION 2 - FIBER DATA -->
-        <section class="sectionEditTraca"">
-            <h4 id="scrollspyHeading2">Données Fibre</h4>
+        <section class="sectionEditTraca px-2 mb-3">
+            <h4 class="bg-primary" id="scrollspyHeading2">Données Fibre</h4>
             <!-- Material Reference Field -->
             <div class="mb-3">
                 <label for="material" class="form-label">Matière</label>
@@ -136,8 +136,8 @@
 
 
         <!-- SECTION 3 - DIMENSIONS AFTER COATING -->
-        <section class="sectionEditTraca"">
-            <h4 id="scrollspyHeading3">Dimensions après enduction</h4>
+        <section class="sectionEditTraca px-2 mb-3">
+            <h4 class="bg-primary" id="scrollspyHeading3">Dimensions après enduction</h4>
             <!-- Date Dimension After Coating -->
             <div class="mb-3">
                 <label for="dateDimAfterCoating" class="form-label">Date</label>
@@ -248,8 +248,8 @@
 
 
         <!-- SECTION 4 - TENSILE TEST BEFIRE SHRINK FIT -->
-        <section class="sectionEditTraca"">
-            <h4 id="scrollspyHeading4">Essais de traction avant frettage</h4>
+        <section class="sectionEditTraca px-2 mb-3">
+            <h4 class="bg-primary" id="scrollspyHeading4">Essais de traction avant frettage</h4>
             <div class="row mb-3">
 
                 <!--  Label - Profile Mass Before Shrink Fit-->
@@ -626,8 +626,8 @@
 
 
         <!-- SECTION 5 - TENSILE TEST AFTER SHRINK FIT -->
-        <section class="sectionEditTraca"">
-            <h4 id="scrollspyHeading5">Essais de traction après frettage</h4>
+        <section class="sectionEditTraca px-2 mb-3">
+            <h4 class="bg-primary" id="scrollspyHeading5">Essais de traction après frettage</h4>
             <div class="row mb-3">
 
                 <!--  Label - Profile Mass After Shrink Fit-->
@@ -998,8 +998,8 @@
 
 
         <!-- SECTION 6 - DIMENSION AFTER SHRINK FIT -->
-        <section class="sectionEditTraca"">
-            <h4 id="scrollspyHeading6">Dimension après frettage</h4>
+        <section class="sectionEditTraca px-2 mb-3">
+            <h4 class="bg-primary" id="scrollspyHeading6">Dimension après frettage</h4>
             <div class="row mb-3">
 
                 <!--  Diameter DF1 -->
@@ -1152,9 +1152,9 @@
 
 
         <!-- SECTION 7 - OPERATOR VALIDATION -->
-        <section class="sectionEditTraca"">
+        <section class="sectionEditTraca px-2 mb-3">
 
-            <h4 id="scrollspyHeading7">Déclaration de conformité opérateur</h4>
+            <h4 class="bg-primary" id="scrollspyHeading7">Déclaration de conformité opérateur</h4>
 
             <!-- Operator Date Conformity Declaration -->
             <div class="mb-3">
@@ -1239,9 +1239,9 @@
 
 
         <!-- SECTION 8 - QUALITY CONTROL -->
-        <section class="sectionEditTraca"">
+        <section class="sectionEditTraca px-2 mb-3">
 
-            <h4 id="scrollspyHeading8">Déclaration de conformité controlleur</h4>
+            <h4 class="bg-primary" id="scrollspyHeading8">Déclaration de conformité controlleur</h4>
 
             <!-- Controller Date Conformity Declaration -->
             <div class="mb-3">
@@ -1311,8 +1311,8 @@
 
 
         <!-- SECTION 9 - WINDIND CHARTS -->
-        <section class="sectionEditTraca"">
-            <h4 id="scrollspyHeading9">Graphique frettage</h4>
+        <section class="sectionEditTraca px-2 mb-3">
+            <h4 class="bg-primary" id="scrollspyHeading9">Graphique frettage</h4>
             <!-- Chart GENERAL-->
             <button onclick="resetZoomChartGeneral()" class="btn btn-danger">Réinitialiser le Zoom</button>
             <div class="mb-3">
@@ -1328,7 +1328,7 @@
 
 
         <!-- SECTION 10 - TENSILE TEST CHARTS-->
-        <section class="sectionEditTraca"">
+        <section class="sectionEditTraca px-2 mb-3">
             <h3 id="scrollspyHeading10">Graphiques essais de traction</h3>
             <p>Future graphique de frettage</p>
         </section>
