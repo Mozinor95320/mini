@@ -2,8 +2,10 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="<?php echo URL . 'tracabilitySheets'; ?>">Home</a></li>
-            <li class="breadcrumb-item"><a href="<?php echo URL . 'tracabilitySheets'; ?>">Bliblothèque de fiches</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Fiche n°<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></li>
+            <li class="breadcrumb-item"><a href="<?php echo URL . 'tracabilitySheets'; ?>">Bliblothèque de fiches</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Fiche
+                n°<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?></li>
         </ol>
     </nav>
     <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
@@ -17,7 +19,7 @@
                     <label for="workOrder" class="form-label">N°OF</label>
                     <input type="text" class="form-control" id="workOrder" name="workOrder"
                         value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>"
-                         disabled>
+                        disabled>
 
                 </div>
 
@@ -26,7 +28,7 @@
                     <label for="serialNumber" class="form-label">SN</label>
                     <input type="text" class="form-control" id="serialNumber" name="serialNumber"
                         value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>"
-                         disabled>
+                        disabled>
                 </div>
             </div>
             <div class="row align-items-center mb-3">
@@ -36,7 +38,7 @@
                     <label for="partNumber" class="form-label">PN</label>
                     <input type="text" class="form-control" id="partNumber" name="partNumber"
                         value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>"
-                         disabled>
+                        disabled>
 
                 </div>
 
@@ -45,7 +47,7 @@
                     <label for="sheetCreationDate" class="form-label">Date de création de la fiche</label>
                     <input type="datetime-local" class="form-control" id="sheetCreationDate" name="sheetCreationDate"
                         value="<?php echo htmlspecialchars($tracabilitySheet->sheetCreationDate, ENT_QUOTES, 'UTF-8'); ?>"
-                         disabled>
+                        disabled>
                 </div>
             </div>
             <div class="row align-items-center">
@@ -55,7 +57,7 @@
                     <label for="refPlan" class="form-label">Référence plan</label>
                     <input type="text" class="form-control" id="refPlan" name="refPlan"
                         value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>"
-                         disabled>
+                        disabled>
 
                 </div>
 
@@ -64,7 +66,7 @@
                     <label for="refMachine" class="form-label">Machine</label>
                     <input type="text" class="form-control" id="refMachine" name="refMachine"
                         value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>"
-                         disabled>
+                        disabled>
                 </div>
             </div>
         </section>
@@ -1314,13 +1316,11 @@
         <section class="sectionEditTraca px-2 py-2 mb-3 rounded shadow-sm bg-light">
             <h4 class="bg-primary px-2 py-2 rounded" id="scrollspyHeading9">Graphique frettage</h4>
             <!-- Chart GENERAL-->
-            <button onclick="resetZoomChartGeneral()" class="btn btn-danger">Réinitialiser le Zoom</button>
-            <div class="mb-3">
-                <div class="chart-container">
-                    <canvas id="myChartGeneral"></canvas>
-                </div>
+            <div class="chart-container">
+                <button onclick="resetZoomChartGeneral()" class="btn btn-danger"><i
+                        class="bi bi-arrow-counterclockwise"></i></button>
+                <canvas id="myChartGeneral" style="height: 100vh;" ></canvas>
             </div>
-
         </section>
 
 
