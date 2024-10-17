@@ -1317,10 +1317,10 @@
             <h4 class="bg-primary px-2 py-2 rounded" id="scrollspyHeading9">Graphique frettage</h4>
             <!-- Chart GENERAL-->
             <div class="chart-container" style="height: 100vh;">
-                <button onclick="resetZoomChartGeneral()" class="btn btn-danger"><i
-                        class="bi bi-arrow-counterclockwise"></i></button>
                 <canvas id="myChartGeneral" style="display: block; width: 100%; height:100%;"></canvas>
             </div>
+            <button onclick="resetZoomChartGeneral()" class="btn btn-danger"><i
+            class="bi bi-arrow-counterclockwise"></i></button>
         </section>
 
 
