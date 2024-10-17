@@ -1,50 +1,6 @@
-<div class="container mt-4" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-offset="70"
-    data-bs-smooth-scroll="true" tabindex="0">
-    <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top mt-5">
-        <a class="navbar-brand" href="#">Navbar</a>
-
-        <ul class="nav nav-pills">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                    aria-expanded="false">Tracabilité</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#scrollspyHeading1">Informations générales</a></li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading2">Données Fibre</a></li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading3">Dimensions après enduction</a></li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading4">Essais de traction avant frettage</a></li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading5">Essais de traction après frettage</a></li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading6">Dimension après frettage</a></li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading7">Déclaration de conformité opérateur</a></li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading8">Déclaration de conformité controlleur</a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading9">Graphique frettage</a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#scrollspyHeading10">Graphiques essais de traction</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading0">Fiche traca</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading9">Frettage</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#scrollspyHeading10">Essais de traction</a>
-            </li>
-
-        </ul>
-    </nav>
-
+<div class="container mt-4">
+    
     <form action="<?php echo URL; ?>tracabilitySheets/updatetracabilitySheet" method="POST">
-
-
-
-
         <!-- SECTION 1 - Generic DATA -->
         <h3 id="scrollspyHeading0" class="mb-3">Fiche traca:</h3>
         <h4 id="scrollspyHeading1" class="mb-3">Informations générales</h4>
