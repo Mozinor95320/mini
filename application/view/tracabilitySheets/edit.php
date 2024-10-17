@@ -48,7 +48,7 @@
                          disabled>
                 </div>
             </div>
-            <div class="row align-items-center mb-3">
+            <div class="row align-items-center">
 
                 <!-- Plan Reference Field -->
                 <div class="col-md-6">
