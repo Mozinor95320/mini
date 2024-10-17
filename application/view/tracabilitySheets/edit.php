@@ -1329,7 +1329,7 @@
 
         <!-- SECTION 10 - TENSILE TEST CHARTS-->
         <section class="sectionEditTraca px-2 py-2 mb-3 rounded shadow-sm bg-light">
-            <h3 id="scrollspyHeading10">Graphiques essais de traction</h3>
+        <h4 class="bg-primary px-2 py-2 rounded" id="scrollspyHeading10">Graphiques essais de traction</h3>
             <p>Future graphique de frettage</p>
         </section>
     </form>
