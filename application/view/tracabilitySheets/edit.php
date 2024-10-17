@@ -1339,4 +1339,5 @@
 var url = "<?php echo URL; ?>";
 var serialNumberSheet = "<?php echo $tracabilitySheet->serialNumber; ?>";
 </script>
+<script src="<?php echo URL; ?>js/tolerances.js"></script>
 
