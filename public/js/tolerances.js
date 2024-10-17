@@ -36,7 +36,7 @@ function verifyTolerance({
   }
 }
 
-window.addEventListener("load", function () {
+window.addEventListener("DOMContentLoaded", function () {
   verifyTolerance({
     inputId: "lengthL",
     toleranceId: "toleranceLengthL",

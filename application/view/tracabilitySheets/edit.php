@@ -1348,5 +1348,5 @@ var serialNumberSheet = "<?php echo $tracabilitySheet->serialNumber; ?>";
 <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-<script src="<?php echo URL; ?>js/tolerances.js"></script>
 <script src="<?php echo URL; ?>js/windingCharts.js"></script>
+<script src="<?php echo URL; ?>js/tolerances.js"></script>
