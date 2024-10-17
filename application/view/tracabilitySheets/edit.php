@@ -1306,7 +1306,7 @@
 
         <!-- SECTION 9 - WINDIND CHARTS -->
         <section>
-            <h3 id="scrollspyHeading9">Graphique frettage</h3>
+            <h4 id="scrollspyHeading9">Graphique frettage</h4>
             <!-- Chart GENERAL-->
             <button onclick="resetZoomChartGeneral()" class="btn btn-danger">Réinitialiser le Zoom</button>
             <div class="mb-3">
