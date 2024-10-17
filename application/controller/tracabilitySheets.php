@@ -127,6 +127,7 @@ class TracabilitySheets extends Controller
         if (isset($tracabilitySheet_id)) {
             // do getTracabilitySheet() in model/model.php
             $tracabilitySheet = $this->model->getTracabilitySheet($tracabilitySheet_id);
+            $materials =  $this->model->getAllFiberTypes();
 
             // in a real application we would also check if this db entry exists and therefore show the result or
             // redirect the user to an error page or similar
