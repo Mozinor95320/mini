@@ -17,7 +17,7 @@
                     <label for="workOrder" class="form-label">N°OF</label>
                     <input type="text" class="form-control" id="workOrder" name="workOrder"
                         value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>"
-                         readonly>
+                         disabled>
 
                 </div>
 
@@ -26,7 +26,7 @@
                     <label for="serialNumber" class="form-label">SN</label>
                     <input type="text" class="form-control" id="serialNumber" name="serialNumber"
                         value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>"
-                         readonly>
+                         disabled>
                 </div>
             </div>
             <div class="row align-items-center mb-3">
@@ -36,7 +36,7 @@
                     <label for="partNumber" class="form-label">PN</label>
                     <input type="text" class="form-control" id="partNumber" name="partNumber"
                         value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>"
-                         readonly>
+                         disabled>
 
                 </div>
 
@@ -45,7 +45,7 @@
                     <label for="sheetCreationDate" class="form-label">Date de création de la fiche</label>
                     <input type="datetime-local" class="form-control" id="sheetCreationDate" name="sheetCreationDate"
                         value="<?php echo htmlspecialchars($tracabilitySheet->sheetCreationDate, ENT_QUOTES, 'UTF-8'); ?>"
-                         readonly>
+                         disabled>
                 </div>
             </div>
             <div class="row align-items-center mb-3">
@@ -55,7 +55,7 @@
                     <label for="refPlan" class="form-label">Référence plan</label>
                     <input type="text" class="form-control" id="refPlan" name="refPlan"
                         value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>"
-                         readonly>
+                         disabled>
 
                 </div>
 
@@ -64,7 +64,7 @@
                     <label for="refMachine" class="form-label">Machine</label>
                     <input type="text" class="form-control" id="refMachine" name="refMachine"
                         value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>"
-                         readonly>
+                         disabled>
                 </div>
             </div>
         </section>
@@ -280,11 +280,11 @@
                     </div>
                 </div>
 
-                <!--  Input readonly - Linear Mass Before Shrink Fit-->
+                <!--  Input disabled - Linear Mass Before Shrink Fit-->
                 <div class="col-md-3">
                     <div class="input-group">
                         <input type="number" class="form-control" id="linearMassBeforeShrinkFit"
-                            name="linearMassBeforeShrinkFit" placeholder="Calculée automatiquement" readonly
+                            name="linearMassBeforeShrinkFit" placeholder="Calculée automatiquement" disabled
                             value="<?php echo isset($tracabilitySheet->linearMassBeforeShrinkFit) && !empty($tracabilitySheet->linearMassBeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->linearMassBeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
@@ -579,7 +579,7 @@
                 <div class="col-md-6">
                     <div class="input-group">
                         <input type="number" class="form-control" id="averageBeforeShrinkFit"
-                            name="averageBeforeShrinkFit" placeholder="Calculée automatiquement" readonly
+                            name="averageBeforeShrinkFit" placeholder="Calculée automatiquement" disabled
                             value="<?php echo isset($tracabilitySheet->averageBeforeShrinkFit) && !empty($tracabilitySheet->averageBeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->averageBeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
@@ -607,7 +607,7 @@
                 <div class="col-md-6">
                     <div class="input-group">
                         <input type="number" class="form-control" id="sigmaBeforeShrinkFit" name="sigmaBeforeShrinkFit"
-                            placeholder="Calculée automatiquement" readonly
+                            placeholder="Calculée automatiquement" disabled
                             value="<?php echo isset($tracabilitySheet->sigmaBeforeShrinkFit) && !empty($tracabilitySheet->sigmaBeforeShrinkFit) ? htmlspecialchars($tracabilitySheet->sigmaBeforeShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
@@ -659,11 +659,11 @@
                     </div>
                 </div>
 
-                <!--  Input readonly - Linear Mass After Shrink Fit-->
+                <!--  Input disabled - Linear Mass After Shrink Fit-->
                 <div class="col-md-3">
                     <div class="input-group">
                         <input type="number" class="form-control" id="linearMassAfterShrinkFit"
-                            name="linearMassAfterShrinkFit" placeholder="Calculée automatiquement" readonly
+                            name="linearMassAfterShrinkFit" placeholder="Calculée automatiquement" disabled
                             value="<?php echo isset($tracabilitySheet->linearMassAfterShrinkFit) && !empty($tracabilitySheet->linearMassAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->linearMassAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
@@ -954,7 +954,7 @@
                 <div class="col-md-6">
                     <div class="input-group">
                         <input type="number" class="form-control" id="averageAfterShrinkFit"
-                            name="averageAfterShrinkFit" placeholder="Calculée automatiquement" readonly
+                            name="averageAfterShrinkFit" placeholder="Calculée automatiquement" disabled
                             value="<?php echo isset($tracabilitySheet->averageAfterShrinkFit) && !empty($tracabilitySheet->averageAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->averageAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
@@ -982,7 +982,7 @@
                 <div class="col-md-6">
                     <div class="input-group">
                         <input type="number" class="form-control" id="sigmaAfterShrinkFit" name="sigmaAfterShrinkFit"
-                            placeholder="Calculée automatiquement" readonly
+                            placeholder="Calculée automatiquement" disabled
                             value="<?php echo isset($tracabilitySheet->sigmaAfterShrinkFit) && !empty($tracabilitySheet->sigmaAfterShrinkFit) ? htmlspecialchars($tracabilitySheet->sigmaAfterShrinkFit, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
@@ -1072,7 +1072,7 @@
                 <div class="col-md-6">
                     <label for="mf" class="form-label">MF</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="mf" name="mf" readonly
+                        <input type="text" class="form-control" id="mf" name="mf" disabled
                             value="<?php echo isset($tracabilitySheet->mf) && !empty($tracabilitySheet->mf) ? htmlspecialchars($tracabilitySheet->mf, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
 
