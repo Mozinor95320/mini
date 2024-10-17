@@ -118,8 +118,7 @@
             <select class="form-select" id="material" name="material">
                 <option selected disabled>Sélectionner la matière</option>
                 <?php foreach ($materials as $material) { ?>
-                <option value="<?php echo $material->partNumberParker . " - " . $material->partNumberSuplier ;if ($tracabilitySheet->material == $material->partNumberSuplier) echo 'selected';  ?>">
-                    <?php echo $material->partNumberParker . " - " . $material->partNumberSuplier ;  ?>
+                <option value="<?php echo $material->partNumberParker . " - " . $material->partNumberSuplier;?>" <?php if ($tracabilitySheet->material == $material->partNumberSuplier) echo ' selected';?>> <?php echo $material->partNumberParker . " - " . $material->partNumberSuplier ;  ?>
                 </option>
                 <?php } ?>
             </select>
