@@ -17,7 +17,7 @@
                     <label for="workOrder" class="form-label">N°OF</label>
                     <input type="text" class="form-control" id="workOrder" name="workOrder"
                         value="<?php echo htmlspecialchars($tracabilitySheet->workOrder, ENT_QUOTES, 'UTF-8'); ?>"
-                        readonly>
+                         readonly>
 
                 </div>
 
@@ -26,7 +26,7 @@
                     <label for="serialNumber" class="form-label">SN</label>
                     <input type="text" class="form-control" id="serialNumber" name="serialNumber"
                         value="<?php echo htmlspecialchars($tracabilitySheet->serialNumber, ENT_QUOTES, 'UTF-8'); ?>"
-                        readonly>
+                         readonly>
                 </div>
             </div>
             <div class="row align-items-center mb-3">
@@ -36,7 +36,7 @@
                     <label for="partNumber" class="form-label">PN</label>
                     <input type="text" class="form-control" id="partNumber" name="partNumber"
                         value="<?php echo htmlspecialchars($tracabilitySheet->partNumber, ENT_QUOTES, 'UTF-8'); ?>"
-                        readonly>
+                         readonly>
 
                 </div>
 
@@ -45,7 +45,7 @@
                     <label for="sheetCreationDate" class="form-label">Date de création de la fiche</label>
                     <input type="datetime-local" class="form-control" id="sheetCreationDate" name="sheetCreationDate"
                         value="<?php echo htmlspecialchars($tracabilitySheet->sheetCreationDate, ENT_QUOTES, 'UTF-8'); ?>"
-                        readonly>
+                         readonly>
                 </div>
             </div>
             <div class="row align-items-center mb-3">
@@ -55,7 +55,7 @@
                     <label for="refPlan" class="form-label">Référence plan</label>
                     <input type="text" class="form-control" id="refPlan" name="refPlan"
                         value="<?php echo htmlspecialchars($tracabilitySheet->refPlan, ENT_QUOTES, 'UTF-8'); ?>"
-                        readonly>
+                         readonly>
 
                 </div>
 
@@ -64,7 +64,7 @@
                     <label for="refMachine" class="form-label">Machine</label>
                     <input type="text" class="form-control" id="refMachine" name="refMachine"
                         value="<?php echo htmlspecialchars($tracabilitySheet->refMachine, ENT_QUOTES, 'UTF-8'); ?>"
-                        readonly>
+                         readonly>
                 </div>
             </div>
         </section>
