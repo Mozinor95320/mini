@@ -165,7 +165,7 @@
                 </div>
 
                 <!-- Dimension diameter D -->
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4">
                     <label for="diameterD" class="form-label">Diamètre D</label>
                     <div class="input-group">
                         <input type="number" class="form-control" id="diameterD" name="diameterD"
@@ -181,7 +181,7 @@
                 </div>
 
                 <!-- Mass M -->
-                <div class="col-md-4 mb-3">
+                <div class="col-md-4">
                     <label for="massM" class="form-label">Masse M</label>
                     <div class="input-group">
                         <input type="number" class="form-control" id="massM" name="massM" placeholder="Entrez la masse"
