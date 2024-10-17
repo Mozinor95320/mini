@@ -118,7 +118,9 @@
             <select class="form-select" id="material" name="material">
                 <option selected disabled>Sélectionner la matière</option>
                 <?php foreach ($materials as $material) { ?>
-                <option value="<?php echo $material->partNumberParker . " - " . $material->partNumberSuplier;?>" <?php if ($tracabilitySheet->material == $material->partNumberSuplier) echo ' selected';?>> <?php echo $material->partNumberParker . " - " . $material->partNumberSuplier ;  ?>
+                <option value="<?php echo $material->partNumberParker . " - " . $material->partNumberSuplier;?>"
+                    <?php if ($tracabilitySheet->material == $material->partNumberSuplier) echo ' selected';?>>
+                    <?php echo $material->partNumberParker . " - " . $material->partNumberSuplier ;  ?>
                 </option>
                 <?php } ?>
             </select>
@@ -1166,23 +1168,30 @@
         <!-- SECTION 7 - OPERATOR VALIDATION -->
         <h4 id="scrollspyHeading7">Déclaration de conformité opérateur</h4>
 
-        <!-- Date Operator Conformity Declaration -->
+        <!-- Operator Date Conformity Declaration -->
         <div class="mb-3">
-            <label for="dateOperatorConformityDeclaration" class="form-label">Date validation par
+            <label for="operatorDateConformityDeclaration" class="form-label">Date validation par
                 l'opérateur</label>
-            <input type="datetime-local" class="form-control" id="dateOperatorConformityDeclaration"
-                name="dateOperatorConformityDeclaration"
-                value="<?php echo isset($tracabilitySheet->dateOperatorConformityDeclaration) && !empty($tracabilitySheet->dateOperatorConformityDeclaration) ? htmlspecialchars($tracabilitySheet->dateOperatorConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
+            <input type="datetime-local" class="form-control" id="operatorDateConformityDeclaration"
+                name="operatorDateConformityDeclaration"
+                value="<?php echo isset($tracabilitySheet->operatorDateConformityDeclaration) && !empty($tracabilitySheet->operatorDateConformityDeclaration) ? htmlspecialchars($tracabilitySheet->operatorDateConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
         </div>
 
-        <div class="row mb-3">
-            <!-- Operator Name Conformity Declaration -->
-            <div class="col-md-4">
-                <label for="operatorNameConformityDeclaration" class="form-label">Opérateur</label>
-                <input type="text" class="form-control" id="operatorNameConformityDeclaration"
-                    name="operatorNameConformityDeclaration"
-                    value="<?php echo isset($tracabilitySheet->operatorNameConformityDeclaration) && !empty($tracabilitySheet->operatorNameConformityDeclaration) ? htmlspecialchars($tracabilitySheet->operatorNameConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
+
+        <div class="row mb-3">
+            <!-- Operator ID Conformity Declaration -->
+            <div class="col-md-4">
+                <label for="operatorIdConformityDeclaration" class="form-label">Matière</label>
+                <select class="form-select" id="operatorIdConformityDeclaration" name="operatorIdConformityDeclaration">
+                    <option selected disabled>Sélectionner le nom de l'opérateur</option>
+                    <?php foreach ($operators as $operator) { ?>
+                    <option value="<?php echo $operator->operatorFirstName . " - " . $operator->operatorLastName;?>"
+                        <?php if ($tracabilitySheet->operatorIdConformityDeclaration == $operator->id) echo ' selected';?>>
+                        <?php echo $operator->operatorFirstName . " " . $operator->operatorLastName ;  ?>
+                    </option>
+                    <?php } ?>
+                </select>
             </div>
 
             <!-- Operator Conformity Declaration -->
@@ -1241,56 +1250,65 @@
         <!-- SECTION 8 - QUALITY CONTROL -->
         <h4 id="scrollspyHeading8">Déclaration de conformité controlleur</h4>
 
-        <!-- Date Quality Control Conformity Declaration -->
+        <!-- Controller Date Conformity Declaration -->
         <div class="mb-3">
-            <label for="qualityControlDate" class="form-label">Date de validation par le
+            <label for="controllerDateConformityDeclaration" class="form-label">Date de validation par le
                 contrôle</label>
-            <input type="datetime-local" class="form-control" id="qualityControlDate" name="qualityControlDate"
-                value="<?php echo isset($tracabilitySheet->qualityControlDate) && !empty($tracabilitySheet->qualityControlDate) ? htmlspecialchars($tracabilitySheet->qualityControlDate, ENT_QUOTES, 'UTF-8') : ""; ?>">
+            <input type="datetime-local" class="form-control" id="controllerDateConformityDeclaration"
+                name="controllerDateConformityDeclaration"
+                value="<?php echo isset($tracabilitySheet->controllerDateConformityDeclaration) && !empty($tracabilitySheet->controllerDateConformityDeclaration) ? htmlspecialchars($tracabilitySheet->controllerDateConformityDeclaration, ENT_QUOTES, 'UTF-8') : ""; ?>">
 
         </div>
 
         <div class="row mb-3">
 
-            <!-- Quality Inspector Name -->
+            <!-- Controller ID Conformity Declaration -->
             <div class="col-md-6">
-                <label for="qualityInspectorName" class="form-label">Contrôleur</label>
-                <input type="text" class="form-control" id="qualityInspectorName" name="qualityInspectorName"
-                    value="<?php echo isset($tracabilitySheet->qualityInspectorName) && !empty($tracabilitySheet->qualityInspectorName) ? htmlspecialchars($tracabilitySheet->qualityInspectorName, ENT_QUOTES, 'UTF-8') : ""; ?>">
-
+                <label for="controllerIdConformityDeclaration" class="form-label">Matière</label>
+                <select class="form-select" id="controllerIdConformityDeclaration"
+                    name="controllerIdConformityDeclaration">
+                    <option selected disabled>Sélectionner la nom du controlleur</option>
+                    <?php foreach ($controllers as $controller) { ?>
+                    <option
+                        value="<?php echo $controller->controllerFirstName . " - " . $controller->controllerLastName;?>"
+                        <?php if ($tracabilitySheet->controllerIdConformityDeclaration == $controller->id) echo ' selected';?>>
+                        <?php echo $controller->controllerFirstName . " " . $controller->controllerLastName ;  ?>
+                    </option>
+                    <?php } ?>
+                </select>
             </div>
 
-            <!-- Quality Control Conformity Declaration -->
+            <!-- Controller Conformity Declaration -->
 
-            <!-- Quality Control Conformity Declaration - Label-->
+            <!-- Controller Conformity Declaration - Label-->
             <div class="col-md-6">
                 <h6>Conformité</h6>
 
-                <!-- Quality Control Conformity Declaration - CheckBox-->
+                <!-- Controller Conformity Declaration - CheckBox-->
                 <div class="col-md-6">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="qualityConformityDeclarationOk"
-                            name="qualityConformityDeclarationOk" value="1"
-                            <?php if ((bool)$tracabilitySheet->qualityConformityDeclaration === true) echo 'checked'; ?>>
-                        <label class="form-check-label" for="qualityConformityDeclarationOk">Oui</label>
+                        <input class="form-check-input" type="radio" id="controllerConformityDeclarationOk"
+                            name="controllerConformityDeclarationOk" value="1"
+                            <?php if ((bool)$tracabilitySheet->controllerConformityDeclaration === true) echo 'checked'; ?>>
+                        <label class="form-check-label" for="controllerConformityDeclarationOk">Oui</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="qualityConformityDeclarationNok"
-                            name="qualityConformityDeclarationNok" value="0"
-                            <?php if ((bool)$tracabilitySheet->qualityConformityDeclaration === false) echo 'checked'; ?>>
-                        <label class="form-check-label" for="qualityConformityDeclarationNok">Non</label>
+                        <input class="form-check-input" type="radio" id="controllerConformityDeclarationNok"
+                            name="controllerConformityDeclarationNok" value="0"
+                            <?php if ((bool)$tracabilitySheet->controllerConformityDeclaration === false) echo 'checked'; ?>>
+                        <label class="form-check-label" for="controllerConformityDeclarationNok">Non</label>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <!-- Quality Inspector Remarks -->
+        <!-- Controller Remarks -->
         <div class="mb-3">
-            <label for="qualityInspectorRemarks" class="form-label">Remarque</label>
-            <textarea class="form-control" id="qualityInspectorRemarks" name="qualityInspectorRemarks" rows="4"
+            <label for="controllerRemarks" class="form-label">Remarque</label>
+            <textarea class="form-control" id="controllerRemarks" name="controllerRemarks" rows="4"
                 placeholder="Entrez votre commentaire..."
-                maxlength="255"><?php echo isset($tracabilitySheet->qualityInspectorRemarks) && !empty($tracabilitySheet->qualityInspectorRemarks) ? htmlspecialchars($tracabilitySheet->qualityInspectorRemarks, ENT_QUOTES, 'UTF-8') : ""; ?></textarea>
+                maxlength="255"><?php echo isset($tracabilitySheet->controllerRemarks) && !empty($tracabilitySheet->controllerRemarks) ? htmlspecialchars($tracabilitySheet->controllerRemarks, ENT_QUOTES, 'UTF-8') : ""; ?></textarea>
             <div id="charCount2" class="form-text">0/255 caractères</div>
         </div>
 
@@ -1331,4 +1349,4 @@ var serialNumberSheet = "<?php echo $tracabilitySheet->serialNumber; ?>";
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 <script src="<?php echo URL; ?>js/tolerances.js"></script>
-<!-- <script src="<?php echo URL; ?>js/windingCharts.js"></script> -->
+<script src="<?php echo URL; ?>js/windingCharts.js"></script>
