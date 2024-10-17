@@ -35,5 +35,9 @@
   background-color: #ffa500 !important; 
 }
 .card-body {
-  background-color: #fffffff6 !important; 
+  background-color: #fffff6 !important; 
+}
+
+.sectionEditTraca {
+  background-color: #dc3545 !important; 
 }
