@@ -1,13 +1,13 @@
 // chart.js
-var tensileTest1BeforeChart;
+var tensileTest2BeforeChart;
 
 //ajaxGetChartTensileTest($tracabilitySheet_id, $tensileTestNumber, $beforeOrAfterShrinkFit )
 
 document.addEventListener("DOMContentLoaded", function() {
-    const ctx = document.getElementById('chart1BeforeShrinkFit').getContext('2d');
+    const ctx = document.getElementById('chart2BeforeShrinkFit').getContext('2d');
 
     // AJAX request to get data
-    fetch(url + "/tracabilitySheets/ajaxGetChartTensileTest1/" + serialNumberSheet)
+    fetch(url + "/tracabilitySheets/ajaxGetChartTensileTest2/" + serialNumberSheet)
         .then(response => response.json())
         .then(data => {
             // Extraction des labels et des données
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const forceN = data.map(item => item.forceN);
 
             // Chart Settings
-            const tensileTest1BeforeChart = new Chart(ctx, {
+            const tensileTest2BeforeChart = new Chart(ctx, {
                 type: 'line', 
                 data: {
                     labels: timeLogs,  // Time in labels

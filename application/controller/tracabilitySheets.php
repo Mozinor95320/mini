@@ -253,9 +253,18 @@ class TracabilitySheets extends Controller
 
     }
 
-    public function ajaxGetChartTensileTest($tracabilitySheet_id)
+    public function ajaxGetChartTensileTest1($tracabilitySheet_id)
     {
         $dataTensileTest = $this->model->getTensileTestChart($tracabilitySheet_id, 1, 'before');
+
+        // simply echo out something. A supersimple API would be possible by echoing JSON here
+        header('Content-Type: application/json');
+        echo json_encode($dataTensileTest);
+
+    }
+    public function ajaxGetChartTensileTest2($tracabilitySheet_id)
+    {
+        $dataTensileTest = $this->model->getTensileTestChart($tracabilitySheet_id, 2, 'before');
 
         // simply echo out something. A supersimple API would be possible by echoing JSON here
         header('Content-Type: application/json');
