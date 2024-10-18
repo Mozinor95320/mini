@@ -268,9 +268,9 @@ class Model
     public function getTensileTestChart($tracabilitySheet_id, $tensileTestNumber, $beforeOrAfterShrinkFit)
     {
         if ($beforeOrAfterShrinkFit == 'before') {
-            $sql = "SELECT timeLog, ForceN FROM tensileTestsReccords WHERE serialNumberBeforeShrinkFit = :tracabilitySheet_id AND tensileTestNumber = :tensileTestNumber ORDER BY timeLog ASC";
+            $sql = "SELECT timeLog, forceN FROM tensileTestsReccords WHERE serialNumberBeforeShrinkFit = :tracabilitySheet_id AND tensileTestNumber = :tensileTestNumber ORDER BY timeLog ASC";
         } elseif ($beforeOrAfterShrinkFit == 'after') {
-            $sql = "SELECT timeLog, ForceN FROM tensileTestsReccords WHERE serialNumberAfterShrinkFit = :tracabilitySheet_id AND tensileTestNumber = :tensileTestNumber ORDER BY timeLog ASC";
+            $sql = "SELECT timeLog, forceN FROM tensileTestsReccords WHERE serialNumberAfterShrinkFit = :tracabilitySheet_id AND tensileTestNumber = :tensileTestNumber ORDER BY timeLog ASC";
         } else {
             throw new InvalidArgumentException('Invalid value for beforeOrAfterShrinkFit.');
         }
