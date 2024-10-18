@@ -1331,12 +1331,11 @@
         <section class="sectionEditTraca px-2 py-2 mb-3 rounded shadow-sm bg-light">
             <h4 class="bg-primary px-2 py-2 rounded" id="scrollspyHeading10">Graphiques essais de traction</h3>
                 <!-- Chart Tensile Tests 1 before shrink fit-->
-
-
                 <div class="chart-container" style="height: 100vh;">
                     <canvas id="chart1BeforeShrinkFit" style="display: block; width: 100%; height:100%;"></canvas>
-                    <button onclick="resetZoomChartGeneral()" class="btn btn-danger"><i
-                            class="bi bi-arrow-counterclockwise"></i></button>
+                </div>
+                <button onclick="resetZoomChartGeneral()" class="btn btn-danger"><i
+                        class="bi bi-arrow-counterclockwise"></i></button>
         </section>
 
 
