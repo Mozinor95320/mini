@@ -4,7 +4,7 @@ var tensileTest1BeforeChart;
 //ajaxGetChartTensileTest($tracabilitySheet_id, $tensileTestNumber, $beforeOrAfterShrinkFit )
 
 document.addEventListener("DOMContentLoaded", function() {
-    const ctx = document.getElementById('myChartGeneral').getContext('2d');
+    const ctx = document.getElementById('chart1BeforeShrinkFit').getContext('2d');
 
     // AJAX request to get data
     fetch(url + "/tracabilitySheets/ajaxGetChartTensileTest/" + serialNumberSheet)
