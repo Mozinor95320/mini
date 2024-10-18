@@ -1331,24 +1331,15 @@
         <section class="sectionEditTraca px-2 py-2 mb-3 rounded shadow-sm bg-light">
             <h4 class="bg-primary px-2 py-2 rounded" id="scrollspyHeading10">Graphiques essais de traction</h3>
                 <!-- Chart Tensile Tests 1 before shrink fit-->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="chart-container" style="height: 100vh;">
-                            <canvas id="chart1BeforeShrinkFit"
-                                style="display: block; width: 100%; height:100%;"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="chart-container" style="height: 100vh;">
-                            <canvas id="chart2BeforeShrinkFit"
-                                style="display: block; width: 100%; height:100%;"></canvas>
-                        </div>
-                    </div>
-                </div>
 
-                <button onclick="resetZoomChartGeneral()" class="btn btn-danger"><i
-                        class="bi bi-arrow-counterclockwise"></i></button>
+
+                <div class="chart-container" style="height: 100vh;">
+                    <canvas id="chart1BeforeShrinkFit" style="display: block; width: 100%; height:100%;"></canvas>
+                    <button onclick="resetZoomChartGeneral()" class="btn btn-danger"><i
+                            class="bi bi-arrow-counterclockwise"></i></button>
         </section>
+
+
     </form>
 </div>
 <!-- define the project's URL (to make AJAX calls possible, even when using this in sub-folders etc) -->
