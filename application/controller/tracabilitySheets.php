@@ -253,19 +253,15 @@ class TracabilitySheets extends Controller
 
     }
 
-
-    public function ajaxGetChartTensileTest($tracabilitySheetId = null, $tensileTestNumber = null)
+    public function ajaxGetChartTensileTest($tracabilitySheet_id)
     {
-        // Vous pouvez récupérer les paramètres directement à partir de la fonction
-        $tracabilitySheetId = $this->url_params[0] ?? null;
-        $tensileTestNumber = $this->url_params[1] ?? null;
+        $dataTensileTest = $this->model->getTensileTestChart($tracabilitySheet_id, 1, 'before');
 
-        // Traitement de la logique en fonction des paramètres reçus
-        $data = $this->model->getTensileTestChart($tracabilitySheetId, $tensileTestNumber,'before');
-
-        // Envoyer les données sous forme JSON
+        // simply echo out something. A supersimple API would be possible by echoing JSON here
         header('Content-Type: application/json');
-        echo json_encode($data);
+        echo json_encode($dataTensileTest);
+
     }
 
+    
 }
