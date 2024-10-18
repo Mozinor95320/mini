@@ -265,6 +265,33 @@ class Model
         return $results = $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getTensileTestChart($tracabilitySheet_id, $tensileTestNumber, $beforeOrAfterShrinkFit)
+    {
+        if ($beforeOrAfterShrinkFit == 'before') {
+            $sql = "SELECT timeLog, ForceN FROM tensileTestsReccords WHERE serialNumberBeforeShrinkFit = :tracabilitySheet_id AND tensileTestNumber = :tensileTestNumber ORDER BY timeLog ASC";
+        } elseif ($beforeOrAfterShrinkFit == 'after') {
+            $sql = "SELECT timeLog, ForceN FROM tensileTestsReccords WHERE serialNumberAfterShrinkFit = :tracabilitySheet_id AND tensileTestNumber = :tensileTestNumber ORDER BY timeLog ASC";
+        } else {
+            throw new InvalidArgumentException('Invalid value for beforeOrAfterShrinkFit.');
+        }
+    
+        $query = $this->db->prepare($sql);
+    
+        // Définir les paramètres
+        $parameters = [
+            ':tracabilitySheet_id' => $tracabilitySheet_id,
+            ':tensileTestNumber' => $tensileTestNumber,
+        ];
+    
+        // Debug optionnel
+        // echo '[ PDO DEBUG ]: ' . Helper::debugPDO($sql, $parameters); exit();
+    
+        // Exécution de la requête
+        $query->execute($parameters);
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+
     public function getPaginatedFiberTypes($limit, $offset)
     {
         $sql = "SELECT id, partNumberParker, partNumberSuplier, remarks FROM fiberTypes LIMIT :limit OFFSET :offset";

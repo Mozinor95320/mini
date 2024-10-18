@@ -1,28 +1,21 @@
 // chart.js
-var chartGeneral;
+var tensileTest1BeforeChart;
+
+//ajaxGetChartTensileTest($tracabilitySheet_id, $tensileTestNumber, $beforeOrAfterShrinkFit )
 
 document.addEventListener("DOMContentLoaded", function() {
     const ctx = document.getElementById('myChartGeneral').getContext('2d');
 
     // AJAX request to get data
-    fetch(url + "/tracabilitySheets/ajaxGetWindingChart/" + serialNumberSheet)
+    fetch(url + "/tracabilitySheets/ajaxGetChartTensileTest/" + serialNumberSheet)
         .then(response => response.json())
         .then(data => {
             // Extraction des labels et des données
             const timeLogs = data.map(item => item.timeLog);
             const dancerArmPressureSetpoint = data.map(item => item.dancerArmPressureSetpoint);
-            const dancerArmTensionActual = data.map(item => item.dancerArmTensionActual);
-            const postTensionActual = data.map(item => item.postTensionActual);
-            const preTensionSetpoint = data.map(item => item.preTensionSetpoint);
-            const preTensionActual = data.map(item => item.preTensionActual);
-            const hotAirBlowerSetpoint = data.map(item => item.hotAirBlowerSetpoint);
-            const nozzleHeaterActual = data.map(item => item.nozzleHeaterActual);
-            const nozzleHeaterSetpoint = data.map(item => item.nozzleHeaterSetpoint);
-            const tapeHeaterActual = data.map(item => item.tapeHeaterActual);
-            const tapeHeaterSetpoint = data.map(item => item.tapeHeaterSetpoint);
 
             // Chart Settings
-            const chartGeneral = new Chart(ctx, {
+            const tensileTest1BeforeChart = new Chart(ctx, {
                 type: 'line', 
                 data: {
                     labels: timeLogs,  // Time in labels
