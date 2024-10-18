@@ -253,9 +253,9 @@ class TracabilitySheets extends Controller
 
     }
 
-    public function ajaxGetChartTensileTest($tracabilitySheet_id)
+    public function ajaxGetChartTensileTest($tracabilitySheet_id, $tensileTestNumber, $beforeOrAfterShrinkFit)
     {
-        $dataTensileTest = $this->model->getTensileTestChart($tracabilitySheet_id, 1, 'before');
+        $dataTensileTest = $this->model->getTensileTestChart($tracabilitySheet_id, , $tensileTestNumber, $beforeOrAfterShrinkFit);
 
         // simply echo out something. A supersimple API would be possible by echoing JSON here
         header('Content-Type: application/json');
