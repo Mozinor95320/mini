@@ -261,7 +261,7 @@ class TracabilitySheets extends Controller
         $beforeOrAfterShrinkFit = $this->url_params[2] ?? null;
 
         // Traitement de la logique en fonction des paramètres reçus
-        $data = $this->model->getTensileTestData($tracabilitySheetId, $tensileTestNumber, $beforeOrAfterShrinkFit);
+        $data = $this->model->getTensileTestChart($tracabilitySheetId, $tensileTestNumber, $beforeOrAfterShrinkFit);
 
         // Envoyer les données sous forme JSON
         header('Content-Type: application/json');
