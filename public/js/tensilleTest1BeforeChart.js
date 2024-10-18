@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 type: 'line', 
                 data: {
                     labels: timeLogs,  // Time in labels
-                    datasets: [
+                    datasets: 
                         {
                             label: 'Force (N)',
                             data: forceN,
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
                             backgroundColor: 'rgba(75, 192, 192, 0.2)',
                             fill: false
                         }
-                    ]
+                    
                 },
                 options: {
                     responsive: true, // Rend le graphique responsive
